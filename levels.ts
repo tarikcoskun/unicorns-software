@@ -19,7 +19,7 @@ var rooms = {
   11: "A10.1",
   61: "A10.2",
   39: "A11",
-  49: "A12",
+  40: "A12",
   41: "A13",
   43: "A14",
   5: "A14",
@@ -137,5 +137,5 @@ var rooms = {
 };
 
 exports = {
-  rooms: Object.ent,
+  rooms: rooms,
 };

@@ -1,5 +1,5 @@
-<script>
-  export var chapterA = [
+<script lang="ts">
+  var chapterA = [
     "A01-hall-secret-color=blue",
     "A01.1-hall-color=blue",
     "A02-hall-secret-color=blue",
@@ -28,7 +28,7 @@
     "A20-demolition_boss-difficulty_point-color=orange",
     "A21-reward-exploration_point-color=blue",
   ];
-  export var chapterB = [
+  var chapterB = [
     "B01",
     "B02",
     "B03",
@@ -54,7 +54,7 @@
     "B18",
     "B19",
   ];
-  export var chapterC = [
+  var chapterC = [
     "C01",
     "C01.1",
     "C02",
@@ -80,7 +80,7 @@
     "C21",
     "C22",
   ];
-  export var chapterD = [
+  var chapterD = [
     "D01",
     "D02",
     "D03",
@@ -111,7 +111,7 @@
     "D19",
     "D20",
   ];
-  export var chapterE = [
+  var chapterE = [
     "E01",
     "E02",
     "E03",
