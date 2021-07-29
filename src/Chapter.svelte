@@ -24,7 +24,7 @@
         class={level[1].boss ? "boss_icon" : "level_icon"}
         src={`/img/level_icons/${level[1].icon}.png`}
         style={`filter: drop-shadow(0 0 8px var(--${level[1].color}-darker))`}
-        alt="level"
+        alt={level[1].icon}
       />
       <h1
         style={`filter: drop-shadow(0 0 8px var(--${level[1].color}-darker)); color: var(--${level[1].color})`}

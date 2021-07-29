@@ -72,7 +72,7 @@ export default {
     color: "blue",
   },
   A12: {
-    icon: "reward",
+    icon: "blank",
     color: "blue",
   },
   A13: {
@@ -122,7 +122,7 @@ export default {
     boss: true,
   },
   A21: {
-    icon: "reward",
+    icon: "blank",
     color: "blue",
     exploration: true,
   },

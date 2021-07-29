@@ -107,7 +107,7 @@ export default {
     exploration: true,
   },
   C20: {
-    icon: "reward",
+    icon: "blank",
     color: "blue",
     exploration: true,
   },
@@ -118,7 +118,7 @@ export default {
     boss: true,
   },
   C22: {
-    icon: "reward",
+    icon: "blank",
     color: "blue",
   },
 };

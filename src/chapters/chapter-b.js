@@ -116,7 +116,7 @@ export default {
     exploration: true,
   },
   B19: {
-    icon: "reward",
+    icon: "blank",
     color: "blue",
   },
 };
