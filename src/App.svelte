@@ -1,10 +1,10 @@
 <script lang="ts">
   import Chapter from "./Chapter.svelte";
   import ChapterA from "./chapters/chapter-a";
-  import ChapterB from "./chapters/chapter-b";
+  /*import ChapterB from "./chapters/chapter-b";
   import ChapterC from "./chapters/chapter-c";
   import ChapterD from "./chapters/chapter-d";
-  import ChapterE from "./chapters/chapter-E";
+  import ChapterE from "./chapters/chapter-E";*/
 </script>
 
 <main class="points">
@@ -20,10 +20,10 @@
 
 <main class="levels">
   <Chapter id="A" levels={ChapterA} />
-  <Chapter id="B" levels={ChapterB} />
+  <!-- <Chapter id="B" levels={ChapterB} />
   <Chapter id="C" levels={ChapterC} />
   <Chapter id="D" levels={ChapterD} />
-  <Chapter id="E" levels={ChapterE} />
+  <Chapter id="E" levels={ChapterE} /> -->
 </main>
 
 <style lang="scss">
