@@ -13,7 +13,7 @@ This is a save editor for the game [Will You Snail?](https://store.steampowered.
 
 ### Contributing
 
-All contributions are appreciated. Pull requests are welcome. Opening an issue is better if the changes are not from the to-do list. Please test your changes before opening pull requests.
+All contributions are appreciated, pull requests are welcome. Opening an issue is better if the changes are not from the to-do list. Please test your changes before opening pull requests.
 
 ### Running locally
 
