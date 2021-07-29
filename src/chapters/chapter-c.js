@@ -1,121 +1,123 @@
 export default {
-  B01: {
-    icon: "puzzle",
-    color: "blue",
-    exploration: true,
-  },
-  B02: {
-    icon: "puzzle",
-    color: "blue",
-    exploration: true,
-  },
-  B03: {
+  C01: {
     icon: "puzzle",
     color: "blue",
     secret: true,
     exploration: true,
   },
-  "B03.1": {
+  "C01.1": {
     icon: "puzzle",
     color: "blue",
     exploration: true,
   },
-  B04: {
-    icon: "brain",
+  C02: {
+    icon: "puzzle",
     color: "blue",
-    secret: true,
+    exploration: true,
   },
-  "B04.1": {
-    icon: "brain",
+  C03: {
+    icon: "puzzle",
     color: "blue",
-    secret: true,
+    exploration: true,
   },
-  "B04.2": {
-    icon: "firewall",
-    color: "pink",
-    secret: true,
-  },
-  "B04.3": {
-    icon: "emotions_module",
-    color: "pink",
-    secret: true,
-  },
-  "B04.4": {
-    icon: "prediction_processing_unit",
-    color: "pink",
-  },
-  B05: {
+  C04: {
     icon: "universes",
     color: "blue",
   },
-  B06: {
+  C05: {
     icon: "universes",
     color: "blue",
   },
-  B07: {
+  C06: {
     icon: "universes",
     color: "blue",
   },
-  B08: {
-    icon: "lasers",
-    color: "orange",
-    combat: true,
+  C07: {
+    icon: "universes",
+    color: "blue",
   },
-  B09: {
+  C08: {
     icon: "spikes",
     color: "orange",
     combat: true,
   },
-  B10: {
-    icon: "laser_show",
+  C09: {
+    icon: "spikes",
     color: "orange",
     combat: true,
   },
-  B11: {
-    icon: "lasers",
+  C10: {
+    icon: "fish_and_jellyfish",
     color: "orange",
     combat: true,
   },
-  B12: {
+  C11: {
+    icon: "fish_and_jellyfish",
+    color: "orange",
+    combat: true,
+    exploration: true,
+  },
+  C12: {
+    icon: "race",
+    color: "orange",
+    combat: true,
+  },
+  C13: {
+    icon: "race",
+    color: "orange",
+    combat: true,
+    secret: true,
+  },
+  "C13.1": {
+    icon: "water_pump",
+    color: "pink",
+  },
+  C14: {
     icon: "blocks",
     color: "orange",
     combat: true,
+    exploration: true,
   },
-  B13: {
-    icon: "conveyor_belts",
+  C15: {
+    icon: "fish_and_jellyfish",
     color: "orange",
     combat: true,
   },
-  B14: {
-    icon: "laser_show",
+  C16: {
+    icon: "race",
     color: "orange",
     combat: true,
   },
-  B15: {
-    icon: "combat",
-    color: "orange",
-    combat: true,
-  },
-  B16: {
+  C17: {
     icon: "combat",
     color: "orange",
     combat: true,
     exploration: true,
   },
-  B17: {
+  C18: {
     icon: "combat",
     color: "orange",
     combat: true,
     exploration: true,
   },
-  B18: {
-    icon: "mr_dance_boss",
+  C19: {
+    icon: "race",
+    color: "orange",
+    combat: true,
+    exploration: true,
+  },
+  C20: {
+    icon: "reward",
+    color: "blue",
+    exploration: true,
+  },
+  C21: {
+    icon: "mama_squid_boss",
     color: "orange",
     combat: true,
     boss: true,
-    exploration: true,
   },
-  B19: {
+  C22: {
     icon: "reward",
     color: "blue",
   },
