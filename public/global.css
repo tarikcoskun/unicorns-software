@@ -10,10 +10,7 @@
 }
 
 ::-webkit-scrollbar {
-  width: 12px;
-  &-thumb {
-    background: #a64ecc;
-  }
+  width: 0;
 }
 
 * {

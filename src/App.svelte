@@ -1,141 +1,135 @@
 <script lang="ts">
-  var chapterA = [
-    "A01-hall-secret-color=blue",
-    "A01.1-hall-color=blue",
-    "A02-hall-secret-color=blue",
-    "A02.1-hat_selection-color=pink",
-    "A03-hall-secret-color=blue",
-    "A03.1-diana-color=pink",
-    "A04-hall-color=blue",
-    "A05-skill_test-color=blue",
-    "A06-difficulty_decision-color=blue",
-    "A07-stars-color=blue",
-    "A08-stars-color=blue",
-    "A09-stars-color=blue",
-    "A10-stars-secret-color=blue",
-    "A10.1-stars-color=blue",
-    "A10.2-stars-color=blue",
-    "A11-stars-color=blue",
-    "A12-reward-color=blue",
-    "A13-spikes-difficulty_point-color=orange",
-    "A14-spikes-difficulty_point-secret-color=orange",
-    "A14.1-secret_presentation-color=pink",
-    "A15-spikes-difficulty_point-color=orange",
-    "A16-conveyor_bells-difficulty_point-color=orange",
-    "A17-conveyor_bells-difficulty_point-color=orange",
-    "A18-action-difficulty_point-color=orange",
-    "A19-action-difficulty_point-color=orange",
-    "A20-demolition_boss-difficulty_point-color=orange",
-    "A21-reward-exploration_point-color=blue",
-  ];
-  var chapterB = [
-    "B01",
-    "B02",
-    "B03",
-    "B03.1",
-    "B04",
-    "B04.1",
-    "B04.2",
-    "B04.3",
-    "B04.4",
-    "B05",
-    "B06",
-    "B07",
-    "B08",
-    "B09",
-    "B10",
-    "B11",
-    "B12",
-    "B13",
-    "B14",
-    "B15",
-    "B16",
-    "B17",
-    "B18",
-    "B19",
-  ];
-  var chapterC = [
-    "C01",
-    "C01.1",
-    "C02",
-    "C03",
-    "C04",
-    "C05",
-    "C06",
-    "C07",
-    "C08",
-    "C09",
-    "C10",
-    "C11",
-    "C12",
-    "C13",
-    "C13.1",
-    "C14",
-    "C15",
-    "C16",
-    "C17",
-    "C18",
-    "C19",
-    "C20",
-    "C21",
-    "C22",
-  ];
-  var chapterD = [
-    "D01",
-    "D02",
-    "D03",
-    "D03.1",
-    "D04",
-    "D05",
-    "D05.1",
-    "D05.2",
-    "D06",
-    "D06.1",
-    "D06.2",
-    "D06.3",
-    "D06.4",
-    "D06.5",
-    "D07",
-    "D08",
-    "D09",
-    "D10",
-    "D10.1",
-    "D11",
-    "D12",
-    "D13",
-    "D14",
-    "D15",
-    "D16",
-    "D17",
-    "D18",
-    "D19",
-    "D20",
-  ];
-  var chapterE = [
-    "E01",
-    "E02",
-    "E03",
-    "E03.1",
-    "E04",
-    "E05",
-    "E06",
-    "E07",
-    "E08",
-    "E09",
-    "E10",
-    "E11",
-    "E12",
-    "E13",
-    "E14",
-    "E15",
-    "E15.1",
-    "E15.2",
-    "E16",
-    "E17",
-    "E18",
-    "E19",
-    "E19.1",
-  ];
+  var chapter_a = Object.entries({
+    A01: {
+      icon: "hall",
+      color: "blue",
+      secret: true,
+    },
+    "A01.1": {
+      icon: "hall",
+      color: "blue",
+      exploration: true,
+    },
+    A02: {
+      icon: "hall",
+      color: "blue",
+      secret: true,
+    },
+    "A02.1": {
+      icon: "hat_selection",
+      color: "pink",
+    },
+    A03: {
+      icon: "hall",
+      color: "blue",
+      secret: true,
+      exploration: true,
+    },
+    "A03.1": {
+      icon: "diana",
+      color: "pink",
+    },
+    A04: {
+      icon: "hall",
+      color: "blue",
+    },
+    A05: {
+      icon: "skill_test",
+      color: "blue",
+    },
+    A06: {
+      icon: "difficulty_decision",
+      color: "blue",
+    },
+    A07: {
+      icon: "stars",
+      color: "blue",
+    },
+    A08: {
+      icon: "stars",
+      color: "blue",
+    },
+    A09: {
+      icon: "stars",
+      color: "blue",
+    },
+    A10: {
+      icon: "stars",
+      color: "blue",
+      secret: true,
+    },
+    "A10.1": {
+      icon: "stars",
+      color: "blue",
+      exploration: true,
+    },
+    "A10.2": {
+      icon: "stars",
+      color: "blue",
+      exploration: true,
+    },
+    A11: {
+      icon: "stars",
+      color: "blue",
+    },
+    A12: {
+      icon: "reward",
+      color: "blue",
+    },
+    A13: {
+      icon: "spikes",
+      color: "orange",
+      combat: true,
+    },
+    A14: {
+      icon: "spikes",
+      color: "orange",
+      combat: true,
+      secret: true,
+    },
+    "A14.1": {
+      icon: "secret_presentation",
+      color: "pink",
+    },
+    A15: {
+      icon: "spikes",
+      color: "orange",
+      combat: true,
+    },
+    A16: {
+      icon: "conveyor_belts",
+      color: "orange",
+      combat: true,
+    },
+    A17: {
+      icon: "conveyor_belts",
+      color: "orange",
+      combat: true,
+    },
+    A18: {
+      icon: "action",
+      color: "orange",
+      combat: true,
+    },
+    A19: {
+      icon: "action",
+      color: "orange",
+      combat: true,
+    },
+    A20: {
+      icon: "demolition_boss",
+      color: "orange",
+      combat: true,
+      boss: true,
+    },
+    A21: {
+      icon: "reward",
+      color: "blue",
+      exploration: true,
+    },
+  }).sort((a, b) => {
+    return a[1] < b[1] ? -1 : a[1] > b[1] ? 1 : 0;
+  });
 </script>
 
 <main class="points">
@@ -151,12 +145,39 @@
 
 <main class="levels">
   <section id="A" style="margin-left: 2.5rem">
-    {#each chapterA as level, index}
+    {#each chapter_a as level, index}
       <figure style={"animation-delay:" + index * 0.25 + "s"}>
-        {#if level.split("-").includes("secret")}
+        {#if level[1].secret}
           <img class="secret_icon" src="/img/secret.png" alt="secret" />
         {/if}
-        {#if level.split("-").includes("color=orange")}
+        {#if level[1].combat}
+          <img
+            class="difficulty_icon"
+            src="/img/difficulty.png"
+            alt="difficulty"
+          />
+        {/if}
+        <img
+          class={level[1].boss ? "boss_icon" : "level_icon"}
+          src={`/img/level_icons/${level[1].icon}.png`}
+          style={`filter: drop-shadow(0 0 8px var(--${level[1].color}-darker))`}
+          alt="level"
+        />
+        <h1
+          style={`filter: drop-shadow(0 0 8px var(--${level[1].color}-darker)); color: var(--${level[1].color})`}
+        >
+          {level[0]}
+        </h1>
+      </figure>
+    {/each}
+  </section>
+  <!-- <section id="B">
+    {#each levels.chapterB as level, index}
+      <figure style={"animation-delay:" + index * 0.25 + "s"}>
+        {#if level.includes("secret")}
+          <img class="secret_icon" src="/img/secret.png" alt="secret" />
+        {/if}
+        {#if level.includes("color=orange")}
           <img
             class="difficulty_icon"
             src="/img/difficulty.png"
@@ -180,7 +201,7 @@
         </h1>
       </figure>
     {/each}
-  </section>
+  </section> -->
 </main>
 
 <style lang="scss">
@@ -211,7 +232,7 @@
   .levels {
     height: 100%;
     width: 100%;
-    padding-top: 4rem;
+    margin-top: 4rem;
     display: flex;
     gap: 2rem;
     align-items: center;
@@ -265,11 +286,12 @@
           opacity: 0;
           transition: all 0.2s;
         }
-        .level_icon {
+        .level_icon,
+        .boss_icon {
           width: 56px;
           transform: rotate(90deg);
           transition: all 0.2s;
-          &.demolition_boss {
+          &.boss_icon {
             width: 64px;
           }
         }
@@ -290,10 +312,11 @@
           .difficulty_icon {
             opacity: 100;
           }
-          .level_icon {
+          .level_icon,
+          .boss_icon {
             width: 96px;
             transform: rotate(0);
-            &.demolition_boss {
+            &.boss_icon {
               width: 104px;
             }
           }
