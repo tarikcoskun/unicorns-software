@@ -4,6 +4,7 @@
   import ChapterB from "./chapters/chapter-B.js";
   import ChapterC from "./chapters/chapter-C.js";
   import ChapterD from "./chapters/chapter-D.js";
+  import ChapterE from "./chapters/chapter-E.js";
 </script>
 
 <main class="points">
@@ -22,6 +23,7 @@
   <Chapter id="B" levels={ChapterB} />
   <Chapter id="C" levels={ChapterC} />
   <Chapter id="D" levels={ChapterD} />
+  <Chapter id="E" levels={ChapterE} />
 </main>
 
 <style lang="scss">
