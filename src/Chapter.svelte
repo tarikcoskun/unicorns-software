@@ -7,7 +7,7 @@
   });
 </script>
 
-<section {id} style="margin-left: 2.5rem">
+<section {id}>
   {#each levelsArray as level, index}
     <figure style={"animation-delay:" + index * 0.25 + "s"}>
       {#if level[1].secret}
@@ -59,6 +59,9 @@
       position: absolute;
       left: 6px;
       bottom: calc(14rem + 16px);
+    }
+    &#A {
+      margin-left: 2.5rem;
     }
     figure {
       display: flex;
