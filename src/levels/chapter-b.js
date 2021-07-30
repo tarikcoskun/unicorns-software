@@ -17,17 +17,17 @@ export default {
   },
   "B03.1": {
     icon: "puzzle",
-    color: "blue",
+    color: "pink",
     exploration: true,
   },
   B04: {
-    icon: "brain",
+    icon: "squids_brain",
     color: "blue",
     secret: true,
   },
   "B04.1": {
-    icon: "brain",
-    color: "blue",
+    icon: "squids_brain",
+    color: "pink",
     secret: true,
   },
   "B04.2": {
@@ -36,7 +36,7 @@ export default {
     secret: true,
   },
   "B04.3": {
-    icon: "emotions_module",
+    icon: "squids_heart",
     color: "pink",
     secret: true,
   },
@@ -45,15 +45,15 @@ export default {
     color: "pink",
   },
   B05: {
-    icon: "universes",
+    icon: "universe",
     color: "blue",
   },
   B06: {
-    icon: "universes",
+    icon: "universe",
     color: "blue",
   },
   B07: {
-    icon: "universes",
+    icon: "universe",
     color: "blue",
   },
   B08: {

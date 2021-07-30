@@ -17,7 +17,7 @@ export default {
   },
   "D03.1": {
     icon: "puzzle",
-    color: "blue",
+    color: "pink",
     exploration: true,
   },
   D04: {
@@ -66,7 +66,7 @@ export default {
   },
   "D06.5": {
     icon: "hall",
-    color: "blue",
+    color: "pink",
     exploration: true,
   },
   D07: {
@@ -92,7 +92,7 @@ export default {
   },
   "D10.1": {
     icon: "hall",
-    color: "blue",
+    color: "pink",
     exploration: true,
   },
   D11: {

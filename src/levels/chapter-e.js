@@ -15,7 +15,7 @@ export default {
   },
   "E03.1": {
     icon: "puzzle",
-    color: "blue",
+    color: "pink",
     exploration: true,
   },
   E04: {
@@ -35,7 +35,7 @@ export default {
   },
   "E06.1": {
     icon: "puzzle",
-    color: "blue",
+    color: "pink",
     exploration: true,
   },
   E07: {
@@ -80,7 +80,7 @@ export default {
     combat: true,
   },
   E15: {
-    icon: "shellies",
+    icon: "shelly",
     color: "orange",
     combat: true,
   },

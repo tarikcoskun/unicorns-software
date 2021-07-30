@@ -107,8 +107,8 @@
             drop-shadow(0 0 8px var(--pink-darker));
         }
         &.orange {
-          filter: invert(1) invert(85%) sepia(82%) saturate(476%)
-            hue-rotate(355deg) brightness(104%) contrast(107%)
+          filter: invert(1) invert(90%) sepia(14%) saturate(6503%)
+            hue-rotate(332deg) brightness(101%) contrast(103%)
             drop-shadow(0 0 8px var(--orange-darker));
         }
       }
