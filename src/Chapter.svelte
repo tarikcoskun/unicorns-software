@@ -7,6 +7,7 @@
   });
 </script>
 
+
 <section {id}>
   {#each levelsArray as level, index}
     <figure style={"animation-delay:" + index * 0.25 + "s"}>
