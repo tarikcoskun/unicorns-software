@@ -80,19 +80,19 @@
         width: 42px;
         z-index: 10;
         filter: grayscale(1);
-        transition: all 0.2s;
+        transition: all 400ms cubic-bezier(0.125, 0.250, 0.100, 1.035);
       }
       .difficulty_icon {
         position: absolute;
         bottom: 10.5rem;
         opacity: 0;
-        transition: all 0.2s;
+        transition: all 400ms cubic-bezier(0.125, 0.250, 0.100, 1.035);
       }
       .level_icon,
       .boss_icon {
         width: 56px;
         transform: rotate(90deg);
-        transition: all 0.2s;
+        transition: all 400ms cubic-bezier(0.125, 0.250, 0.100, 1.035);
         &.boss_icon {
           width: 64px;
         }
