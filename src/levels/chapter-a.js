@@ -6,7 +6,7 @@ export default {
   },
   "A01.1": {
     icon: "hall",
-    color: "blue",
+    color: "pink",
     exploration: true,
   },
   A02: {
@@ -59,12 +59,12 @@ export default {
   },
   "A10.1": {
     icon: "stars",
-    color: "blue",
+    color: "pink",
     exploration: true,
   },
   "A10.2": {
     icon: "stars",
-    color: "blue",
+    color: "pink",
     exploration: true,
   },
   A11: {

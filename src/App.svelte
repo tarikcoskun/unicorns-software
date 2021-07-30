@@ -1,10 +1,10 @@
 <script lang="ts">
   import Chapter from "./Chapter.svelte";
-  import ChapterA from "./chapters/chapter-a";
-  /*import ChapterB from "./chapters/chapter-b";
-  import ChapterC from "./chapters/chapter-c";
-  import ChapterD from "./chapters/chapter-d";
-  import ChapterE from "./chapters/chapter-E";*/
+  import ChapterA from "./levels/chapter-a";
+  /*import ChapterB from "./levels/chapter-b";
+  import ChapterC from "./levels/chapter-c";
+  import ChapterD from "./levels/chapter-d";
+  import ChapterE from "./levels/chapter-E";*/
 </script>
 
 <main class="points">

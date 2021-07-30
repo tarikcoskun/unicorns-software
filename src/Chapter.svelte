@@ -21,9 +21,10 @@
         />
       {/if}
       <img
-        class={level[1].boss ? "boss_icon" : "level_icon"}
+        class={level[1].boss
+          ? "boss_icon " + level[1].color
+          : "level_icon " + level[1].color}
         src={`/img/level_icons/${level[1].icon}.png`}
-        style={`filter: drop-shadow(0 0 8px var(--${level[1].color}-darker))`}
         alt={level[1].icon}
       />
       <h1
@@ -94,6 +95,21 @@
         transition: all 0.2s;
         &.boss_icon {
           width: 64px;
+        }
+        &.blue {
+          filter: invert(1) invert(65%) sepia(40%) saturate(5396%)
+            hue-rotate(159deg) brightness(101%) contrast(102%)
+            drop-shadow(0 0 8px var(--blue-darker));
+        }
+        &.pink {
+          filter: invert(1) invert(61%) sepia(59%) saturate(4618%)
+            hue-rotate(260deg) brightness(106%) contrast(103%)
+            drop-shadow(0 0 8px var(--pink-darker));
+        }
+        &.orange {
+          filter: invert(1) invert(85%) sepia(82%) saturate(476%)
+            hue-rotate(355deg) brightness(104%) contrast(107%)
+            drop-shadow(0 0 8px var(--orange-darker));
         }
       }
       h1 {
