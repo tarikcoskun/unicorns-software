@@ -6,9 +6,11 @@
     return a[1] < b[1] ? -1 : a[1] > b[1] ? 1 : 0;
   });
 
-  function soundEffect() {
-    let sfx = new Audio("/sfx/hover_default.mp3");
-    sfx.play();
+  function blueSfx() {
+    new Audio("/assets/sfx/hover_blue.mp3").play();
+  }
+  function defaultSfx() {
+    new Audio("/assets/sfx/hover_default.mp3").play();
   }
 </script>
 
@@ -16,12 +18,12 @@
   {#each levelsArray as level, index}
     <figure
       style={"animation-delay:" + index * 0.25 + "s"}
-      on:mouseenter={soundEffect}
+      on:mouseenter={level[1].color === "blue" ? blueSfx : defaultSfx}
     >
       {#if level[1].exploration}
         <img
           class={"exp_point_icon " + level[1].color}
-          src="/img/exploration_point.png"
+          src="/assets/img/exploration_point.png"
           alt="exploration_point"
         />
       {/if}
@@ -36,17 +38,13 @@
         />
       {/if} -->
       <img
-        class={level[1].boss
-          ? "boss_icon " + level[1].color
-          : "level_icon " + level[1].color}
-        src={`/img/level_icons/${level[1].icon}.png`}
+        class={"level_icon " + level[1].color}
+        src={`/assets/img/level_icons/${level[1].icon}.png`}
         alt={level[1].icon}
       />
       <img
-        class={level[1].boss
-          ? "boss_icon level_icon level_icon_ghost " + level[1].color
-          : "level_icon level_icon_ghost " + level[1].color}
-        src={`/img/level_icons/${level[1].icon}.png`}
+        class={"level_icon level_icon_ghost " + level[1].color}
+        src={`/assets/img/level_icons/${level[1].icon}.png`}
         alt={level[1].icon}
       />
       <h1
@@ -142,18 +140,14 @@
         opacity: 0;
         transition: 0.25s cubic-bezier(0.125, 0.25, 0.1, 1.035);
       }
-      .boss_icon {
-        width: 60px;
-      }
-      .level_icon,
-      .boss_icon {
-        width: 52px;
+      .level_icon {
+        width: 48px;
         transform: rotate(90deg);
         transition: 0.25s cubic-bezier(0.125, 0.25, 0.1, 1.035);
         &_ghost {
           position: absolute;
           margin-top: -48px;
-          width: 62px;
+          width: 56px;
           z-index: -1;
           &.blue {
             filter: invert(1) invert(13%) sepia(95%) saturate(7036%)
@@ -204,10 +198,9 @@
         .level_icon {
           width: 96px;
           transform: rotate(0);
-        }
-        .boss_icon {
-          width: 104px;
-          transform: rotate(0);
+          &_ghost {
+            width: 112px;
+          }
         }
         h1 {
           opacity: 100;
