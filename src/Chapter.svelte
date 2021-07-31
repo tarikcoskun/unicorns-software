@@ -7,11 +7,10 @@
   });
 
   function soundEffect() {
-    let sfx = new Audio("/sfx/hover_default");
+    let sfx = new Audio("/sfx/hover_default.mp3");
     sfx.play();
   }
 </script>
-
 
 <section {id}>
   {#each levelsArray as level, index}

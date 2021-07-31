@@ -1,6 +1,6 @@
-### Save files
+### Save file
 
-That is the formation of a new created save file
+That is the formation of a new created save file. These values will be used if the user didn't change them in the editor.
 
 Line  | Description
 ----  | -----------
