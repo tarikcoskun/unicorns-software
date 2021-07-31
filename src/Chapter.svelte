@@ -12,6 +12,7 @@
   }
 </script>
 
+
 <section {id}>
   {#each levelsArray as level, index}
     <figure
