@@ -25,6 +25,7 @@ body {
   background: #000;
   height: 100vh;
   overflow-y: hidden;
+  scroll-behavior: smooth;
 }
 
 @keyframes upDown {
