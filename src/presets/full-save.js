@@ -1,7 +1,7 @@
 presets["100%"] = {
   "Game Version": "Beta_4.2",
-  Room: "143",
-  "Difficulty Settings Unlocked": "1",
+  Room: 143,
+  "Difficulty Settings Unlocked": 1,
   "Level Data: Unlocked": [
     128, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
     1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
@@ -128,10 +128,22 @@ presets["100%"] = {
   "Anger Game Level": 100,
 };
 
+let totalSkillPoints = 0;
 let skillPoints = Object.values(presets["100%"])[4];
+let indexList = [
+  18, 19, 21, 22, 23, 24, 25, 26, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50,
+  60, 61, 62, 63, 64, 65, 67, 68, 69, 70, 71, 72, 74, 85, 86, 87, 88, 90, 91,
+  92, 93, 95, 96, 97, 98, 99, 100, 101, 102, 103, 113, 114, 115, 116, 117, 118,
+  119, 120, 121, 122, 125, 126,
+];
+
+for (var i = 0; i < skillPoints.length; i++) {
+  if (!indexList.includes(i)) continue;
+  totalSkillPoints += skillPoints[i] + 1;
+}
 
 export default {
   room: presets["100%"].room,
-  skillPoints: skillPoints,
+  skillPoints: totalSkillPoints,
   explorationPoints: Object.values(presets["100%"])[5][0],
 };
