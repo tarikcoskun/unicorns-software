@@ -43,6 +43,7 @@
 		background: #000000;
 		border: 4px solid #663a5d;
 		box-shadow: 0 0 12px 8px #00000050;
+		cursor: pointer;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
