@@ -7,10 +7,10 @@
   });
 
   function blueSfx() {
-    new Audio("/assets/sfx/hover_blue.mp3").play();
+    new Audio("/sfx/hover_blue.mp3").play();
   }
   function defaultSfx() {
-    new Audio("/assets/sfx/hover_default.mp3").play();
+    new Audio("/sfx/hover_default.mp3").play();
   }
 </script>
 
@@ -23,28 +23,18 @@
       {#if level[1].exploration}
         <img
           class={"exp_point_icon " + level[1].color}
-          src="/assets/img/exploration_point.png"
+          src="/img/exploration_point.png"
           alt="exploration_point"
         />
       {/if}
-      <!-- {#if level[1].secret}
-        <img class="secret_icon" src="/img/secret.png" alt="secret" />
-      {/if}
-      {#if level[1].combat}
-        <img
-          class="difficulty_icon"
-          src="/img/difficulty.png"
-          alt="difficulty"
-        />
-      {/if} -->
       <img
         class={"level_icon " + level[1].color}
-        src={`/assets/img/level_icons/${level[1].icon}.png`}
+        src={`/img/level_icons/${level[1].icon}.png`}
         alt={level[1].icon}
       />
       <img
         class={"level_icon level_icon_ghost " + level[1].color}
-        src={`/assets/img/level_icons/${level[1].icon}.png`}
+        src={`/img/level_icons/${level[1].icon}.png`}
         alt={level[1].icon}
       />
       <h1
@@ -59,15 +49,15 @@
 <style lang="scss">
   @mixin blueFilter {
     filter: invert(1) invert(65%) sepia(40%) saturate(5396%) hue-rotate(159deg)
-      brightness(101%) contrast(102%);
+      brightness(101%) contrast(102%) drop-shadow(0 0 8px var(--blue-darker));
   }
   @mixin pinkFilter {
     filter: invert(1) invert(61%) sepia(59%) saturate(4618%) hue-rotate(260deg)
-      brightness(106%) contrast(103%);
+      brightness(106%) contrast(103%) drop-shadow(0 0 8px var(--pink-darker));
   }
   @mixin orangeFilter {
     filter: invert(1) invert(90%) sepia(14%) saturate(6503%) hue-rotate(332deg)
-      brightness(101%) contrast(103%);
+      brightness(101%) contrast(103%) drop-shadow(0 0 8px var(--orange-darker));
   }
 
   section {

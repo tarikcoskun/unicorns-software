@@ -1,24 +1,38 @@
-### Unicorn's Studio
+# create-svelte
 
-This is a save editor for the game [Will You Snail?](https://store.steampowered.com/app/1115050/Will_You_Snail)
+Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte);
 
-### To-do
+## Creating a project
 
-- [ ] Changeable skill and exploration point values
-- [ ] Option to unlock all skill points, exploration points and dialogs
-- [ ] 3 slots for user presets in-game style, with the ability to export and import presets
-- [x] Sound effects (improvements might be needed)
-- [x] Add every level of the game
-- [x] Re-create the level selector of the game
+If you're seeing this, you've probably already done this step. Congrats!
 
-### Contributing
+```bash
+# create a new project in the current directory
+npm init svelte@next
 
-All contributions are appreciated, pull requests are welcome. Opening an issue is better if the changes are not from the to-do list. Please test your changes before opening pull requests.
+# create a new project in my-app
+npm init svelte@next my-app
+```
 
-### Running locally
+> Note: the `@next` is temporary
 
-You need [Node.js](https://nodejs.org/en/download) to be installed in your system.
+## Developing
 
-- Clone the repository using `git clone https://github.com/tarikcoskun/unicorns-studio`
-- Install modules using `yarn` or `npm install`
-- Start the project in development mode: `yarn dev` or `npm run dev`
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+
+```bash
+npm run dev
+
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
+```
+
+## Building
+
+Before creating a production version of your app, install an [adapter](https://kit.svelte.dev/docs#adapters) for your target environment. Then:
+
+```bash
+npm run build
+```
+
+> You can preview the built app with `npm run preview`, regardless of whether you installed an adapter. This should _not_ be used to serve your app in production.
