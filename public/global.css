@@ -28,6 +28,12 @@ body {
   scroll-behavior: smooth;
 }
 
+.horizontal-scroll-wrapper {
+  ...
+  transform:rotate(-90deg) translateY(-100px);
+  ...
+}
+
 @keyframes upDown {
   0% {
     transform: translateY(0);
