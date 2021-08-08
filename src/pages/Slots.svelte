@@ -16,6 +16,6 @@
 		grid-template-columns: repeat(3, minmax(0, 1fr));
 		gap: 4rem;
 		place-items: end;
-		padding: 0 10vh;
+		padding: 0 5rem;
 	}
 </style>

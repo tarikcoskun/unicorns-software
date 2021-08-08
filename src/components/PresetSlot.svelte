@@ -47,7 +47,7 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		margin-bottom: 11vh;
+		margin-bottom: 5rem;
 		transition: 0.4s cubic-bezier(0.125, 0.25, 0.1, 1.035);
 		.container {
 			transition: 0.4s cubic-bezier(0.125, 0.25, 0.1, 1.035);
@@ -99,7 +99,7 @@
 			}
 		}
 		&:hover {
-			transform: translateY(-10vh);
+			transform: translateY(-4rem);
 			border-color: #fff;
 			box-shadow: 0 0 12px 8px #66005d;
 			.container,
