@@ -1,14 +1,14 @@
 <script lang="ts">
-  import Chapter from "$lib/Chapter.svelte";
-  import ChapterA from "../levels/chapter-a";
-  import ChapterB from "../levels/chapter-b";
-  import ChapterC from "../levels/chapter-c";
-  import ChapterD from "../levels/chapter-d";
-  import ChapterE from "../levels/chapter-e";
-  // import activePreset from "../presets/full-save";
+  import Chapter from "../components/Chapter.svelte";
+  import ChapterA from "../../assets/levels/chapter-a";
+  import ChapterB from "../../assets/levels/chapter-b";
+  import ChapterC from "../../assets/levels/chapter-c";
+  import ChapterD from "../../assets/levels/chapter-d";
+  import ChapterE from "../../assets/levels/chapter-e";
+  import activePreset from "../../assets/presets/full-save";
 
-  let skillPoints = 244;
-  let explorationPoints = 45;
+  let skillPoints = activePreset.skillPoints;
+  let explorationPoints = activePreset.explorationPoints;
 </script>
 
 <main class="points">

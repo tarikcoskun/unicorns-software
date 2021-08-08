@@ -38,27 +38,27 @@
 
 <style lang="scss">
 	.slot {
-		height: 70vh;
+		position: relative;
+		height: 65vh;
 		width: 100%;
 		background: #000000;
-		border: 4px solid #663a5d;
+		border: 3.5px solid #3f253f;
 		box-shadow: 0 0 12px 8px #00000050;
-		cursor: pointer;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		margin-bottom: 10vh;
+		margin-bottom: 11vh;
 		transition: 0.4s cubic-bezier(0.125, 0.25, 0.1, 1.035);
 		.container {
 			transition: 0.4s cubic-bezier(0.125, 0.25, 0.1, 1.035);
 			filter: brightness(0.3);
-			margin: 2rem;
+			margin: 1.75rem;
 			display: flex;
 			text-align: center;
 			flex-direction: column;
 			justify-content: center;
 			h1 {
-				font-size: 2.625rem;
+				font-size: 2.875rem;
 			}
 			h2 {
 				font-size: 1.25rem;
@@ -67,10 +67,12 @@
 				margin: 1.5rem 1rem;
 				position: relative;
 				height: 187px;
+				transition: 0.4s cubic-bezier(0.125, 0.25, 0.1, 1.035);
+				filter: grayscale(100);
 				img {
 					object-fit: cover;
 					object-position: bottom;
-					width: 100%;
+					width: 230px;
 					position: absolute;
 					bottom: 0;
 					left: 0;
@@ -79,7 +81,12 @@
 		}
 		footer {
 			filter: brightness(0.3);
-			margin-bottom: 2rem;
+			position: absolute;
+			width: 90%;
+			bottom: -0.75rem;
+			left: 50%;
+			transform: translateX(-50%);
+			margin-bottom: 3rem;
 			display: grid;
 			grid-template-columns: repeat(2, minmax(100px, 1fr));
 			div {
@@ -87,13 +94,16 @@
 				flex-direction: column;
 				align-items: center;
 				gap: 1rem;
+				&.exploration_point {
+					width: 200%;
+				}
 				p {
-					font-size: 1.125rem;
+					font-size: 1rem;
 				}
 			}
 		}
 		&:hover {
-			transform: translateY(-10vh);
+			transform: translateY(-12vh);
 			border-color: #fff;
 			box-shadow: 0 0 12px 8px #66005d;
 			.container,
@@ -103,8 +113,11 @@
 			h1,
 			h2,
 			p,
-			img {
+			img:not(.shelly_progress img) {
 				filter: drop-shadow(0 0 6px #e2a6cfcc);
+			}
+			.shelly_progress {
+				filter: grayscale(0) drop-shadow(0 0 6px #811ad4);
 			}
 		}
 	}
