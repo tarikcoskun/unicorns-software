@@ -21,7 +21,10 @@
 
 <style lang="scss">
   nav {
-    background: #403852;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #ffffff40;
     color: #000;
     padding: 0.5rem;
   }

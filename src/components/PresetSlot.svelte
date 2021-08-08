@@ -47,7 +47,7 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		margin-bottom: 5rem;
+		margin-bottom: 3rem;
 		transition: 0.4s cubic-bezier(0.125, 0.25, 0.1, 1.035);
 		.container {
 			transition: 0.4s cubic-bezier(0.125, 0.25, 0.1, 1.035);
