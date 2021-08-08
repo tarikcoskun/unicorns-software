@@ -34,4 +34,24 @@
   #app {
     height: 100%;
   }
+  @media only screen and (min-width: 1500px) {
+    #app {
+      zoom: 1.1;
+    }
+  }
+  @media only screen and (min-width: 1600px) {
+    #app {
+      zoom: 1.2;
+    }
+  }
+  @media only screen and (min-width: 1900px) {
+    #app {
+      zoom: 1.4;
+    }
+  }
+  @media only screen and (min-width: 2200px) {
+    #app {
+      zoom: 1.8;
+    }
+  }
 </style>
