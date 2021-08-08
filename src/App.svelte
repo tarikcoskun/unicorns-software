@@ -1,11 +1,37 @@
 <script lang="ts">
-	import { Router, Route } from "svelte-routing";
+	import { Router, Link, Route } from "svelte-routing";
   import Slots from "./pages/Slots.svelte";
   import Levels from "./pages/Levels.svelte";
   export let url = "";
 </script>
 
 <Router url="{url}">
-  <Route path="levels" component="{Levels}" />
-  <Route path="/"><Slots /></Route>
+  <nav>
+    <div>
+      <Link to="/">Slots</Link>
+      <Link to="levels">Levels</Link>
+    </div>
+  </nav>
+  <div id="app">
+    <Route path="levels" component="{Levels}" />
+    <Route path="/"><Slots /></Route>
+  </div>
 </Router>
+<p id="version">Beta_1.0</p>
+
+<style lang="scss">
+  nav {
+    background: #403852;
+    color: #000;
+    padding: 0.5rem;
+  }
+  #version {
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    color: #403852;
+  }
+  #app {
+    height: 100%;
+  }
+</style>

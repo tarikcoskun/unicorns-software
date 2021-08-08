@@ -39,7 +39,7 @@
 <style lang="scss">
 	.slot {
 		position: relative;
-		height: 65vh;
+		box-sizing: border-box;
 		width: 100%;
 		background: #000000;
 		border: 3.5px solid #3f253f;
@@ -61,7 +61,7 @@
 				font-size: 2.875rem;
 			}
 			h2 {
-				font-size: 1.25rem;
+				font-size: 1.5rem;
 			}
 			.shelly_progress {
 				margin: 1.5rem 1rem;
@@ -75,18 +75,14 @@
 					width: 230px;
 					position: absolute;
 					bottom: 0;
-					left: 0;
+					left: 50%;
+					transform: translateX(-50%)
 				}
 			}
 		}
 		footer {
 			filter: brightness(0.3);
-			position: absolute;
-			width: 90%;
-			bottom: -0.75rem;
-			left: 50%;
-			transform: translateX(-50%);
-			margin-bottom: 3rem;
+			margin: 1rem 0 1.75rem;
 			display: grid;
 			grid-template-columns: repeat(2, minmax(100px, 1fr));
 			div {
@@ -98,12 +94,12 @@
 					width: 200%;
 				}
 				p {
-					font-size: 1rem;
+					font-size: 1.125rem;
 				}
 			}
 		}
 		&:hover {
-			transform: translateY(-12vh);
+			transform: translateY(-10vh);
 			border-color: #fff;
 			box-shadow: 0 0 12px 8px #66005d;
 			.container,
