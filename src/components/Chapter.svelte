@@ -7,10 +7,10 @@
   });
 
   function blueSfx() {
-    new Audio("/sfx/hover_blue.mp3").play();
+    new Audio("/sfx/hover_level_blue.mp3").play();
   }
   function defaultSfx() {
-    new Audio("/sfx/hover_default.mp3").play();
+    new Audio("/sfx/hover_level_default.mp3").play();
   }
 </script>
 

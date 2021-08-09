@@ -3,9 +3,15 @@
 	export let timer: any;
 	export let skillPoints: any;
 	export let explorationPoints: any;
+
+	function randomSfx() {
+		const arr = ["/sfx/hover_save_random1.mp3", "/sfx/hover_save_random2.mp3"];
+		const random = Math.floor(Math.random() * arr.length);
+    new Audio(arr[random]).play();
+  }
 </script>
 
-<div class="slot">
+<div class="slot" on:mouseenter={randomSfx}>
 	<div class="container">
 		<h1>{progress}%</h1>
 		<div class="shelly_progress">
@@ -90,9 +96,6 @@
 				flex-direction: column;
 				align-items: center;
 				gap: 1rem;
-				&.exploration_point {
-					width: 200%;
-				}
 				p {
 					font-size: 1.125rem;
 				}

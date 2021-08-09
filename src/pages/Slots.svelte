@@ -1,11 +1,11 @@
 <script lang="ts">
-	import PresetSlot from '../components/PresetSlot.svelte';
+	import Save from '../components/Save.svelte';
 </script>
 
 <main class="slots">
-	<PresetSlot progress="69" timer="17:08" skillPoints="21" explorationPoints="45" />
-	<PresetSlot progress="100" timer="34:26:22" skillPoints="244" explorationPoints="45" />
-	<PresetSlot progress="37" timer="50:53" skillPoints="61" explorationPoints="45" />
+	<Save progress="69" timer="17:08" skillPoints="21" explorationPoints="45" />
+	<Save progress="100" timer="34:26:22" skillPoints="244" explorationPoints="45" />
+	<Save progress="37" timer="50:53" skillPoints="61" explorationPoints="45" />
 </main>
 
 <style lang="scss">

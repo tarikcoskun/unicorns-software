@@ -21,7 +21,7 @@
 
 <style lang="scss">
   nav {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     background: #ffffff40;
@@ -29,7 +29,7 @@
     padding: 0.5rem;
   }
   #version {
-    position: absolute;
+    position: fixed;
     bottom: 0.5rem;
     right: 0.5rem;
     color: #403852;
