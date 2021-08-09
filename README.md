@@ -1,4 +1,4 @@
-### Unicorn's Studio
+### Unicorn's Software
 
 This is a save editor for the game [Will You Snail?](https://store.steampowered.com/app/1115050/Will_You_Snail)
 
@@ -6,14 +6,15 @@ This is a save editor for the game [Will You Snail?](https://store.steampowered.
 
 - [ ] Changeable skill and exploration point values
 - [ ] Option to unlock all skill points, exploration points and dialogs
-- [ ] 3 slots for user presets in-game style, with the ability to export and import presets
+- [ ] Fetch save files directly from the save directory, change values directly in the files
+- [ ] Parse save files into an easily readable and changeable format
 - [x] Sound effects (improvements might be needed)
 - [x] Add every level of the game
 - [x] Re-create the level selector of the game
 
 ### Contributing
 
-All contributions are appreciated, pull requests are welcome. Opening an issue is better if the changes are not from the to-do list. Please test your changes before opening pull requests.
+Pull requests are welcome. Issues are preffered for advices or new ideas. Please test your changes before opening pull requests.
 
 ### Running locally
 
