@@ -15,8 +15,8 @@
   <div>
     <h1>{skillPoints}/244</h1>
     <img
-      src="/img/skill_point.png"
-      alt="skill_point"
+      src="/img/difficulty_point.png"
+      alt="difficulty_point"
       title="Skill points"
     />
   </div>

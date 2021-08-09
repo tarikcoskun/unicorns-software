@@ -27,16 +27,6 @@
           alt="exploration_point"
         />
       {/if}
-      <!-- {#if level[1].secret}
-        <img class="secret_icon" src="/img/secret.png" alt="secret" />
-      {/if}
-      {#if level[1].combat}
-        <img
-          class="difficulty_icon"
-          src="/img/difficulty.png"
-          alt="difficulty"
-        />
-      {/if} -->
       <img
         class={"level_icon " + level[1].color}
         src={`/img/level_icons/${level[1].icon}.png`}

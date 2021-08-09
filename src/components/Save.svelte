@@ -27,7 +27,7 @@
 	</div>
 	<footer>
 		<div>
-			<img src="/img/skill_point.png" alt="skill_point" title="Skill points" />
+			<img src="/img/difficulty_point.png" alt="difficulty_point" title="Skill points" />
 			<p>{skillPoints}/244</p>
 		</div>
 		<div>
