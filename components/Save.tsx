@@ -3,7 +3,7 @@ import Link from "next/link";
 import style from "../styles/Save.module.scss";
 import { readableTime } from "../lib/readableTime";
 
-function playAudio() {
+function soundEffect() {
   const soundEffects = ["hover_save_random1", "hover_save_random2"];
   const random = Math.floor(Math.random() * soundEffects.length);
   new Audio(`/sound/${soundEffects[random]}.mp3`).play();
@@ -24,7 +24,7 @@ export const Save: FC<SaveProps> = ({
 }) => {
   return (
     <Link href="/levels" passHref>
-      <div className={style.slot} onMouseEnter={playAudio}>
+      <div className={style.slot} onMouseEnter={soundEffect}>
         <div className={style.container}>
           <h1>{progress}%</h1>
           <div className={style.shelly_progress}>

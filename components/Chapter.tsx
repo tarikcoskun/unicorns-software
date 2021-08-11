@@ -6,11 +6,23 @@ export interface ChapterProps {
   levels: object;
 }
 
+function blueEffect() {
+  new Audio("/sound/hover_level_blue.mp3").play();
+}
+
+function defaultEffect() {
+  new Audio("/sound/hover_level_default.mp3").play();
+}
+
 export const Chapter: FC<ChapterProps> = ({ id, levels }) => {
   return (
     <section className={style.chapter} id={id}>
       {Object.entries(levels).map((level, index) => (
-        <figure className="level" key={index}>
+        <figure
+          className="level"
+          key={index}
+          onMouseEnter={level[1].color == "blue" ? blueEffect : defaultEffect}
+        >
           {level[1].exploration && (
             <img
               className={`${style.exp_point_icon} ${level[1].color}`}
