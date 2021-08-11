@@ -1,7 +1,7 @@
 import type { FC } from "react";
 import Link from "next/link";
-import { readableTime } from "../lib/readableTime";
 import style from "../styles/Save.module.scss";
+import { readableTime } from "../lib/readableTime";
 
 function playAudio() {
   const soundEffects = ["hover_save_random1", "hover_save_random2"];
@@ -34,13 +34,6 @@ export const Save: FC<SaveProps> = ({
               src="/image/shelly_filler.png"
               alt="shelly_progress"
             />
-            <style jsx>
-              {`
-                .shelly_filler {
-                  height: ${progress}%;
-                }
-              `}
-            </style>
           </div>
           <h2>{readableTime(timer)}</h2>
           <footer>
@@ -62,6 +55,13 @@ export const Save: FC<SaveProps> = ({
             </div>
           </footer>
         </div>
+        <style jsx>
+          {`
+            .shelly_filler {
+              height: ${progress}%;
+            }
+          `}
+        </style>
       </div>
     </Link>
   );

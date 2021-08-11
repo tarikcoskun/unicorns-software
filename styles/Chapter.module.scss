@@ -1,16 +1,3 @@
-@mixin blueFilter {
-  filter: invert(1) invert(65%) sepia(40%) saturate(5396%) hue-rotate(159deg)
-    brightness(101%) contrast(102%) drop-shadow(0 0 8px var(--blue-darker));
-}
-@mixin pinkFilter {
-  filter: invert(1) invert(61%) sepia(59%) saturate(4618%) hue-rotate(260deg)
-    brightness(106%) contrast(103%) drop-shadow(0 0 8px var(--pink-darker));
-}
-@mixin orangeFilter {
-  filter: invert(1) invert(90%) sepia(14%) saturate(6503%) hue-rotate(332deg)
-    brightness(101%) contrast(103%) drop-shadow(0 0 8px var(--orange-darker));
-}
-
 .chapter {
   --blue: #049aff;
   --blue-darker: #0a3bff;
@@ -18,6 +5,31 @@
   --pink-darker: #b20fff;
   --orange: #ffd82f;
   --orange-darker: #ff3718;
+
+  --blue-filter: invert(1) invert(65%) sepia(40%) saturate(5396%)
+    hue-rotate(159deg) brightness(101%) contrast(102%)
+    drop-shadow(0 0 8px var(--blue-darker));
+
+  --pink-filter: invert(1) invert(61%) sepia(59%) saturate(4618%)
+    hue-rotate(260deg) brightness(106%) contrast(103%)
+    drop-shadow(0 0 8px var(--pink-darker));
+
+  --orange-filter: invert(1) invert(90%) sepia(14%) saturate(6503%)
+    hue-rotate(332deg) brightness(101%) contrast(103%)
+    drop-shadow(0 0 8px var(--orange-darker));
+
+  --blue-ghost-filter: invert(1) invert(13%) sepia(95%) saturate(7036%)
+    hue-rotate(237deg) brightness(103%) contrast(108%)
+    drop-shadow(0 0 32px var(--blue-darker));
+
+  --pink-ghost-filter: invert(1) invert(22%) sepia(78%) saturate(7153%)
+    hue-rotate(277deg) brightness(102%) contrast(113%)
+    drop-shadow(0 0 32px var(--pink-darker));
+
+  --orange-ghost-filter: invert(1) invert(40%) sepia(67%) saturate(6652%)
+    hue-rotate(352deg) brightness(102%) contrast(101%)
+    drop-shadow(0 0 32px var(--orange-darker));
+
   position: relative;
   display: flex;
   align-items: center;
@@ -42,12 +54,6 @@
     left: 6px;
     bottom: calc(14rem + 16px);
   }
-  &#A {
-    margin-left: 10rem;
-  }
-  &#E {
-    padding-right: 10rem;
-  }
   figure {
     display: flex;
     flex-direction: column;
@@ -58,22 +64,13 @@
     transition: 0.25s;
     width: 4rem;
     animation: upDown 6s infinite;
-    img.exp_point_icon {
+    .exp_point_icon {
       position: absolute;
       top: -3.5rem;
       width: 36px;
       transition: 0.25s;
-      &.blue {
-        @include blueFilter();
-      }
-      &.pink {
-        @include pinkFilter();
-      }
-      &.orange {
-        @include orangeFilter();
-      }
     }
-    img.level_icon {
+    .level_icon {
       width: 48px;
       transform: rotate(90deg);
       transition: 0.25s cubic-bezier(0.125, 0.25, 0.1, 1.035);
@@ -82,21 +79,6 @@
         margin-top: -48px;
         width: 56px;
         z-index: -1;
-        &.blue {
-          filter: invert(1) invert(13%) sepia(95%) saturate(7036%)
-            hue-rotate(237deg) brightness(103%) contrast(108%)
-            drop-shadow(0 0 32px var(--blue-darker));
-        }
-        &.pink {
-          filter: invert(1) invert(22%) sepia(78%) saturate(7153%)
-            hue-rotate(277deg) brightness(102%) contrast(113%)
-            drop-shadow(0 0 32px var(--pink-darker));
-        }
-        &.orange {
-          filter: invert(1) invert(40%) sepia(67%) saturate(6652%)
-            hue-rotate(352deg) brightness(102%) contrast(101%)
-            drop-shadow(0 0 32px var(--orange-darker));
-        }
       }
     }
     h1 {
