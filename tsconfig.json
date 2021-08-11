@@ -1,6 +1,33 @@
 {
-  "extends": "@tsconfig/svelte/tsconfig.json",
-
-  "include": ["src/**/*", "presets", "assets/presets", "assets/levels"],
-  "exclude": ["node_modules/*", "__sapper__/*", "public/*"]
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "paths": {
+      "@*": ["./*"]
+    },
+    "baseUrl": "./"
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "next.config.js",
+    "lib/levels/chapter-e.js",
+    "lib/levels/chapter-d.js",
+    "lib/levels/chapter-c.js",
+    "lib/levels/chapter-b.js",
+    "lib/levels/chapter-a.js"
+  ],
+  "exclude": ["node_modules"]
 }

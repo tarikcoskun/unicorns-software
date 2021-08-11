@@ -1,14 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
-:root {
-  --blue: #049aff;
-  --blue-darker: #0a3bff;
-  --pink: #ff52ff;
-  --pink-darker: #b20fff;
-  --orange: #ffd82f;
-  --orange-darker: #ff3718;
-}
-
 ::-webkit-scrollbar {
   width: 0;
 }
@@ -28,14 +19,6 @@ body {
   scroll-behavior: smooth;
 }
 
-@keyframes upDown {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-15%);
-  }
-  100% {
-    transform: translateY(0);
-  }
+#__next {
+  height: 100%;
 }

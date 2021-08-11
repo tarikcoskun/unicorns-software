@@ -1,0 +1,106 @@
+.slot {
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  background: #000000;
+  border: 3.5px solid #3f253f;
+  box-shadow: 0 0 12px 8px #00000050;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+  transition: 0.4s cubic-bezier(0.125, 0.25, 0.1, 1.035);
+  .container {
+    transition: 0.4s cubic-bezier(0.125, 0.25, 0.1, 1.035);
+    filter: brightness(0.4);
+    margin: 1.75rem;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    h1 {
+      font-size: 2.875rem;
+      &::after {
+        content: "";
+        position: absolute;
+        top: -0.25rem;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        transform: translate(-50%);
+        box-shadow: inset 5rem -0.25rem 2rem #00000090,
+          inset -5rem 0.25rem 2rem #00000090;
+      }
+    }
+    h2 {
+      font-size: 1.5rem;
+      margin: 0.5rem 0;
+    }
+    .shelly_progress {
+      margin: 1.5rem 1rem;
+      position: relative;
+      height: 187px;
+      transition: 0.4s cubic-bezier(0.125, 0.25, 0.1, 1.035);
+      filter: grayscale(100);
+      img {
+        object-fit: cover;
+        object-position: bottom;
+        width: 230px;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        box-shadow: inset 1.5rem -0.25rem 2rem #00000090,
+          inset -1.5rem 0.25rem 1rem #00000090;
+      }
+    }
+  }
+  footer {
+    margin: 2.5rem 0 0.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(100px, 1fr));
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      p {
+        font-size: 1.125rem;
+      }
+    }
+  }
+  &:hover {
+    transform: translateY(-4rem);
+    border-color: #fff;
+    box-shadow: 0 0 12px 8px #66005d;
+    .container,
+    footer {
+      filter: brightness(1);
+    }
+    h1,
+    h2,
+    p,
+    img:not(.shelly_progress img) {
+      filter: drop-shadow(0 0 6px #e2a6cfcc);
+    }
+    .shelly_progress {
+      filter: drop-shadow(0 0 6px #811ad4);
+      &::after {
+        box-shadow: none;
+      }
+    }
+    h1::after {
+      box-shadow: none;
+    }
+  }
+}
