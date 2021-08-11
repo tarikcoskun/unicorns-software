@@ -2,7 +2,7 @@
   cursor: pointer;
   user-select: none;
   position: relative;
-  box-sizing: border-box;
+  height: 30.5rem;
   width: 100%;
   background: #000000;
   border: 3.5px solid #3f253f;
@@ -79,6 +79,18 @@
       }
     }
   }
+  h3 {
+    font-size: 1.25rem;
+    text-align: center;
+    opacity: 0;
+    width: 100%;
+    position: absolute;
+    bottom: -4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    filter: drop-shadow(0 0 8px #c910b9);
+    transition: 0.2s cubic-bezier(0.125, 0.25, 0.1, 1.035);
+  }
   &:hover {
     transform: translateY(-4rem);
     border-color: #fff;
@@ -101,6 +113,9 @@
     }
     h1::after {
       box-shadow: none;
+    }
+    h3 {
+      opacity: 100;
     }
   }
 }

@@ -3,28 +3,26 @@ import Link from "next/link";
 import style from "../styles/Save.module.scss";
 import { readableTime } from "../lib/readableTime";
 
-function soundEffect() {
-  const soundEffects = ["hover_save_random1", "hover_save_random2"];
-  const random = Math.floor(Math.random() * soundEffects.length);
-  new Audio(`/sound/${soundEffects[random]}.mp3`).play();
-}
-
 export interface SaveProps {
-  progress: number;
-  timer: number;
-  skillPoints: number;
-  explorationPoints: number;
+  progress?: number;
+  timer?: number;
+  skillPoints?: number;
+  explorationPoints?: number;
 }
 
 export const Save: FC<SaveProps> = ({
-  progress,
-  timer,
-  skillPoints,
-  explorationPoints,
+  progress = 0,
+  timer = 0,
+  skillPoints = 0,
+  explorationPoints = 0,
 }) => {
   return (
     <Link href="/levels" passHref>
-      <div className={style.slot} onMouseEnter={soundEffect}>
+      <div
+        className={style.slot}
+        onMouseEnter={() => new Audio("/sound/slot_enter.mp3").play()}
+        onMouseLeave={() => new Audio("/sound/slot_leave.mp3").play()}
+      >
         <div className={style.container}>
           <h1>{progress}%</h1>
           <div className={style.shelly_progress}>
@@ -62,6 +60,7 @@ export const Save: FC<SaveProps> = ({
             }
           `}
         </style>
+        <h3>Select Save</h3>
       </div>
     </Link>
   );
