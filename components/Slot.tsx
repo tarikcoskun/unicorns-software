@@ -1,5 +1,4 @@
 import type { FC } from "react";
-import Link from "next/link";
 import style from "../styles/Save.module.scss";
 
 export const Slot: FC = () => {

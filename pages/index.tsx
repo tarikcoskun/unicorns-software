@@ -4,7 +4,7 @@ import style from "../styles/Slots.module.scss";
 import { Save } from "../components/Save";
 import { Slot } from "../components/Slot";
 
-const slots: Array<Object> = [
+const slots: Array<any> = [
   {
     progress: 100,
     timer: 200,
