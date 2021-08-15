@@ -1,9 +1,9 @@
 .slots {
-  background-image: radial-gradient(
+  background: radial-gradient(
     circle,
-    #2c0017,
-    #230219,
-    #190218,
+    #470037,
+    #340023,
+    #110019,
     #050017,
     #000019
   );
@@ -13,4 +13,13 @@
   gap: 5rem;
   place-items: end;
   padding: 0 5rem;
+  &::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background: linear-gradient(to bottom, #000, #44000030, transparent);
+  }
 }

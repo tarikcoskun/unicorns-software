@@ -16,7 +16,7 @@ if (typeof window !== "undefined") {
   } catch (err) {
     localStorage.slots = JSON.stringify([{}, {}, {}]);
     slots = JSON.parse(localStorage.slots);
-    console.log("Slots value has been set to the initial value");
+    console.log("Slots value was set to the initial value");
   }
 }
 
