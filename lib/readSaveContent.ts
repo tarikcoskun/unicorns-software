@@ -1,9 +1,14 @@
-export function calculateProgress(saveFile: string) {
+export function readSaveContent(saveFile: string) {
   let content: Array<string> = <Array<string>>saveFile.match(/[^\r\n]+/g);
+  let gameTimer: number = 0;
   let skillPoints: number = 0;
   let unlockedLevels: number = 0;
   let explorationPoints: number = 0;
   let progressPercentage: number = 0;
+
+  // Calculate game timer
+  const timerIndex: number = content.indexOf("Timer Game");
+  gameTimer = Math.floor(Number(content[timerIndex + 1]));
 
   // Calculate skill points
   const skillPointsIndex: number = content.indexOf(
@@ -24,16 +29,7 @@ export function calculateProgress(saveFile: string) {
 
   // Calculate unlocked levels
   const unlockedLevelsIndex = content.indexOf("Level Data: Unlocked");
-  const unlockedLevelsArray = parseArray(unlockedLevelsIndex);
-
-  for (
-    var i = 0;
-    i < <number>(<unknown>content[unlockedLevelsIndex + 1]);
-    i++
-  ) {
-    if (i == 0) continue;
-    unlockedLevels += Number(unlockedLevelsArray[i]);
-  }
+  unlockedLevels = Number(content[unlockedLevelsIndex + 1]);
 
   // Calculate exploration points
   explorationPoints =
@@ -53,6 +49,7 @@ export function calculateProgress(saveFile: string) {
   }
 
   return {
+    gameTimer: gameTimer,
     skillPoints: skillPoints,
     explorationPoints: explorationPoints,
     progressPercentage: progressPercentage,

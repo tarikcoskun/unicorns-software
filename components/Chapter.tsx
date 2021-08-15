@@ -1,17 +1,15 @@
 import type { FC } from "react";
 import style from "../styles/Chapter.module.scss";
 
-export interface ChapterProps {
+function playSound(type: string) {
+  let audio = "default";
+  if (type == "blue") audio = "blue";
+  new Audio(`/sound/hover_level_${audio}.mp3`).play();
+}
+
+interface ChapterProps {
   id: string;
   levels: object;
-}
-
-function blueEffect() {
-  new Audio("/sound/hover_level_blue.mp3").play();
-}
-
-function defaultEffect() {
-  new Audio("/sound/hover_level_default.mp3").play();
 }
 
 export const Chapter: FC<ChapterProps> = ({ id, levels }) => {
@@ -21,7 +19,7 @@ export const Chapter: FC<ChapterProps> = ({ id, levels }) => {
         <figure
           className="level"
           key={index}
-          onMouseEnter={level[1].color == "blue" ? blueEffect : defaultEffect}
+          onMouseEnter={() => playSound(level[1].color)}
         >
           {level[1].exploration && (
             <img

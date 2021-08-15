@@ -6,9 +6,9 @@ This is a save editor for the game [Will You Snail?](https://store.steampowered.
 
 - [ ] Changeable skill and exploration point values
 - [ ] Option to unlock all skill points, exploration points and dialogs
-- [ ] Fetch save files directly from the save directory, change values directly in the files
-- [ ] Parse save files into an easily readable and changeable format
-- [x] Sound effects (improvements might be needed)
+- [x] Let users upload save files
+- [x] Parse save files into an easily readable and changeable format
+- [x] Sound effects
 - [x] Add every level of the game
 - [x] Re-create the level selector of the game
 

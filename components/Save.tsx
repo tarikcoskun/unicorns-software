@@ -1,30 +1,59 @@
-import type { FC } from "react";
+import type { ChangeEvent, FC } from "react";
 import Link from "next/link";
+import Router from "next/router";
 import style from "../styles/Save.module.scss";
-import { readableTime } from "../lib/readableTime";
+import { readableTime } from "@lib/readableTime";
+import { readSaveContent } from "@lib/readSaveContent";
 
-export interface SaveProps {
-  progress?: number;
-  timer?: number;
+interface SaveProps {
+  index: number;
+  type?: string;
+  gameTimer?: number;
   skillPoints?: number;
   explorationPoints?: number;
+  progressPercentage?: number;
 }
 
 export const Save: FC<SaveProps> = ({
-  progress = 0,
-  timer = 0,
+  index,
+  type = "slot",
+  gameTimer = 0,
   skillPoints = 0,
   explorationPoints = 0,
+  progressPercentage = 0,
 }) => {
-  return (
-    <Link href="/levels" passHref>
-      <div
-        className={style.slot}
-        onMouseEnter={() => new Audio("/sound/slot_enter.mp3").play()}
-        onMouseLeave={() => new Audio("/sound/slot_leave.mp3").play()}
-      >
+  function uploadSave(event: ChangeEvent<HTMLInputElement>) {
+    const reader = new FileReader();
+    const files = event.target.files;
+
+    reader.onload = handleFileLoad;
+    if (files) reader.readAsText(files[0]);
+  }
+
+  function handleFileLoad(event: any) {
+    if (typeof window !== "undefined") {
+      let slots = JSON.parse(localStorage.slots);
+      slots[index] = readSaveContent(event.target.result);
+      localStorage.slots = JSON.stringify(slots);
+      Router.reload();
+    }
+  }
+  const element = (
+    <label
+      htmlFor={"upload-save" + index}
+      className={style.slot}
+      onMouseEnter={() => new Audio("/sound/slot_enter.mp3").play()}
+      onMouseLeave={() => new Audio("/sound/slot_leave.mp3").play()}
+    >
+      <input
+        id={"upload-save" + index}
+        type="file"
+        accept=".sav"
+        onChange={uploadSave}
+      ></input>
+      {type == "save" ? (
         <div className={style.container}>
-          <h1>{progress}%</h1>
+          <h1>{progressPercentage}%</h1>
           <div className={style.shelly_progress}>
             <img src="/image/shelly_outline.png" alt="shelly_progress" />
             <img
@@ -33,7 +62,7 @@ export const Save: FC<SaveProps> = ({
               alt="shelly_progress"
             />
           </div>
-          <h2>{readableTime(timer)}</h2>
+          <h2>{readableTime(gameTimer)}</h2>
           <footer>
             <div>
               <img
@@ -53,15 +82,44 @@ export const Save: FC<SaveProps> = ({
             </div>
           </footer>
         </div>
-        <style jsx>
-          {`
-            .shelly_filler {
-              height: ${progress}%;
+      ) : (
+        <div className={`${style.container} ${style.centered}`}>
+          <img className="new_game" src="/image/new_game.png" alt="new_game" />
+        </div>
+      )}
+      <style jsx>
+        {`
+          .shelly_filler {
+            height: ${progressPercentage}%;
+          }
+          input[type="file"] {
+            display: none;
+          }
+          .new_game {
+            transition: 0.4s cubic-bezier(0.125, 0.25, 0.1, 1.035);
+            animation: growShrink 3s ease-out infinite;
+          }
+          @keyframes growShrink {
+            0% {
+              width: 9rem;
             }
-          `}
-        </style>
-        <h3>Select Save</h3>
-      </div>
-    </Link>
+            50% {
+              width: 11rem;
+            }
+            100% {
+              width: 9rem;
+            }
+          }
+        `}
+      </style>
+      <h3>{type == "save" ? "Select Save" : "Upload Save"}</h3>
+    </label>
   );
+  if (type == "save")
+    return (
+      <Link href="/levels" passHref>
+        {element}
+      </Link>
+    );
+  else return element;
 };

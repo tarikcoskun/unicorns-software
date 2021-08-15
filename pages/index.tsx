@@ -1,21 +1,24 @@
-import React from "react";
 import Head from "next/head";
 import style from "../styles/Slots.module.scss";
 import { Save } from "../components/Save";
-import { Slot } from "../components/Slot";
 
-const slots: Array<any> = [
-  {
-    progress: 100,
-    timer: 200,
-    skillPoints: 244,
-    explorationPoints: 45,
-  },
-];
+interface Slot {
+  gameTimer: number;
+  skillPoints: number;
+  explorationPoints: number;
+  progressPercentage: number;
+}
+let slots: Array<Partial<Slot>> = [{}, {}, {}];
 
-const emptySlots: any = [];
-for (var i = 0; i < 3 - slots.length; i++) {
-  emptySlots.push(<Slot key={i} />);
+if (typeof window !== "undefined") {
+  try {
+    slots = JSON.parse(localStorage.slots);
+    console.log("Fetched the slots successfully");
+  } catch (err) {
+    localStorage.slots = JSON.stringify([{}, {}, {}]);
+    slots = JSON.parse(localStorage.slots);
+    console.log("Slots value has been set to the initial value");
+  }
 }
 
 export default function Home() {
@@ -29,13 +32,14 @@ export default function Home() {
         {slots.map((slot, index) => (
           <Save
             key={index}
-            progress={slot.progress}
-            timer={slot.timer}
+            index={index}
+            gameTimer={slot.gameTimer}
             skillPoints={slot.skillPoints}
             explorationPoints={slot.explorationPoints}
+            progressPercentage={slot.progressPercentage}
+            type={!slots[index].progressPercentage ? "slot" : "save"}
           />
         ))}
-        {emptySlots}
       </main>
     </>
   );

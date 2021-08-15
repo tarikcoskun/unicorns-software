@@ -67,6 +67,7 @@
     }
   }
   footer {
+    width: 100%;
     margin: 2.5rem 0 0.5rem;
     display: grid;
     grid-template-columns: repeat(2, minmax(100px, 1fr));
@@ -119,4 +120,11 @@
       opacity: 100;
     }
   }
+}
+
+.centered {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
