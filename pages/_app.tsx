@@ -1,7 +1,15 @@
-import '../styles/main.scss'
-import type { AppProps } from 'next/app'
+import type { AppProps } from "next/app";
+import Head from "next/head";
+import "../styles/main.scss";
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+export default function MyApp({ Component, pageProps }: AppProps) {
+  return (
+    <>
+      <Head>
+        <title>{"Unicorn's Software"}</title>
+        <link rel="icon" href="/favicon.png" />
+      </Head>
+      <Component {...pageProps} />
+    </>
+  );
 }
-export default MyApp

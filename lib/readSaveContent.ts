@@ -1,3 +1,8 @@
+import {
+  calculatedExplorationPoints,
+  calculatedDifficultyPoints,
+} from "@lib/calculatedPoints";
+
 export function readSaveContent(saveFile: string) {
   let content: Array<string> = <Array<string>>saveFile.match(/[^\r\n]+/g);
   let gameTimer: number = 0;
@@ -7,33 +12,35 @@ export function readSaveContent(saveFile: string) {
   let progressPercentage: number = 0;
 
   // Calculate game timer
-  const timerIndex: number = content.indexOf("Timer Game");
-  gameTimer = Math.floor(Number(content[timerIndex + 1]));
+  gameTimer = Math.floor(Number(content[content.indexOf("Timer Game") + 1]));
 
   // Calculate skill points
-  const skillPointsIndex: number = content.indexOf(
-    "Level Data: Beaten On Difficulty"
+  const skillPointsArray: Array<string | number> = parseArray(
+    content.indexOf("Level Data: Beaten On Difficulty"),
+    128
   );
-  const skillPointsArray: Array<string | number> = parseArray(skillPointsIndex);
-  const calculatedDifficultyPoints = [
-    18, 19, 21, 22, 23, 24, 25, 26, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50,
-    60, 61, 62, 63, 64, 65, 67, 68, 69, 70, 71, 72, 74, 85, 86, 87, 88, 90, 91,
-    92, 93, 95, 96, 97, 98, 99, 100, 101, 102, 103, 113, 114, 115, 116, 117,
-    118, 119, 120, 121, 122, 125, 126,
-  ];
 
-  for (var i = 0; i < <number>(<unknown>content[skillPointsIndex + 1]); i++) {
-    if (!calculatedDifficultyPoints.includes(i)) continue;
-    skillPoints += Number(skillPointsArray[i]) + 1;
+  for (var index = 0; index < 128; index++) {
+    if (!calculatedDifficultyPoints.includes(index)) continue;
+    skillPoints += Number(skillPointsArray[index]) + 1;
   }
 
   // Calculate unlocked levels
-  const unlockedLevelsIndex = content.indexOf("Level Data: Unlocked");
-  unlockedLevels = Number(content[unlockedLevelsIndex + 1]);
+  for (var index = 0; index < 128; index++) {
+    unlockedLevels += Number(
+      parseArray(content.indexOf("Level Data: Unlocked"), 128)[index]
+    );
+  }
 
   // Calculate exploration points
-  explorationPoints =
-    parseArray(content.indexOf("Collected Exploration Points")).length - 1;
+  const explorationPointsIndex = content.indexOf(
+    "Collected Exploration Points"
+  );
+  const explorationPointsArray = parseArray(explorationPointsIndex, 45);
+  for (var index = 0; index < 45; index++) {
+    if (calculatedExplorationPoints.includes(explorationPointsArray[index]))
+      explorationPoints++;
+  }
 
   // Calculate progress percentage
   progressPercentage = Math.floor(
@@ -41,11 +48,8 @@ export function readSaveContent(saveFile: string) {
       100
   );
 
-  function parseArray(valueTitleIndex: number) {
-    return content.slice(
-      valueTitleIndex + 1,
-      Number(content[valueTitleIndex + 1]) + valueTitleIndex + 2
-    );
+  function parseArray(valueTitleIndex: number, listLength: number) {
+    return content.slice(valueTitleIndex + 2, valueTitleIndex + listLength + 2);
   }
 
   return {
