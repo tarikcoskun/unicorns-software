@@ -20,7 +20,7 @@ if (typeof window !== "undefined") {
   }
 }
 
-export default function Home() {
+export default function Slots() {
   return (
     <main className={style.slots}>
       {slots.map((slot, index) => (

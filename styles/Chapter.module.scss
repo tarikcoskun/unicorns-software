@@ -64,6 +64,13 @@
     transition: 0.25s;
     width: 4rem;
     animation: upDown 6s infinite;
+    .selected_room {
+      z-index: 10;
+      position: absolute;
+      top: 0;
+      width: 48px;
+      transition: 0.25s;
+    }
     .exp_point_icon {
       position: absolute;
       top: -3.5rem;
@@ -93,7 +100,8 @@
       .exp_point_icon {
         width: 54px;
       }
-      .level_icon {
+      .level_icon,
+      .selected_room {
         width: 96px;
         transform: rotate(0);
         &_ghost {

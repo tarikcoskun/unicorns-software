@@ -8,7 +8,7 @@ import ChapterC from "@lib/levels/chapter-c";
 import ChapterD from "@lib/levels/chapter-d";
 import ChapterE from "@lib/levels/chapter-e";
 
-export default function Home() {
+export default function Levels() {
   const router = useRouter();
   let activeSlot = { skillPoints: 0, explorationPoints: 0 };
   if (typeof window !== "undefined")

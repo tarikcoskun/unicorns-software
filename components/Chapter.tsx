@@ -1,4 +1,5 @@
 import type { FC } from "react";
+import { useRouter } from "next/router";
 import style from "../styles/Chapter.module.scss";
 
 function playSound(type: string) {
@@ -13,6 +14,11 @@ interface ChapterProps {
 }
 
 export const Chapter: FC<ChapterProps> = ({ id, levels }) => {
+  const router = useRouter();
+  let activeSlot = { room: 143 };
+  if (typeof window !== "undefined")
+    activeSlot = JSON.parse(localStorage.slots)[Number(router.query.slot)];
+
   return (
     <section className={style.chapter} id={id}>
       {Object.entries(levels).map((level, index) => (
@@ -21,6 +27,13 @@ export const Chapter: FC<ChapterProps> = ({ id, levels }) => {
           key={index}
           onMouseEnter={() => playSound(level[1].color)}
         >
+          {activeSlot.room == level[1].id && (
+            <img
+              className={style.selected_room}
+              src="/image/checkmark.png"
+              alt="selected_room"
+            />
+          )}
           {level[1].exploration && (
             <img
               className={`${style.exp_point_icon} ${level[1].color}`}
