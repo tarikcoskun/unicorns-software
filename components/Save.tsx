@@ -31,7 +31,7 @@ export const Save: FC<SaveProps> = ({
   }
 
   function handleFileLoad(event: any) {
-    if (typeof window !== "undefined") {
+    if (process.browser) {
       let slots = JSON.parse(localStorage.slots);
       slots[index] = readSaveContent(event.target.result);
       localStorage.slots = JSON.stringify(slots);
@@ -128,7 +128,7 @@ export const Save: FC<SaveProps> = ({
   );
   if (type == "save")
     return (
-      <Link href={`/slots/${index}`} passHref>
+      <Link href={`/slots?slot=${index + 1}`} passHref>
         {element}
       </Link>
     );

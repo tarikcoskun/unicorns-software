@@ -9,7 +9,7 @@ interface Slot {
 }
 let slots: Array<Partial<Slot>> = [{}, {}, {}];
 
-if (typeof window !== "undefined") {
+if (process.browser) {
   try {
     slots = JSON.parse(localStorage.slots);
     console.log("Fetched the slots successfully");

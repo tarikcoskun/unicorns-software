@@ -16,11 +16,11 @@ interface ChapterProps {
 export const Chapter: FC<ChapterProps> = ({ id, levels }) => {
   const router = useRouter();
   let activeSlot = { room: 143 };
-  if (typeof window !== "undefined")
-    activeSlot = JSON.parse(localStorage.slots)[Number(router.query.slot)];
+  if (process.browser)
+    activeSlot = JSON.parse(localStorage.slots)[Number(router.query.slot) - 1];
 
   function selectLevel(id: number) {
-    if (typeof window !== "undefined") {
+    if (process.browser) {
       let slots = JSON.parse(localStorage.slots);
       activeSlot.room = id;
       localStorage.slots = JSON.stringify(slots);

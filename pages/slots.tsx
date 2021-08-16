@@ -11,12 +11,13 @@ import ChapterE from "@lib/levels/chapter-e";
 
 export default function Levels() {
   const router = useRouter();
-  let activeSlot = { skillPoints: 0, explorationPoints: 0 };
-  if (typeof window !== "undefined")
-    activeSlot = JSON.parse(localStorage.slots)[Number(router.query.slot)];
+  let activeSlot = { room: 143, skillPoints: 0, explorationPoints: 0 };
+  if (process.browser)
+    activeSlot = JSON.parse(localStorage.slots)[Number(router.query.slot) - 1];
 
   const skillPoints = activeSlot.skillPoints;
   const explorationPoints = activeSlot.explorationPoints;
+
   return (
     <>
       <Link href="/" passHref>
