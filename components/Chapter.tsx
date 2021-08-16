@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import { useRouter } from "next/router";
+import Router, { useRouter } from "next/router";
 import style from "../styles/Chapter.module.scss";
 
 function playSound(type: string) {
@@ -19,6 +19,15 @@ export const Chapter: FC<ChapterProps> = ({ id, levels }) => {
   if (typeof window !== "undefined")
     activeSlot = JSON.parse(localStorage.slots)[Number(router.query.slot)];
 
+  function selectLevel(id: number) {
+    if (typeof window !== "undefined") {
+      let slots = JSON.parse(localStorage.slots);
+      activeSlot.room = id;
+      localStorage.slots = JSON.stringify(slots);
+      console.log(activeSlot);
+    }
+  }
+
   return (
     <section className={style.chapter} id={id}>
       {Object.entries(levels).map((level, index) => (
@@ -26,6 +35,7 @@ export const Chapter: FC<ChapterProps> = ({ id, levels }) => {
           className="level"
           key={index}
           onMouseEnter={() => playSound(level[1].color)}
+          onClick={() => selectLevel(level[1].id)}
         >
           {activeSlot.room == level[1].id && (
             <img

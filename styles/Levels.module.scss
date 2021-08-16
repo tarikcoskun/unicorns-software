@@ -1,3 +1,20 @@
+.switch_slot {
+  color: #fff;
+  line-height: 1.75rem;
+  cursor: pointer;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  text-decoration: none;
+  font-size: 1.125rem;
+  margin-top: 0.325rem;
+  border-bottom: 3px solid transparent;
+  filter: drop-shadow(0 0 8px #8c82d8);
+  &:hover {
+    border-color: #fff;
+  }
+}
+
 .points {
   position: fixed;
   left: 50%;

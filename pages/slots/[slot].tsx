@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { Chapter } from "@components/Chapter";
 import style from "@styles/Levels.module.scss";
@@ -18,6 +19,9 @@ export default function Levels() {
   const explorationPoints = activeSlot.explorationPoints;
   return (
     <>
+      <Link href="/" passHref>
+        <h1 className={style.switch_slot}>Switch Slot</h1>
+      </Link>
       <header className={style.points}>
         <div>
           <h1>{skillPoints}/244</h1>
