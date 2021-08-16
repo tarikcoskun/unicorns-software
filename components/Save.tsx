@@ -88,6 +88,17 @@ export const Save: FC<SaveProps> = ({
           <img className="new_game" src="/image/new_game.png" alt="new_game" />
         </div>
       )}
+      <div className={style.bottom_container}>
+        {type == "save" ? (
+          <img
+            className={style.delete_save}
+            src="/image/delete_save.png"
+            alt="Delete save"
+          />
+        ) : (
+          <h3>Upload Save</h3>
+        )}
+      </div>
       <style jsx>
         {`
           .shelly_filler {
@@ -113,12 +124,11 @@ export const Save: FC<SaveProps> = ({
           }
         `}
       </style>
-      <h3>{type == "save" ? "Select Save" : "Upload Save"}</h3>
     </label>
   );
   if (type == "save")
     return (
-      <Link href="/levels" passHref>
+      <Link href={`/slots/${index}`} passHref>
         {element}
       </Link>
     );

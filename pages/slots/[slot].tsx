@@ -1,16 +1,21 @@
+import { useRouter } from "next/router";
 import { Chapter } from "@components/Chapter";
 import style from "@styles/Levels.module.scss";
 
-import ChapterA from "../lib/levels/chapter-a";
-import ChapterB from "../lib/levels/chapter-b";
-import ChapterC from "../lib/levels/chapter-c";
-import ChapterD from "../lib/levels/chapter-d";
-import ChapterE from "../lib/levels/chapter-e";
-
-const skillPoints = 244;
-const explorationPoints = 45;
+import ChapterA from "@lib/levels/chapter-a";
+import ChapterB from "@lib/levels/chapter-b";
+import ChapterC from "@lib/levels/chapter-c";
+import ChapterD from "@lib/levels/chapter-d";
+import ChapterE from "@lib/levels/chapter-e";
 
 export default function Home() {
+  const router = useRouter();
+  let activeSlot = { skillPoints: 0, explorationPoints: 0 };
+  if (typeof window !== "undefined")
+    activeSlot = JSON.parse(localStorage.slots)[Number(router.query.slot)];
+
+  const skillPoints = activeSlot.skillPoints;
+  const explorationPoints = activeSlot.explorationPoints;
   return (
     <>
       <header className={style.points}>

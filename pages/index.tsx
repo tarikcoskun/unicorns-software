@@ -31,7 +31,7 @@ export default function Home() {
           skillPoints={slot.skillPoints}
           explorationPoints={slot.explorationPoints}
           progressPercentage={slot.progressPercentage}
-          type={!slots[index].gameTimer ? "slot" : "save"}
+          type={Object.keys(slots[index]).length === 0 ? "slot" : "save"}
         />
       ))}
     </main>
