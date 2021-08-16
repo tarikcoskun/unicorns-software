@@ -22,3 +22,39 @@ body {
 #__next {
   height: 100%;
 }
+
+@media only screen and (min-width: 90rem) {
+  #__next {
+    zoom: 1.111;
+  }
+}
+@media only screen and (min-width: 100rem) {
+  #__next {
+    zoom: 1.25;
+  }
+}
+@media only screen and (min-width: 112rem) {
+  #__next {
+    zoom: 1.335;
+  }
+}
+@media only screen and (min-width: 125rem) {
+  #__next {
+    zoom: 1.5;
+  }
+}
+@media only screen and (min-width: 135rem) {
+  #__next {
+    zoom: 2;
+  }
+}
+@media only screen and (min-width: 185rem) {
+  #__next {
+    zoom: 3;
+  }
+}
+@media only screen and (min-width: 260rem) {
+  #__next {
+    zoom: 4;
+  }
+}
