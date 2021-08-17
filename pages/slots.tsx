@@ -1,5 +1,5 @@
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import { Chapter } from "@components/Chapter";
 import style from "@styles/Levels.module.scss";
 
@@ -10,10 +10,17 @@ import ChapterD from "@lib/levels/chapter-d";
 import ChapterE from "@lib/levels/chapter-e";
 
 export default function Levels() {
-  const router = useRouter();
-  let activeSlot = { room: 143, skillPoints: 0, explorationPoints: 0 };
-  if (process.browser)
-    activeSlot = JSON.parse(localStorage.slots)[Number(router.query.slot) - 1];
+  const [activeSlot, setActiveSlot] = useState({
+    skillPoints: 0,
+    explorationPoints: 0,
+  });
+  useEffect(() => {
+    setActiveSlot(
+      JSON.parse(localStorage.slots)[
+        Number(window.location.search.substr(-1)) - 1
+      ]
+    );
+  }, []);
 
   const skillPoints = activeSlot.skillPoints;
   const explorationPoints = activeSlot.explorationPoints;

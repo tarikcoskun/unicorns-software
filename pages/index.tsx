@@ -1,5 +1,6 @@
-import { Save } from "../components/Save";
-import style from "../styles/Slots.module.scss";
+import { useEffect, useState } from "react";
+import { Save } from "@components/Save";
+import style from "@styles/Slots.module.scss";
 
 interface Slot {
   gameTimer: number;
@@ -7,20 +8,22 @@ interface Slot {
   explorationPoints: number;
   progressPercentage: number;
 }
-let slots: Array<Partial<Slot>> = [{}, {}, {}];
-
-if (process.browser) {
-  try {
-    slots = JSON.parse(localStorage.slots);
-    console.log("Fetched the slots successfully");
-  } catch (err) {
-    localStorage.slots = JSON.stringify([{}, {}, {}]);
-    slots = JSON.parse(localStorage.slots);
-    console.log("Slots value was set to the initial value");
-  }
-}
 
 export default function Slots() {
+  const [slots, setSlots] = useState<Array<Partial<Slot>>>([{}, {}, {}]);
+  useEffect(() => {
+    try {
+      // if (JSON.stringify(slots) !== localStorage.slots) {
+      setSlots(JSON.parse(localStorage.slots));
+      console.log("Fetched the slots successfully");
+      console.log(localStorage.slots);
+      // }
+    } catch (error) {
+      localStorage.slots = JSON.stringify(slots);
+      console.log("Slots value was set to the initial value");
+    }
+  }, [slots]);
+
   return (
     <main className={style.slots}>
       {slots.map((slot, index) => (

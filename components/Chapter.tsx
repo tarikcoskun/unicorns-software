@@ -1,6 +1,5 @@
-import type { FC } from "react";
-import Router, { useRouter } from "next/router";
-import style from "../styles/Chapter.module.scss";
+import { FC, useEffect, useState } from "react";
+import style from "@styles/Chapter.module.scss";
 
 function playSound(type: string) {
   let audio = "default";
@@ -14,18 +13,24 @@ interface ChapterProps {
 }
 
 export const Chapter: FC<ChapterProps> = ({ id, levels }) => {
-  const router = useRouter();
-  let activeSlot = { room: 143 };
-  if (process.browser)
-    activeSlot = JSON.parse(localStorage.slots)[Number(router.query.slot) - 1];
+  const [activeSlot, setActiveSlot] = useState({
+    room: 143,
+  });
+  useEffect(() => {
+    setActiveSlot(
+      JSON.parse(localStorage.slots)[
+        Number(window.location.search.substr(-1)) - 1
+      ]
+    );
+  }, []);
 
-  function selectLevel(id: number) {
-    if (process.browser) {
+  function SelectLevel(id: number) {
+    useEffect(() => {
       let slots = JSON.parse(localStorage.slots);
       activeSlot.room = id;
       localStorage.slots = JSON.stringify(slots);
       console.log(activeSlot);
-    }
+    });
   }
 
   return (
@@ -35,7 +40,7 @@ export const Chapter: FC<ChapterProps> = ({ id, levels }) => {
           className="level"
           key={index}
           onMouseEnter={() => playSound(level[1].color)}
-          onClick={() => selectLevel(level[1].id)}
+          onClick={() => SelectLevel(level[1].id)}
         >
           {activeSlot.room == level[1].id && (
             <img

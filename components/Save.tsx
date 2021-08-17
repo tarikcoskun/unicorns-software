@@ -1,7 +1,6 @@
-import type { ChangeEvent, FC } from "react";
+import { FC, ChangeEvent, useState } from "react";
 import Link from "next/link";
-import Router from "next/router";
-import style from "../styles/Save.module.scss";
+import style from "@styles/Save.module.scss";
 import { readableTime } from "@lib/readableTime";
 import { readSaveContent } from "@lib/readSaveContent";
 
@@ -22,20 +21,23 @@ export const Save: FC<SaveProps> = ({
   explorationPoints = 0,
   progressPercentage = 0,
 }) => {
+  const [slots, setSlots] = useState([{}, {}, {}]);
+
   function uploadSave(event: ChangeEvent<HTMLInputElement>) {
     const reader = new FileReader();
     const files = event.target.files;
 
-    reader.onload = handleFileLoad;
+    reader.onload = HandleFileLoad;
     if (files) reader.readAsText(files[0]);
   }
 
-  function handleFileLoad(event: any) {
-    if (process.browser) {
-      let slots = JSON.parse(localStorage.slots);
-      slots[index] = readSaveContent(event.target.result);
-      localStorage.slots = JSON.stringify(slots);
-      Router.reload();
+  function HandleFileLoad(event: any) {
+    if (typeof window !== "undefined") {
+      let slotsArr = JSON.parse(localStorage.slots);
+      slotsArr[index] = readSaveContent(event.target.result);
+      setSlots(slotsArr);
+      localStorage.slots = JSON.stringify(slotsArr);
+      console.log(localStorage.slots);
     }
   }
 
