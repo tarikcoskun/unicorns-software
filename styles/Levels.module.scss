@@ -29,9 +29,31 @@
     align-items: center;
     justify-content: center;
     h1 {
+      display: flex;
+      gap: 0.25rem;
+      align-items: center;
       font-size: 1.25rem;
       margin-top: 0.25rem;
       filter: drop-shadow(0 0 8px #8c82d8);
+      input {
+        -moz-appearance: textfield;
+        color: #ff72ff;
+        text-align: right;
+        width: 4rem;
+        padding: 0.125rem 0.25rem;
+        box-sizing: content-box;
+        background: none;
+        border: 2px solid #c737ff;
+        font-size: 1.25rem;
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+        &:focus {
+          outline: none;
+        }
+      }
     }
     img {
       filter: drop-shadow(0 0 8px #8c82d8);

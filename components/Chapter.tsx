@@ -24,13 +24,14 @@ export const Chapter: FC<ChapterProps> = ({ id, levels }) => {
     );
   }, []);
 
-  function SelectLevel(id: number) {
-    useEffect(() => {
+  function selectLevel(id: number) {
+    if (typeof window !== "undefined") {
       let slots = JSON.parse(localStorage.slots);
       activeSlot.room = id;
+      slots[Number(window.location.search.substr(-1)) - 1].room = id;
       localStorage.slots = JSON.stringify(slots);
       console.log(activeSlot);
-    });
+    }
   }
 
   return (
@@ -40,13 +41,14 @@ export const Chapter: FC<ChapterProps> = ({ id, levels }) => {
           className="level"
           key={index}
           onMouseEnter={() => playSound(level[1].color)}
-          onClick={() => SelectLevel(level[1].id)}
+          onClick={() => selectLevel(level[1].id)}
         >
           {activeSlot.room == level[1].id && (
             <img
               className={style.selected_room}
-              src="/image/checkmark.png"
+              src="/image/shelly.png"
               alt="selected_room"
+              draggable="false"
             />
           )}
           {level[1].exploration && (
@@ -54,17 +56,20 @@ export const Chapter: FC<ChapterProps> = ({ id, levels }) => {
               className={`${style.exp_point_icon} ${level[1].color}`}
               src="/image/exploration_point.png"
               alt="exploration_point"
+              draggable="false"
             />
           )}
           <img
             className={style.level_icon}
             src={`/image/level_icons/${level[1].icon}.png`}
             alt={level[1].icon}
+            draggable="false"
           />
           <img
             className={`${style.level_icon} ${style.level_icon_ghost}`}
             src={`/image/level_icons/${level[1].icon}.png`}
             alt={level[1].icon}
+            draggable="false"
           />
           <h1>{level[0]}</h1>
           <style jsx>

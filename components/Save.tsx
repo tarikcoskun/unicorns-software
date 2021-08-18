@@ -58,11 +58,16 @@ export const Save: FC<SaveProps> = ({
         <div className={style.container}>
           <h1>{progressPercentage}%</h1>
           <div className={style.shelly_progress}>
-            <img src="/image/shelly_outline.png" alt="shelly_progress" />
+            <img
+              src="/image/shelly_outline.png"
+              alt="shelly_progress"
+              draggable="false"
+            />
             <img
               className="shelly_filler"
               src="/image/shelly_filler.png"
               alt="shelly_progress"
+              draggable="false"
             />
           </div>
           <h2>{readableTime(gameTimer)}</h2>
@@ -72,6 +77,7 @@ export const Save: FC<SaveProps> = ({
                 src="/image/difficulty_point.png"
                 alt="difficulty_point"
                 title="Skill points"
+                draggable="false"
               />
               <p>{skillPoints}/244</p>
             </div>
@@ -80,6 +86,7 @@ export const Save: FC<SaveProps> = ({
                 src="/image/exploration_point.png"
                 alt="exploration_point"
                 title="Exploration points"
+                draggable="false"
               />
               <p>{explorationPoints}/45</p>
             </div>
@@ -87,7 +94,12 @@ export const Save: FC<SaveProps> = ({
         </div>
       ) : (
         <div className={`${style.container} ${style.centered}`}>
-          <img className="new_game" src="/image/new_game.png" alt="new_game" />
+          <img
+            className="new_game"
+            src="/image/new_game.png"
+            alt="new_game"
+            draggable="false"
+          />
         </div>
       )}
       <div className={style.bottom_container}>
@@ -96,6 +108,7 @@ export const Save: FC<SaveProps> = ({
             className={style.delete_save}
             src="/image/delete_save.png"
             alt="Delete save"
+            draggable="false"
           />
         ) : (
           <h3>Upload Save</h3>

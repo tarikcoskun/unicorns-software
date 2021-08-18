@@ -32,19 +32,39 @@ export default function Levels() {
       </Link>
       <header className={style.points}>
         <div>
-          <h1>{skillPoints}/244</h1>
+          <h1>
+            <input
+              id="skill_points_input"
+              type="number"
+              min="0"
+              max="244"
+              defaultValue={skillPoints}
+            />
+            /244
+          </h1>
           <img
             src="/image/difficulty_point.png"
             alt="difficulty_point"
             title="Skill points"
+            draggable="false"
           />
         </div>
         <div>
-          <h1>{explorationPoints}/45</h1>
+          <h1>
+            <input
+              id="exploration_points_input"
+              type="number"
+              min="0"
+              max="45"
+              defaultValue={explorationPoints}
+            />
+            /45
+          </h1>
           <img
             src="/image/exploration_point.png"
             alt="exploration_point"
             title="Exploration points"
+            draggable="false"
           />
         </div>
       </header>
@@ -56,6 +76,11 @@ export default function Levels() {
         <Chapter id="D" levels={ChapterD} />
         <Chapter id="E" levels={ChapterE} />
       </main>
+      <style jsx>{`
+        input#exploration_points_input {
+          width: 2.75rem;
+        }
+      `}</style>
     </>
   );
 }
