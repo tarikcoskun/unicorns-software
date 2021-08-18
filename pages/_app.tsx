@@ -14,6 +14,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <meta name="theme-color" content="#ff37d2" />
         <meta name="title" content="Unicorn's Software" />
         <meta name="og:title" content="Unicorn's Software" />
+        <meta name="og:site_name" content="unicorns.software" />
         <meta
           name="description"
           content="Unicorn's Software is a save editor for the game Will You Snail?"
