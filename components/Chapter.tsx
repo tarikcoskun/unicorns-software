@@ -26,11 +26,12 @@ export const Chapter: FC<ChapterProps> = ({ id, levels }) => {
 
   function selectLevel(id: number) {
     if (typeof window !== "undefined") {
+      console.log("Old room: " + activeSlot.room);
       let slots = JSON.parse(localStorage.slots);
       activeSlot.room = id;
       slots[Number(window.location.search.substr(-1)) - 1].room = id;
       localStorage.slots = JSON.stringify(slots);
-      console.log(activeSlot);
+      console.log("New room: " + activeSlot.room);
     }
   }
 
@@ -69,9 +70,9 @@ export const Chapter: FC<ChapterProps> = ({ id, levels }) => {
           </header>
           {activeSlot.room == level[1].id && (
             <img
-              className={style.selected_room}
+              className={style.selected_level}
               src="/image/shelly.png"
-              alt="selected_room"
+              alt="selected_level"
               draggable="false"
             />
           )}

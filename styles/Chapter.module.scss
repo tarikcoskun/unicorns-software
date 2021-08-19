@@ -84,7 +84,7 @@
         transition: 0.25s cubic-bezier(0.125, 0.25, 0.1, 1.035);
       }
     }
-    .selected_room {
+    .selected_level {
       z-index: 10;
       position: absolute;
       top: 0;
@@ -121,7 +121,7 @@
         }
       }
       .level_icon,
-      .selected_room {
+      .selected_level {
         width: 96px;
         transform: rotate(0);
         &_ghost {

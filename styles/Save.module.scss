@@ -15,6 +15,7 @@
   margin-bottom: 5rem;
   transition: 0.3s cubic-bezier(0.125, 0.25, 0.1, 1.035);
   .container {
+    z-index: 15;
     transition: 0.4s cubic-bezier(0.125, 0.25, 0.1, 1.035);
     filter: brightness(0.4);
     margin: 1.75rem;
@@ -141,4 +142,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  .new_game {
+    transition: 0.4s cubic-bezier(0.125, 0.25, 0.1, 1.035);
+    animation: growShrink 3s ease-out infinite;
+  }
+}
+
+@keyframes growShrink {
+  0% {
+    width: 9rem;
+  }
+  50% {
+    width: 11rem;
+  }
+  100% {
+    width: 9rem;
+  }
 }
