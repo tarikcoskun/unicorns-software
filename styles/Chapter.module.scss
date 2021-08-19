@@ -20,15 +20,15 @@
 
   --blue-ghost-filter: invert(1) invert(13%) sepia(95%) saturate(7036%)
     hue-rotate(237deg) brightness(103%) contrast(108%)
-    drop-shadow(0 0 32px var(--blue-darker));
+    drop-shadow(0 0 16px var(--blue-darker));
 
   --pink-ghost-filter: invert(1) invert(22%) sepia(78%) saturate(7153%)
     hue-rotate(277deg) brightness(102%) contrast(113%)
-    drop-shadow(0 0 32px var(--pink-darker));
+    drop-shadow(0 0 16px var(--pink-darker));
 
   --orange-ghost-filter: invert(1) invert(40%) sepia(67%) saturate(6652%)
     hue-rotate(352deg) brightness(102%) contrast(101%)
-    drop-shadow(0 0 32px var(--orange-darker));
+    drop-shadow(0 0 16px var(--orange-darker));
 
   position: relative;
   display: flex;
@@ -64,17 +64,31 @@
     transition: 0.25s;
     width: 4rem;
     animation: upDown 6s infinite;
+    .upper {
+      width: 100%;
+      position: absolute;
+      bottom: 8rem;
+      display: flex;
+      gap: 0.25rem;
+      flex-direction: column;
+      align-items: center;
+      transition: 0.25s cubic-bezier(0.125, 0.25, 0.1, 1.035);
+      .exploration_point {
+        width: 36px;
+        transition: 0.25s;
+        margin-bottom: 0.5rem;
+        transition: 0.25s cubic-bezier(0.125, 0.25, 0.1, 1.035);
+      }
+      .beaten_on_difficulty {
+        width: 28px;
+        transition: 0.25s cubic-bezier(0.125, 0.25, 0.1, 1.035);
+      }
+    }
     .selected_room {
       z-index: 10;
       position: absolute;
       top: 0;
-      width: 54px;
-      transition: 0.25s;
-    }
-    .exp_point_icon {
-      position: absolute;
-      top: -3.5rem;
-      width: 36px;
+      width: 48px;
       transition: 0.25s;
     }
     .level_icon {
@@ -97,8 +111,14 @@
     }
     &:hover {
       padding: 0 2.5rem;
-      .exp_point_icon {
-        width: 54px;
+      .upper {
+        bottom: 11rem;
+        .exploration_point {
+          width: 54px;
+        }
+        .beaten_on_difficulty {
+          width: 36px;
+        }
       }
       .level_icon,
       .selected_room {

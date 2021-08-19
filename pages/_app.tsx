@@ -7,10 +7,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>{"Unicorn's Software"}</title>
-        <link
-          rel="icon"
-          href="https://unicorns.software/logo.png/favicon.png"
-        />
+        <link rel="icon" href="/favicon.png" />
         <meta name="theme-color" content="#ff37d2" />
         <meta name="title" content="Unicorn's Software" />
         <meta name="og:title" content="Unicorn's Software" />

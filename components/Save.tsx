@@ -50,6 +50,7 @@ export const Save: FC<SaveProps> = ({
     >
       <input
         id={"upload-save" + index}
+        style={{ display: "none" }}
         type="file"
         accept=".sav"
         onChange={uploadSave}
@@ -65,6 +66,7 @@ export const Save: FC<SaveProps> = ({
             />
             <img
               className="shelly_filler"
+              style={{ height: progressPercentage + "%" }}
               src="/image/shelly_filler.png"
               alt="shelly_progress"
               draggable="false"
@@ -116,12 +118,6 @@ export const Save: FC<SaveProps> = ({
       </div>
       <style jsx>
         {`
-          .shelly_filler {
-            height: ${progressPercentage}%;
-          }
-          input[type="file"] {
-            display: none;
-          }
           .new_game {
             transition: 0.4s cubic-bezier(0.125, 0.25, 0.1, 1.035);
             animation: growShrink 3s ease-out infinite;

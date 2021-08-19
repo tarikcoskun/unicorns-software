@@ -22,7 +22,7 @@ export default function Slots() {
       localStorage.slots = JSON.stringify(slots);
       console.log("Slots value was set to the initial value");
     }
-  }, [slots]);
+  }, []);
 
   return (
     <main className={style.slots}>

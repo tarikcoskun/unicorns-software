@@ -39,10 +39,34 @@ export const Chapter: FC<ChapterProps> = ({ id, levels }) => {
       {Object.entries(levels).map((level, index) => (
         <figure
           className="level"
+          style={{ animationDelay: index * 0.25 + "s" }}
           key={index}
           onMouseEnter={() => playSound(level[1].color)}
           onClick={() => selectLevel(level[1].id)}
         >
+          <header className={style.upper}>
+            {level[1].exploration && (
+              <img
+                className={`${style.exploration_point} ${level[1].color}`}
+                style={{ filter: `var(--${level[1].color}-filter)` }}
+                src="/image/exploration_point.png"
+                alt="exploration_point"
+                draggable="false"
+              />
+            )}
+            {/* {level[1].combat &&
+              [0, 0, 0, 0].map((difficulty, index) => (
+                <img
+                  key={index}
+                  className={style.beaten_on_difficulty}
+                  style={{
+                    filter: `var(--${level[1].color}-filter)`,
+                  }}
+                  src="/image/difficulty_point.png"
+                  alt="difficulty"
+                />
+              ))} */}
+          </header>
           {activeSlot.room == level[1].id && (
             <img
               className={style.selected_room}
@@ -51,47 +75,28 @@ export const Chapter: FC<ChapterProps> = ({ id, levels }) => {
               draggable="false"
             />
           )}
-          {level[1].exploration && (
-            <img
-              className={`${style.exp_point_icon} ${level[1].color}`}
-              src="/image/exploration_point.png"
-              alt="exploration_point"
-              draggable="false"
-            />
-          )}
           <img
             className={style.level_icon}
+            style={{ filter: `var(--${level[1].color}-filter)` }}
             src={`/image/level_icons/${level[1].icon}.png`}
             alt={level[1].icon}
             draggable="false"
           />
           <img
             className={`${style.level_icon} ${style.level_icon_ghost}`}
+            style={{ filter: `var(--${level[1].color}-ghost-filter)` }}
             src={`/image/level_icons/${level[1].icon}.png`}
             alt={level[1].icon}
             draggable="false"
           />
-          <h1>{level[0]}</h1>
-          <style jsx>
-            {`
-              h1 {
-                filter: drop-shadow(0 0 8px var(--${level[1].color}-darker));
-                color: var(--${level[1].color});
-              }
-              .level {
-                animation-delay: ${index * 0.25}s;
-              }
-              .Chapter_level_icon__elxy_ {
-                filter: var(--${level[1].color}-filter);
-              }
-              .Chapter_level_icon_ghost__2CJbI {
-                filter: var(--${level[1].color}-ghost-filter);
-              }
-              .Chapter_exp_point_icon__1u4b1 {
-                filter: var(--${level[1].color}-filter);
-              }
-            `}
-          </style>
+          <h1
+            style={{
+              filter: `drop-shadow(0 0 8px var(--${level[1].color}-darker))`,
+              color: `var(--${level[1].color})`,
+            }}
+          >
+            {level[0]}
+          </h1>
         </figure>
       ))}
     </section>

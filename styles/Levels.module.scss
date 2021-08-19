@@ -34,7 +34,6 @@
       align-items: center;
       font-size: 1.25rem;
       margin-top: 0.25rem;
-      filter: drop-shadow(0 0 8px #8c82d8);
       input {
         -moz-appearance: textfield;
         color: #ff72ff;
@@ -44,7 +43,9 @@
         box-sizing: content-box;
         background: none;
         border: 2px solid #c737ff;
+        border-radius: 0;
         font-size: 1.25rem;
+        filter: drop-shadow(0 0 8px #ff72ff90);
         &::-webkit-outer-spin-button,
         &::-webkit-inner-spin-button {
           -webkit-appearance: none;
@@ -53,6 +54,9 @@
         &:focus {
           outline: none;
         }
+      }
+      label {
+        filter: drop-shadow(0 0 8px #8c82d8);
       }
     }
     img {
