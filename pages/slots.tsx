@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Chapter } from "@components/Chapter";
-import style from "@styles/Levels.module.scss";
+import style from "@style/Levels.module.scss";
 
 import ChapterA from "@lib/levels/chapter-a";
 import ChapterB from "@lib/levels/chapter-b";
@@ -47,6 +47,7 @@ export default function Levels() {
             alt="difficulty_point"
             title="Skill points"
             draggable="false"
+            onDragStart={() => false}
           />
         </div>
         <div>
@@ -66,6 +67,7 @@ export default function Levels() {
             alt="exploration_point"
             title="Exploration points"
             draggable="false"
+            onDragStart={() => false}
           />
         </div>
       </header>

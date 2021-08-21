@@ -1,5 +1,5 @@
-import { FC, useEffect, useState } from "react";
-import style from "@styles/Chapter.module.scss";
+import { FC as Component, useEffect, useState } from "react";
+import style from "@style/Chapter.module.scss";
 
 function playSound(type: string) {
   let audio = "default";
@@ -12,7 +12,7 @@ interface ChapterProps {
   levels: object;
 }
 
-export const Chapter: FC<ChapterProps> = ({ id, levels }) => {
+export const Chapter: Component<ChapterProps> = ({ id, levels }) => {
   const [activeSlot, setActiveSlot] = useState({
     room: 143,
   });
@@ -53,6 +53,7 @@ export const Chapter: FC<ChapterProps> = ({ id, levels }) => {
                 src="/image/exploration_point.png"
                 alt="exploration_point"
                 draggable="false"
+                onDragStart={() => false}
               />
             )}
             {/* {level[1].combat &&
@@ -74,6 +75,7 @@ export const Chapter: FC<ChapterProps> = ({ id, levels }) => {
               src="/image/shelly.png"
               alt="selected_level"
               draggable="false"
+              onDragStart={() => false}
             />
           )}
           <img
@@ -82,6 +84,7 @@ export const Chapter: FC<ChapterProps> = ({ id, levels }) => {
             src={`/image/level_icons/${level[1].icon}.png`}
             alt={level[1].icon}
             draggable="false"
+            onDragStart={() => false}
           />
           <img
             className={`${style.level_icon} ${style.level_icon_ghost}`}
@@ -89,6 +92,7 @@ export const Chapter: FC<ChapterProps> = ({ id, levels }) => {
             src={`/image/level_icons/${level[1].icon}.png`}
             alt={level[1].icon}
             draggable="false"
+            onDragStart={() => false}
           />
           <h1
             style={{

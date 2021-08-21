@@ -1,6 +1,6 @@
-import { FC, ChangeEvent, useState } from "react";
+import { FC as Component, ChangeEvent, useState } from "react";
 import Link from "next/link";
-import style from "@styles/Save.module.scss";
+import style from "@style/Save.module.scss";
 import { readableTime } from "@lib/readableTime";
 import { readSaveContent } from "@lib/readSaveContent";
 
@@ -13,7 +13,7 @@ interface SaveProps {
   progressPercentage?: number;
 }
 
-export const Save: FC<SaveProps> = ({
+export const Save: Component<SaveProps> = ({
   index,
   type = "slot",
   gameTimer = 0,
@@ -66,6 +66,7 @@ export const Save: FC<SaveProps> = ({
                 src="/image/shelly_outline.png"
                 alt="shelly_progress"
                 draggable="false"
+                onDragStart={() => false}
               />
               <img
                 className="shelly_filler"
@@ -73,6 +74,7 @@ export const Save: FC<SaveProps> = ({
                 src="/image/shelly_filler.png"
                 alt="shelly_progress"
                 draggable="false"
+                onDragStart={() => false}
               />
             </div>
             <h2>{readableTime(gameTimer)}</h2>
@@ -83,6 +85,7 @@ export const Save: FC<SaveProps> = ({
                   alt="difficulty_point"
                   title="Skill points"
                   draggable="false"
+                  onDragStart={() => false}
                 />
                 <p>{skillPoints}/244</p>
               </div>
@@ -92,6 +95,7 @@ export const Save: FC<SaveProps> = ({
                   alt="exploration_point"
                   title="Exploration points"
                   draggable="false"
+                  onDragStart={() => false}
                 />
                 <p>{explorationPoints}/45</p>
               </div>
@@ -112,6 +116,7 @@ export const Save: FC<SaveProps> = ({
             src="/image/new_game.png"
             alt="new_game"
             draggable="false"
+            onDragStart={() => false}
           />
         </div>
       )}
@@ -123,6 +128,7 @@ export const Save: FC<SaveProps> = ({
             alt="Delete save"
             draggable="false"
             onClick={deleteSave}
+            onDragStart={() => false}
           />
         ) : (
           <h3>Upload Save</h3>

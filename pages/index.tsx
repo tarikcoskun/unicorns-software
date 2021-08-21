@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Save } from "@components/Save";
-import style from "@styles/Slots.module.scss";
+import style from "@style/Slots.module.scss";
 
 interface Slot {
   gameTimer: number;
