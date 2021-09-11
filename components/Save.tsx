@@ -1,7 +1,10 @@
 import style from "@style/Save.module.scss";
 import { readableTime } from "@lib/readableTime";
+import { readSaveContent } from "@lib/readSaveContent";
 import { Slot } from "@types";
-import router from "next/router";
+import Link from "next/link";
+import { ChangeEvent } from "react";
+import { useRouter } from "next/router";
 
 type Props = {
   index: number;
@@ -16,18 +19,33 @@ export const Save: React.FC<Props> = ({
   explorationPoints = 0,
   progressPercentage = 0,
 }) => {
+  const router = useRouter();
+  function uploadSave(event: ChangeEvent<HTMLInputElement>) {
+    const reader = new FileReader();
+    const files = event.target.files;
+
+    reader.onload = handleFileLoad;
+    if (files) reader.readAsText(files[0]);
+  }
+
+  function handleFileLoad(event: any) {
+    if (typeof window !== "undefined") {
+      let slotsArr = JSON.parse(localStorage.slots);
+      slotsArr[index] = readSaveContent(event.target.result);
+      localStorage.slots = JSON.stringify(slotsArr);
+    }
+    router.reload();
+  }
+
   return (
-    <div
+    <label
+      htmlFor={"upload-save" + index}
       className={style.slot}
-      onClick={() => {
-        router.push({
-          pathname: "/slots",
-          query: { slot: index + 1 },
-        });
-      }}
+      onMouseEnter={() => new Audio("/sound/slot_enter.mp3").play()}
+      onMouseLeave={() => new Audio("/sound/slot_leave.mp3").play()}
     >
       {type === "save" ? (
-        <a>
+        <Link href={`/slots?slot=${index + 1}`} passHref>
           <div className={style.container}>
             <h1>{progressPercentage}%</h1>
             <div className={style.shelly_progress}>
@@ -70,9 +88,16 @@ export const Save: React.FC<Props> = ({
               </div>
             </footer>
           </div>
-        </a>
+        </Link>
       ) : (
         <div className={`${style.container} ${style.centered}`}>
+          <input
+            id={"upload-save" + index}
+            style={{ display: "none" }}
+            type="file"
+            accept=".sav"
+            onChange={uploadSave}
+          ></input>
           <img
             className={style.new_game}
             src="/image/new_game.png"
@@ -83,19 +108,8 @@ export const Save: React.FC<Props> = ({
         </div>
       )}
       <div className={style.bottom_container}>
-        {type == "save" ? <h3>Load Save</h3> : <h3>Create Save</h3>}
+        {type == "save" ? <h3>Load Save</h3> : <h3>Upload Save</h3>}
       </div>
-    </div>
+    </label>
   );
 };
-
-export async function getServerSideProps() {
-  const res = await fetch("http://localhost:3000/api/slots");
-  const data = await res.json();
-
-  return {
-    props: {
-      slotsData: data,
-    },
-  };
-}

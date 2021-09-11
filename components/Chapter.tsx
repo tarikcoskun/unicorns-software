@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import style from "@style/Chapter.module.scss";
-import { Slot } from "@types";
 import { useRouter } from "next/router";
 
 function playSound(type: string) {
@@ -13,7 +12,17 @@ export const Chapter: React.FC<{
   id: string;
   levels: object;
 }> = ({ id, levels }) => {
-  /*function selectLevel(id: number) {
+  const router = useRouter();
+  const [activeSlot, setActiveSlot] = useState({
+    room: 143,
+  });
+  useEffect(() => {
+    setActiveSlot(
+      JSON.parse(localStorage.slots)[Number(router.query.slot) - 1]
+    );
+  }, [router.query.slot]);
+
+  function selectLevel(id: number) {
     if (typeof window !== "undefined") {
       console.log("Old room: " + activeSlot.room);
       let slots = JSON.parse(localStorage.slots);
@@ -22,7 +31,7 @@ export const Chapter: React.FC<{
       localStorage.slots = JSON.stringify(slots);
       console.log("New room: " + activeSlot.room);
     }
-  }*/
+  }
 
   return (
     <section className={style.chapter} id={id}>
@@ -32,7 +41,7 @@ export const Chapter: React.FC<{
           style={{ animationDelay: index * 0.25 + "s" }}
           key={index}
           onMouseEnter={() => playSound(level[1].color)}
-          //onClick={() => selectLevel(level[1].id)}
+          onClick={() => selectLevel(level[1].id)}
         >
           <header className={style.upper}>
             {level[1].exploration && (
@@ -46,7 +55,7 @@ export const Chapter: React.FC<{
               />
             )}
           </header>
-          {/* {activeSlot.room == level[1].id && (
+          {activeSlot.room == level[1].id && (
             <img
               className={style.selected_level}
               src="/image/shelly.png"
@@ -54,7 +63,7 @@ export const Chapter: React.FC<{
               draggable="false"
               onDragStart={() => false}
             />
-          )} */}
+          )}
           <img
             className={style.level_icon}
             style={{ filter: `var(--${level[1].color}-filter)` }}

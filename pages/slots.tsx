@@ -14,19 +14,18 @@ import ChapterC from "@lib/levels/chapter-c";
 import ChapterD from "@lib/levels/chapter-d";
 import ChapterE from "@lib/levels/chapter-e";
 
-export default function Levels({
-  slotsData,
-}: {
-  slotsData: Array<Partial<Slot>>;
-}) {
+export default function Levels() {
   const router = useRouter();
   const [slots, setSlots] = useState<Array<Partial<Slot>>>([{}, {}, {}]);
   const [activeSlot, setActiveSlot] = useState<Partial<Slot> | null>(null);
   useEffect(() => {
-    setSlots(slotsData);
+    setSlots(JSON.parse(localStorage.slots));
+
     if (router.query.slot)
-      setActiveSlot(slotsData[Number(router.query.slot) - 1]);
-  }, [slotsData, router.query.slot]);
+      setActiveSlot(
+        JSON.parse(localStorage.slots)[Number(router.query.slot) - 1]
+      );
+  }, [router.query.slot]);
 
   if (router.query.slot) {
     return (
@@ -101,15 +100,4 @@ export default function Levels({
         ))}
       </main>
     );
-}
-
-export async function getServerSideProps() {
-  const res = await fetch("http://localhost:3000/api/slots");
-  const data = await res.json();
-
-  return {
-    props: {
-      slotsData: res.status === 404 ? [{}, {}, {}] : data,
-    },
-  };
 }
