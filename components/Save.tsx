@@ -1,19 +1,14 @@
-import { FC as Component, ChangeEvent, useState } from "react";
-import Link from "next/link";
 import style from "@style/Save.module.scss";
 import { readableTime } from "@lib/readableTime";
-import { readSaveContent } from "@lib/readSaveContent";
+import { Slot } from "@types";
+import router from "next/router";
 
-interface SaveProps {
+type Props = {
   index: number;
   type?: string;
-  gameTimer?: number;
-  skillPoints?: number;
-  explorationPoints?: number;
-  progressPercentage?: number;
-}
+} & Slot;
 
-export const Save: Component<SaveProps> = ({
+export const Save: React.FC<Props> = ({
   index,
   type = "slot",
   gameTimer = 0,
@@ -21,44 +16,18 @@ export const Save: Component<SaveProps> = ({
   explorationPoints = 0,
   progressPercentage = 0,
 }) => {
-  const [slots, setSlots] = useState([{}, {}, {}]);
-
-  function uploadSave(event: ChangeEvent<HTMLInputElement>) {
-    const reader = new FileReader();
-    const files = event.target.files;
-
-    reader.onload = handleFileLoad;
-    if (files) reader.readAsText(files[0]);
-  }
-
-  function handleFileLoad(event: any) {
-    if (typeof window !== "undefined") {
-      let slotsArr = JSON.parse(localStorage.slots);
-      slotsArr[index] = readSaveContent(event.target.result);
-      setSlots(slotsArr);
-      localStorage.slots = JSON.stringify(slotsArr);
-    }
-  }
-
-  function deleteSave(event: any) {
-    if (typeof window !== "undefined") {
-      let slotsArr = JSON.parse(localStorage.slots);
-      slotsArr[index] = {};
-      setSlots(slotsArr);
-      localStorage.slots = JSON.stringify(slotsArr);
-      console.log(`Deleted save slot ${index + 1} successfully`);
-    }
-  }
-
   return (
-    <label
-      htmlFor={"upload-save" + index}
+    <div
       className={style.slot}
-      onMouseEnter={() => new Audio("/sound/slot_enter.mp3").play()}
-      onMouseLeave={() => new Audio("/sound/slot_leave.mp3").play()}
+      onClick={() => {
+        router.push({
+          pathname: "/slots",
+          query: { slot: index + 1 },
+        });
+      }}
     >
-      {type == "save" ? (
-        <Link href={`/slots?slot=${index + 1}`} passHref>
+      {type === "save" ? (
+        <a>
           <div className={style.container}>
             <h1>{progressPercentage}%</h1>
             <div className={style.shelly_progress}>
@@ -101,16 +70,9 @@ export const Save: Component<SaveProps> = ({
               </div>
             </footer>
           </div>
-        </Link>
+        </a>
       ) : (
         <div className={`${style.container} ${style.centered}`}>
-          <input
-            id={"upload-save" + index}
-            style={{ display: "none" }}
-            type="file"
-            accept=".sav"
-            onChange={uploadSave}
-          ></input>
           <img
             className={style.new_game}
             src="/image/new_game.png"
@@ -121,19 +83,19 @@ export const Save: Component<SaveProps> = ({
         </div>
       )}
       <div className={style.bottom_container}>
-        {type == "save" ? (
-          <img
-            className={style.delete_save}
-            src="/image/delete_save.png"
-            alt="Delete save"
-            draggable="false"
-            onClick={deleteSave}
-            onDragStart={() => false}
-          />
-        ) : (
-          <h3>Upload Save</h3>
-        )}
+        {type == "save" ? <h3>Load Save</h3> : <h3>Create Save</h3>}
       </div>
-    </label>
+    </div>
   );
 };
+
+export async function getServerSideProps() {
+  const res = await fetch("http://localhost:3000/api/slots");
+  const data = await res.json();
+
+  return {
+    props: {
+      slotsData: data,
+    },
+  };
+}

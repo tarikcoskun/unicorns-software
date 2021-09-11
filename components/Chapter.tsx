@@ -1,5 +1,7 @@
-import { FC as Component, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import style from "@style/Chapter.module.scss";
+import { Slot } from "@types";
+import { useRouter } from "next/router";
 
 function playSound(type: string) {
   let audio = "default";
@@ -7,24 +9,11 @@ function playSound(type: string) {
   new Audio(`/sound/hover_level_${audio}.mp3`).play();
 }
 
-interface ChapterProps {
+export const Chapter: React.FC<{
   id: string;
   levels: object;
-}
-
-export const Chapter: Component<ChapterProps> = ({ id, levels }) => {
-  const [activeSlot, setActiveSlot] = useState({
-    room: 143,
-  });
-  useEffect(() => {
-    setActiveSlot(
-      JSON.parse(localStorage.slots)[
-        Number(window.location.search.substr(-1)) - 1
-      ]
-    );
-  }, []);
-
-  function selectLevel(id: number) {
+}> = ({ id, levels }) => {
+  /*function selectLevel(id: number) {
     if (typeof window !== "undefined") {
       console.log("Old room: " + activeSlot.room);
       let slots = JSON.parse(localStorage.slots);
@@ -33,7 +22,7 @@ export const Chapter: Component<ChapterProps> = ({ id, levels }) => {
       localStorage.slots = JSON.stringify(slots);
       console.log("New room: " + activeSlot.room);
     }
-  }
+  }*/
 
   return (
     <section className={style.chapter} id={id}>
@@ -43,7 +32,7 @@ export const Chapter: Component<ChapterProps> = ({ id, levels }) => {
           style={{ animationDelay: index * 0.25 + "s" }}
           key={index}
           onMouseEnter={() => playSound(level[1].color)}
-          onClick={() => selectLevel(level[1].id)}
+          //onClick={() => selectLevel(level[1].id)}
         >
           <header className={style.upper}>
             {level[1].exploration && (
@@ -56,20 +45,8 @@ export const Chapter: Component<ChapterProps> = ({ id, levels }) => {
                 onDragStart={() => false}
               />
             )}
-            {/* {level[1].combat &&
-              [0, 0, 0, 0].map((difficulty, index) => (
-                <img
-                  key={index}
-                  className={style.beaten_on_difficulty}
-                  style={{
-                    filter: `var(--${level[1].color}-filter)`,
-                  }}
-                  src="/image/difficulty_point.png"
-                  alt="difficulty"
-                />
-              ))} */}
           </header>
-          {activeSlot.room == level[1].id && (
+          {/* {activeSlot.room == level[1].id && (
             <img
               className={style.selected_level}
               src="/image/shelly.png"
@@ -77,7 +54,7 @@ export const Chapter: Component<ChapterProps> = ({ id, levels }) => {
               draggable="false"
               onDragStart={() => false}
             />
-          )}
+          )} */}
           <img
             className={style.level_icon}
             style={{ filter: `var(--${level[1].color}-filter)` }}

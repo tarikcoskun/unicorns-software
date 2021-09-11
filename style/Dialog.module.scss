@@ -33,4 +33,49 @@
       }
     }
   }
+  .controls {
+    position: absolute;
+    height: 350px;
+    img {
+      cursor: pointer;
+      position: absolute;
+      left: 50%;
+      width: 42px;
+      filter: drop-shadow(0 0 8px #fff);
+      animation: upDown 2s infinite linear;
+      &:nth-child(2) {
+        bottom: 0;
+        animation: downUp 2s infinite linear;
+      }
+      &:nth-child(3) {
+        bottom: 0;
+        width: 36px;
+        animation: downUp 2s infinite linear;
+      }
+    }
+  }
+}
+
+@keyframes upDown {
+  0% {
+    transform: translateY(-50%) translateX(-50%);
+  }
+  50% {
+    transform: translateY(0) translateX(-50%);
+  }
+  100% {
+    transform: translateY(-50%) translateX(-50%);
+  }
+}
+
+@keyframes downUp {
+  0% {
+    transform: translateY(50%) translateX(-50%) rotate(180deg);
+  }
+  50% {
+    transform: translateY(0) translateX(-50%) rotate(180deg);
+  }
+  100% {
+    transform: translateY(50%) translateX(-50%) rotate(180deg);
+  }
 }

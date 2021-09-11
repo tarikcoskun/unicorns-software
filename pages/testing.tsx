@@ -1,13 +1,24 @@
-import { Dialog } from "@components/Dialog";
+import { DialogComponent } from "@components/Dialog";
 
 export default function Testing() {
   return (
     <>
       <main>
-        <Dialog
-          image="/image/unicorn_happy.png"
-          title="Unicorn"
-          dialog="Going backwards always brings you to the level select screen in this game."
+        <DialogComponent
+          dialog={[
+            {
+              name: "Dailog Name",
+              image: "/image/unicorn_happy.png",
+              title: "Unicorn 1",
+              text: "Going backwards always brings you to the level select screen in this game.",
+            },
+            {
+              name: "Dailog Name",
+              image: "/image/unicorn_happy.png",
+              title: "Unicorn 2",
+              text: "Going backwards always brings you to the level select screen in this game.",
+            },
+          ]}
         />
       </main>
       <style jsx>{`
