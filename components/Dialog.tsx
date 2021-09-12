@@ -1,9 +1,9 @@
 import { useState } from "react";
-import style from "@style/Dialog.module.scss";
 import { Dialog } from "@types";
+import style from "@styles/Dialog.module.scss";
 
-export const DialogComponent: React.FC<{ dialog: Array<Dialog> }> = ({
-  dialog,
+export const GameDialog: React.FC<{ dialogs: Array<Partial<Dialog>> }> = ({
+  dialogs,
 }) => {
   const [index, setIndex] = useState(0);
   const [destroyed, setDestroyed] = useState(false);
@@ -14,16 +14,25 @@ export const DialogComponent: React.FC<{ dialog: Array<Dialog> }> = ({
       style={{ display: destroyed === true ? "none" : "flex" }}
     >
       <div className={style.dialog}>
-        <img
-          src={dialog[index].image}
-          alt="unicorn"
-          draggable="false"
-          onDragStart={() => false}
-        />
-        <div className={style.container}>
-          <h1>{dialog[index].title}</h1>
-          <p>{dialog[index].text}</p>
-        </div>
+        {dialogs[index].image && (
+          <img
+            src={dialogs[index].image}
+            alt="unicorn"
+            draggable="false"
+            onDragStart={() => false}
+          />
+        )}
+        {dialogs[index].id ? (
+          <div className={style.introduction}>
+            <p>{dialogs[index].id}</p>
+            <h1>{dialogs[index].title}</h1>
+          </div>
+        ) : (
+          <div className={style.container}>
+            <h1>{dialogs[index].title}</h1>
+            <p>{dialogs[index].text}</p>
+          </div>
+        )}
       </div>
       <div className={style.controls}>
         <img
@@ -36,13 +45,13 @@ export const DialogComponent: React.FC<{ dialog: Array<Dialog> }> = ({
           onClick={() => setIndex(index + 1)}
           src="/image/dialog_arrow.png"
           alt="next_dialog"
-          style={{ display: index === dialog.length - 1 ? "none" : "block" }}
+          style={{ display: index === dialogs.length - 1 ? "none" : "block" }}
         />
         <img
           onClick={() => setDestroyed(true)}
           src="/image/checkmark.png"
           alt="next_dialog"
-          style={{ display: index === dialog.length - 1 ? "block" : "none" }}
+          style={{ display: index === dialogs.length - 1 ? "block" : "none" }}
         />
       </div>
     </div>

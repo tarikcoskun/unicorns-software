@@ -1,4 +1,4 @@
-import style from "@style/Save.module.scss";
+import style from "@styles/Save.module.scss";
 import { readableTime } from "@lib/readableTime";
 import { readSaveContent } from "@lib/readSaveContent";
 import { Slot } from "@types";
@@ -33,6 +33,16 @@ export const Save: React.FC<Props> = ({
       let slotsArr = JSON.parse(localStorage.slots);
       slotsArr[index] = readSaveContent(event.target.result);
       localStorage.slots = JSON.stringify(slotsArr);
+    }
+    router.reload();
+  }
+
+  function deleteSave(event: any) {
+    if (typeof window !== "undefined") {
+      let slotsArr = JSON.parse(localStorage.slots);
+      slotsArr[index] = {};
+      localStorage.slots = JSON.stringify(slotsArr);
+      console.log(`Deleted save slot ${index + 1} successfully`);
     }
     router.reload();
   }
@@ -108,7 +118,18 @@ export const Save: React.FC<Props> = ({
         </div>
       )}
       <div className={style.bottom_container}>
-        {type == "save" ? <h3>Load Save</h3> : <h3>Upload Save</h3>}
+        {type == "save" ? (
+          <img
+            className={style.delete_save}
+            src="/image/delete_save.png"
+            alt="Delete save"
+            draggable="false"
+            onClick={deleteSave}
+            onDragStart={() => false}
+          />
+        ) : (
+          <h3>Upload Save</h3>
+        )}
       </div>
     </label>
   );

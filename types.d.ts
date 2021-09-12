@@ -6,7 +6,7 @@ export interface Slot {
 }
 
 export interface Dialog {
-  name: string;
+  id?: number;
   image: string;
   title: string;
   text: string;

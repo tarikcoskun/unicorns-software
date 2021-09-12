@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import style from "@style/Chapter.module.scss";
+import style from "@styles/Chapter.module.scss";
 import { useRouter } from "next/router";
 
 function playSound(type: string) {

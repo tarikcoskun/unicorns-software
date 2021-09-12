@@ -5,8 +5,8 @@ import { useEffect, useState } from "react";
 
 import { Save } from "@components/Save";
 import { Chapter } from "@components/Chapter";
-import slotsStyle from "@style/Slots.module.scss";
-import levelsStyle from "@style/Levels.module.scss";
+import slotsStyle from "@styles/Slots.module.scss";
+import levelsStyle from "@styles/Levels.module.scss";
 
 import ChapterA from "@lib/levels/chapter-a";
 import ChapterB from "@lib/levels/chapter-b";
