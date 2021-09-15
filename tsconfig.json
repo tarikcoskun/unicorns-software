@@ -18,16 +18,6 @@
       "@*": ["./*"]
     }
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "next.config.js",
-    "lib/levels/chapter-e.js",
-    "lib/levels/chapter-d.js",
-    "lib/levels/chapter-c.js",
-    "lib/levels/chapter-b.js",
-    "lib/levels/chapter-a.js"
-  ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "next.config.js"],
   "exclude": ["node_modules"]
 }

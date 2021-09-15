@@ -1,5 +1,4 @@
-/* eslint-disable import/no-anonymous-default-export */
-export default {
+export const ChapterB = {
   B01: {
     id: 51,
     icon: "puzzle",

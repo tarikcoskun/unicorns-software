@@ -1,6 +1,6 @@
-import { AppProps } from "next/app";
-import Head from "next/head";
 import "@styles/main.scss";
+import Head from "next/head";
+import { AppProps } from "next/app";
 
 export default function UnicornsSoftware({ Component, pageProps }: AppProps) {
   return (

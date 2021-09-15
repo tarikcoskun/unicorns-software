@@ -1,23 +1,23 @@
-import { Slot } from "@types";
 import Link from "next/link";
+import { Slot } from "@types";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-
-import { Save } from "@components/Save";
-import { Chapter } from "@components/Chapter";
 import slotsStyle from "@styles/Slots.module.scss";
 import levelsStyle from "@styles/Levels.module.scss";
 
-import ChapterA from "@lib/levels/chapter-a";
-import ChapterB from "@lib/levels/chapter-b";
-import ChapterC from "@lib/levels/chapter-c";
-import ChapterD from "@lib/levels/chapter-d";
-import ChapterE from "@lib/levels/chapter-e";
+import { Save } from "@components/Save";
+import { Chapter } from "@components/Chapter";
+import { ChapterA } from "@lib/levels/chapter-a";
+import { ChapterB } from "@lib/levels/chapter-b";
+import { ChapterC } from "@lib/levels/chapter-c";
+import { ChapterD } from "@lib/levels/chapter-d";
+import { ChapterE } from "@lib/levels/chapter-e";
 
 export default function Levels() {
   const router = useRouter();
   const [slots, setSlots] = useState<Array<Partial<Slot>>>([{}, {}, {}]);
   const [activeSlot, setActiveSlot] = useState<Partial<Slot> | null>(null);
+
   useEffect(() => {
     setSlots(JSON.parse(localStorage.slots));
 
@@ -30,8 +30,8 @@ export default function Levels() {
   if (router.query.slot) {
     return (
       <>
-        <Link href="/slots" passHref>
-          <h1 className={levelsStyle.switch_slot}>Switch Slot</h1>
+        <Link href="/save-editor" passHref>
+          <h1 className={levelsStyle.switchSlot}>Switch Slot</h1>
         </Link>
         <header className={levelsStyle.points}>
           <div>
@@ -84,7 +84,7 @@ export default function Levels() {
         </main>
       </>
     );
-  } else
+  } else {
     return (
       <main className={slotsStyle.slots}>
         {slots.map((slot, index) => (
@@ -100,4 +100,5 @@ export default function Levels() {
         ))}
       </main>
     );
+  }
 }

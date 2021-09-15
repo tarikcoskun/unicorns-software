@@ -1,0 +1,25 @@
+.slots {
+  background: radial-gradient(
+    circle,
+    #010047,
+    #080034,
+    #000219,
+    #000217,
+    #000019
+  );
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 5rem;
+  place-items: end;
+  padding: 0 5rem;
+  &::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background: linear-gradient(to bottom, #000, #2f004430, transparent);
+  }
+}

@@ -15,7 +15,7 @@ export function readSaveContent(saveFile: string) {
   // Set room
   room = Number(content[content.indexOf("Room") + 1]);
 
-  // Calculate game timer
+  // Set timer
   gameTimer = Math.floor(Number(content[content.indexOf("Timer Game") + 1]));
 
   // Calculate skill points

@@ -1,6 +1,7 @@
 {
-  "name": "my-app",
-  "version": "0.1.0",
+  "name": "unicorns-software",
+  "description": "A toolkit for the game Will You Snail?",
+  "version": "0.0.2",
   "private": true,
   "scripts": {
     "dev": "next dev",

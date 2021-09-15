@@ -73,29 +73,29 @@
       flex-direction: column;
       align-items: center;
       transition: 0.25s cubic-bezier(0.125, 0.25, 0.1, 1.035);
-      .exploration_point {
+      .explorationPoint {
         width: 36px;
         transition: 0.25s;
         margin-bottom: 0.5rem;
         transition: 0.25s cubic-bezier(0.125, 0.25, 0.1, 1.035);
       }
-      .beaten_on_difficulty {
+      .beatenOnDifficulty {
         width: 28px;
         transition: 0.25s cubic-bezier(0.125, 0.25, 0.1, 1.035);
       }
     }
-    .selected_level {
+    .selectedLevel {
       z-index: 10;
       position: absolute;
       top: 0;
       width: 48px;
       transition: 0.25s;
     }
-    .level_icon {
+    .levelIcon {
       width: 48px;
       transform: rotate(90deg);
       transition: 0.25s cubic-bezier(0.125, 0.25, 0.1, 1.035);
-      &_ghost {
+      &_Ghost {
         position: absolute;
         margin-top: -48px;
         width: 56px;
@@ -113,18 +113,18 @@
       padding: 0 2.5rem;
       .upper {
         bottom: 11rem;
-        .exploration_point {
+        .explorationPoint {
           width: 54px;
         }
-        .beaten_on_difficulty {
+        .beatenOnDifficulty {
           width: 36px;
         }
       }
-      .level_icon,
-      .selected_level {
+      .levelIcon,
+      .selectedLevel {
         width: 96px;
         transform: rotate(0);
-        &_ghost {
+        &_Ghost {
           width: 112px;
         }
       }

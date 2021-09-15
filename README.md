@@ -1,9 +1,10 @@
 ### Unicorn's Software
 
-This is a save editor for the game [Will You Snail?](https://store.steampowered.com/app/1115050/Will_You_Snail)
+This is a toolkit for the game [Will You Snail?](https://store.steampowered.com/app/1115050/Will_You_Snail). Including a save editor, a theme creator and more to come!
 
 ### To-do
 
+- [ ] Make a theme creator
 - [ ] Changeable skill and exploration point values
 - [ ] Option to unlock all skill points, exploration points and dialogs
 - [x] Let users upload save files

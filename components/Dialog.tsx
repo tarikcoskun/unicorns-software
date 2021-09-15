@@ -1,5 +1,5 @@
-import { useState } from "react";
 import { Dialog } from "@types";
+import { useState } from "react";
 import style from "@styles/Dialog.module.scss";
 
 export const GameDialog: React.FC<{ dialogs: Array<Partial<Dialog>> }> = ({

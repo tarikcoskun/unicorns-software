@@ -1,6 +1,6 @@
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import style from "@styles/Chapter.module.scss";
-import { useRouter } from "next/router";
 
 function playSound(type: string) {
   let audio = "default";
@@ -46,7 +46,7 @@ export const Chapter: React.FC<{
           <header className={style.upper}>
             {level[1].exploration && (
               <img
-                className={`${style.exploration_point} ${level[1].color}`}
+                className={`${style.explorationPoint} ${level[1].color}`}
                 style={{ filter: `var(--${level[1].color}-filter)` }}
                 src="/image/exploration_point.png"
                 alt="exploration_point"
@@ -57,7 +57,7 @@ export const Chapter: React.FC<{
           </header>
           {activeSlot.room == level[1].id && (
             <img
-              className={style.selected_level}
+              className={style.selectedLevel}
               src="/image/shelly.png"
               alt="selected_level"
               draggable="false"
@@ -65,7 +65,7 @@ export const Chapter: React.FC<{
             />
           )}
           <img
-            className={style.level_icon}
+            className={style.levelIcon}
             style={{ filter: `var(--${level[1].color}-filter)` }}
             src={`/image/level_icons/${level[1].icon}.png`}
             alt={level[1].icon}
@@ -73,7 +73,7 @@ export const Chapter: React.FC<{
             onDragStart={() => false}
           />
           <img
-            className={`${style.level_icon} ${style.level_icon_ghost}`}
+            className={`${style.levelIcon} ${style.levelIcon_Ghost}`}
             style={{ filter: `var(--${level[1].color}-ghost-filter)` }}
             src={`/image/level_icons/${level[1].icon}.png`}
             alt={level[1].icon}

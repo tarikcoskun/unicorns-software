@@ -1,10 +1,11 @@
-import style from "@styles/Save.module.scss";
-import { readableTime } from "@lib/readableTime";
-import { readSaveContent } from "@lib/readSaveContent";
-import { Slot } from "@types";
 import Link from "next/link";
+import { Slot } from "@types";
 import { ChangeEvent } from "react";
 import { useRouter } from "next/router";
+import style from "@styles/Save.module.scss";
+
+import { readableTime } from "@lib/readableTime";
+import { readSaveContent } from "@lib/readSaveContent";
 
 type Props = {
   index: number;
@@ -55,10 +56,10 @@ export const Save: React.FC<Props> = ({
       onMouseLeave={() => new Audio("/sound/slot_leave.mp3").play()}
     >
       {type === "save" ? (
-        <Link href={`/slots?slot=${index + 1}`} passHref>
+        <Link href={`/save-editor?slot=${index + 1}`} passHref>
           <div className={style.container}>
             <h1>{progressPercentage}%</h1>
-            <div className={style.shelly_progress}>
+            <div className={style.shellyProgress}>
               <img
                 src="/image/shelly_outline.png"
                 alt="shelly_progress"
@@ -109,7 +110,7 @@ export const Save: React.FC<Props> = ({
             onChange={uploadSave}
           ></input>
           <img
-            className={style.new_game}
+            className={style.newGame}
             src="/image/new_game.png"
             alt="new_game"
             draggable="false"
@@ -117,10 +118,10 @@ export const Save: React.FC<Props> = ({
           />
         </div>
       )}
-      <div className={style.bottom_container}>
+      <div className={style.bottomContainer}>
         {type == "save" ? (
           <img
-            className={style.delete_save}
+            className={style.deleteSave}
             src="/image/delete_save.png"
             alt="Delete save"
             draggable="false"
