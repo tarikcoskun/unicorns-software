@@ -67,7 +67,7 @@ export const Chapter: React.FC<{
           <img
             className={style.levelIcon}
             style={{ filter: `var(--${level[1].color}-filter)` }}
-            src={`/image/level_icons/${level[1].icon}.png`}
+            src={`/image/level_icons/${level[1].icon}.svg`}
             alt={level[1].icon}
             draggable="false"
             onDragStart={() => false}
@@ -75,7 +75,7 @@ export const Chapter: React.FC<{
           <img
             className={`${style.levelIcon} ${style.levelIcon_Ghost}`}
             style={{ filter: `var(--${level[1].color}-ghost-filter)` }}
-            src={`/image/level_icons/${level[1].icon}.png`}
+            src={`/image/level_icons/${level[1].icon}.svg`}
             alt={level[1].icon}
             draggable="false"
             onDragStart={() => false}

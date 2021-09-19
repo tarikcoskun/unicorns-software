@@ -1,4 +1,4 @@
-export const ChapterA = {
+const ChapterA = {
   A01: {
     id: 28,
     icon: "hall",
@@ -154,3 +154,5 @@ export const ChapterA = {
     exploration: true,
   },
 };
+
+export default ChapterA;

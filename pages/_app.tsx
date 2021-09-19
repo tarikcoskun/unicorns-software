@@ -1,8 +1,16 @@
 import "@styles/main.scss";
 import Head from "next/head";
 import { AppProps } from "next/app";
+import { useEffect } from "react";
 
 export default function UnicornsSoftware({ Component, pageProps }: AppProps) {
+  useEffect(() => {
+    if (!localStorage.slots) {
+      localStorage.slots = JSON.stringify([{}, {}, {}]);
+      console.log("Slots value was set to the initial value");
+    } else console.log("Save slots were fetched successfully");
+  }, []);
+
   return (
     <>
       <Head>
@@ -14,15 +22,15 @@ export default function UnicornsSoftware({ Component, pageProps }: AppProps) {
         <meta name="og:site_name" content="unicorns.software" />
         <meta
           name="description"
-          content="Unicorn's Software is a save editor for the game Will You Snail?"
+          content="Unicorn's Software is a toolkit for the game Will You Snail?"
         />
         <meta
           name="og:description"
-          content="Unicorn's Software is a save editor for the game Will You Snail?"
+          content="Unicorn's Software is a toolkit for the game Will You Snail?"
         />
         <meta
           name="twitter:description"
-          content="Unicorn's Software is a save editor for the game Will You Snail?"
+          content="Unicorn's Software is a toolkit for the game Will You Snail?"
         />
         <meta
           name="og:image"

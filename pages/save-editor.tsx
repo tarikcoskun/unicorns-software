@@ -7,11 +7,11 @@ import levelsStyle from "@styles/Levels.module.scss";
 
 import { Save } from "@components/Save";
 import { Chapter } from "@components/Chapter";
-import { ChapterA } from "@lib/levels/chapter-a";
-import { ChapterB } from "@lib/levels/chapter-b";
-import { ChapterC } from "@lib/levels/chapter-c";
-import { ChapterD } from "@lib/levels/chapter-d";
-import { ChapterE } from "@lib/levels/chapter-e";
+import ChapterA from "@lib/levels/chapter-a";
+import ChapterB from "@lib/levels/chapter-b";
+import ChapterC from "@lib/levels/chapter-c";
+import ChapterD from "@lib/levels/chapter-d";
+import ChapterE from "@lib/levels/chapter-e";
 
 export default function Levels() {
   const router = useRouter();
