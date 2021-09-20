@@ -12,19 +12,28 @@
   }
 
   .option {
+    padding: 0.75rem;
     display: flex;
     justify-content: space-between;
-    padding: 1rem 0;
+    align-items: center;
 
     h1 {
-      font-size: 1.25rem;
+      color: #7c7c7c;
+      font-size: 1.125rem;
     }
 
     img {
+      width: 2.5rem;
     }
 
     &:not(.option:last-child) {
       border-bottom: 2px solid #2b2b2b;
+    }
+
+    &:hover {
+      h1 {
+        color: #fff;
+      }
     }
   }
 

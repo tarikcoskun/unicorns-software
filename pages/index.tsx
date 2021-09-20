@@ -22,12 +22,19 @@ export default function Home() {
       <Link href="/save-editor" passHref>
         <figure className={style.option}>
           <h1>Save Editor</h1>
-          <img src="/image/save_editor.png" alt="Save editor" />
+          <img src="/image/level_icons/blank.svg" alt="Save Editor" />
         </figure>
       </Link>
       <Link href="/theme-creator" passHref>
         <figure className={style.option}>
           <h1>Theme Creator</h1>
+          <img src="/image/level_icons/blank.svg" alt="Theme Creator" />
+        </figure>
+      </Link>
+      <Link href="/" passHref>
+        <figure className={style.option}>
+          <h1>More to come...</h1>
+          <img src="/image/level_icons/blank.svg" alt="More to come..." />
         </figure>
       </Link>
       {/* <div id="cool-container"></div> */}

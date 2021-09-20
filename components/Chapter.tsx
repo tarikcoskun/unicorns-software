@@ -58,7 +58,7 @@ export const Chapter: React.FC<{
           {activeSlot.room == level[1].id && (
             <img
               className={style.selectedLevel}
-              src="/image/shelly.png"
+              src="/image/shelly.svg"
               alt="selected_level"
               draggable="false"
               onDragStart={() => false}

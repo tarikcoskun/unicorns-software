@@ -61,7 +61,7 @@ export const Save: React.FC<Props> = ({
             <h1>{progressPercentage}%</h1>
             <div className={style.shellyProgress}>
               <img
-                src="/image/shelly_outline.png"
+                src="/image/shelly_outline.svg"
                 alt="shelly_progress"
                 draggable="false"
                 onDragStart={() => false}
@@ -69,7 +69,7 @@ export const Save: React.FC<Props> = ({
               <img
                 className="shelly_filler"
                 style={{ height: progressPercentage + "%" }}
-                src="/image/shelly_filler.png"
+                src="/image/shelly_filler.svg"
                 alt="shelly_progress"
                 draggable="false"
                 onDragStart={() => false}
@@ -111,7 +111,7 @@ export const Save: React.FC<Props> = ({
           ></input>
           <img
             className={style.newGame}
-            src="/image/new_game.png"
+            src="/image/new_game.svg"
             alt="new_game"
             draggable="false"
             onDragStart={() => false}
