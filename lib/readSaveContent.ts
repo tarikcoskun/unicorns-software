@@ -1,19 +1,19 @@
 import {
-  calculatedExplorationPoints,
   calculatedDifficultyPoints,
+  calculatedExplorationPoints,
 } from "@lib/calculatedPoints";
 
 export function readSaveContent(saveFile: string) {
   let content: Array<string> = <Array<string>>saveFile.match(/[^\r\n]+/g);
-  let room: number = 143;
+  let level: number = 143;
   let gameTimer: number = 0;
   let skillPoints: number = 0;
   let unlockedLevels: number = 0;
   let explorationPoints: number = 0;
   let progressPercentage: number = 0;
 
-  // Set room
-  room = Number(content[content.indexOf("Room") + 1]);
+  // Set level
+  level = Number(content[content.indexOf("Room") + 1]);
 
   // Set timer
   gameTimer = Math.floor(Number(content[content.indexOf("Timer Game") + 1]));
@@ -57,7 +57,7 @@ export function readSaveContent(saveFile: string) {
   }
 
   return {
-    room: room,
+    level: level,
     gameTimer: gameTimer,
     skillPoints: skillPoints,
     explorationPoints: explorationPoints,

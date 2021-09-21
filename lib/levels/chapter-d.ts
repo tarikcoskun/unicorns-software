@@ -1,4 +1,4 @@
-const ChapterD = {
+export const ChapterD = {
   D01: {
     id: 94,
     icon: "puzzle",
@@ -176,5 +176,3 @@ const ChapterD = {
     color: "blue",
   },
 };
-
-export default ChapterD;

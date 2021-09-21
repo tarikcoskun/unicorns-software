@@ -1,6 +1,11 @@
+import { Slot } from "@types";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import style from "@styles/Chapter.module.scss";
+
+type ActiveSlot = {
+  level: number;
+} & Slot;
 
 function playSound(type: string) {
   let audio = "default";
@@ -13,9 +18,10 @@ export const Chapter: React.FC<{
   levels: object;
 }> = ({ id, levels }) => {
   const router = useRouter();
-  const [activeSlot, setActiveSlot] = useState({
-    room: 143,
+  const [activeSlot, setActiveSlot] = useState<Partial<ActiveSlot>>({
+    level: 143,
   });
+
   useEffect(() => {
     setActiveSlot(
       JSON.parse(localStorage.slots)[Number(router.query.slot) - 1]
@@ -24,12 +30,14 @@ export const Chapter: React.FC<{
 
   function selectLevel(id: number) {
     if (typeof window !== "undefined") {
-      console.log("Old room: " + activeSlot.room);
+      console.log("Level change triggered");
+      console.log("Old level: " + activeSlot.level);
       let slots = JSON.parse(localStorage.slots);
-      activeSlot.room = id;
-      slots[Number(window.location.search.substr(-1)) - 1].room = id;
+      activeSlot.level = id;
+      setActiveSlot(activeSlot);
+      slots[Number(location.search.substr(-1)) - 1].level = id;
       localStorage.slots = JSON.stringify(slots);
-      console.log("New room: " + activeSlot.room);
+      console.log("New leel: " + activeSlot.level);
     }
   }
 
@@ -55,7 +63,7 @@ export const Chapter: React.FC<{
               />
             )}
           </header>
-          {activeSlot.room == level[1].id && (
+          {activeSlot.level == level[1].id && (
             <img
               className={style.selectedLevel}
               src="/image/shelly.svg"
