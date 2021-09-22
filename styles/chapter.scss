@@ -1,0 +1,101 @@
+section.chapter {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    height: 14rem;
+    background: #372d46;
+    width: 4px;
+    margin: 0 -0.5rem;
+  }
+  &::after {
+    content: attr(id);
+    color: #372d46;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 6px;
+    bottom: calc(14rem + 16px);
+  }
+
+  figure.level {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: 0.25s;
+    width: 4rem;
+
+    header.upper {
+      width: 100%;
+      position: absolute;
+      bottom: 8rem;
+      display: flex;
+      gap: 0.25rem;
+      flex-direction: column;
+      align-items: center;
+      transition: 0.25s cubic-bezier(0.125, 0.25, 0.1, 1.035);
+
+      img.exploration-point {
+        width: 36px;
+        transition: 0.25s;
+        margin-bottom: 0.5rem;
+        transition: 0.25s cubic-bezier(0.125, 0.25, 0.1, 1.035);
+      }
+    }
+    img.selected-level {
+      z-index: 10;
+      position: absolute;
+      top: 0;
+      width: 48px;
+      transition: 0.25s;
+    }
+    img.level-icon {
+      width: 48px;
+      transform: rotate(90deg);
+      transition: 0.25s cubic-bezier(0.125, 0.25, 0.1, 1.035);
+
+      &-ghost {
+        position: absolute;
+        margin-top: -48px;
+        width: 56px;
+        z-index: -1;
+      }
+    }
+    h1 {
+      font-size: 1.5rem;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.5rem;
+      opacity: 0;
+      transition: 0.2s;
+    }
+    &:hover {
+      padding: 0 2.5rem;
+      header.upper {
+        bottom: 11rem;
+        .exploration-point {
+          width: 54px;
+        }
+      }
+      img.level-icon,
+      img.selected-level {
+        width: 96px;
+        transform: rotate(0);
+        &-ghost {
+          width: 112px;
+        }
+      }
+      h1 {
+        opacity: 100;
+      }
+    }
+  }
+}

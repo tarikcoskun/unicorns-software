@@ -1,4 +1,4 @@
-.slot {
+label.slot {
   z-index: 10;
   cursor: pointer;
   user-select: none;
@@ -14,16 +14,18 @@
   justify-content: space-between;
   margin-bottom: 5rem;
   transition: 0.3s cubic-bezier(0.125, 0.25, 0.1, 1.035);
-  .container {
+
+  div.container {
     z-index: 15;
-    transition: 0.4s cubic-bezier(0.125, 0.25, 0.1, 1.035);
     filter: brightness(0.4);
     margin: 1.75rem;
     display: flex;
     text-align: center;
     flex-direction: column;
     justify-content: center;
-    h1 {
+    transition: 0.4s cubic-bezier(0.125, 0.25, 0.1, 1.035);
+
+    h1.progress-percentage {
       font-size: 2.875rem;
       &::after {
         content: "";
@@ -37,16 +39,19 @@
           inset -5rem 0.25rem 2rem #00000090;
       }
     }
-    h2 {
+
+    h2.timer {
       font-size: 1.5rem;
       margin: 0.5rem 0;
     }
-    .shellyProgress {
+
+    div.shelly-progress {
       margin: 1.5rem 1rem;
       position: relative;
       height: 187px;
-      transition: 0.4s cubic-bezier(0.125, 0.25, 0.1, 1.035);
       filter: grayscale(100);
+      transition: 0.4s cubic-bezier(0.125, 0.25, 0.1, 1.035);
+
       img {
         object-fit: cover;
         object-position: bottom;
@@ -69,22 +74,25 @@
       }
     }
   }
-  footer {
+  footer.points {
     width: 100%;
     margin: 2.5rem 0 0.5rem;
     display: grid;
     grid-template-columns: repeat(2, minmax(100px, 1fr));
+
     div {
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 1rem;
+
       p {
         font-size: 1.125rem;
       }
     }
   }
-  .bottomContainer {
+
+  footer.bottom {
     height: 100%;
     width: 100%;
     position: absolute;
@@ -94,13 +102,14 @@
     justify-content: center;
     align-items: flex-end;
     transition: 0.2s cubic-bezier(0.125, 0.25, 0.1, 1.035);
-    .deleteSave {
+
+    img.delete-save {
       margin-bottom: 4.5rem;
       height: 103px;
       width: 84px;
       filter: drop-shadow(0 0 8px #66005d);
     }
-    h3 {
+    h3.upload-save {
       margin-bottom: 7.5rem;
       font-size: 1.25rem;
       text-align: center;
@@ -112,39 +121,40 @@
     transform: translateY(-7rem);
     border-color: #fff;
     box-shadow: 0 0 12px 8px #66005d;
-    .container,
-    footer {
+
+    div.container,
+    footer.points {
       filter: brightness(1);
     }
-    h1,
-    h2,
+    h1.progress-percentage,
+    h2.timer,
     p,
-    img:not(.shellyProgress img):not(.deleteSave) {
+    img:not(div.shelly-progress img):not(.delete-save) {
       filter: drop-shadow(0 0 6px #e2a6cfcc);
     }
-    .shellyProgress {
+    div.shelly-progress {
       filter: drop-shadow(0 0 6px #811ad4);
       &::after {
         box-shadow: none;
       }
     }
-    h1::after {
+    h1.progress-percentage::after {
       box-shadow: none;
     }
-    .bottomContainer {
+    footer.bottom {
       opacity: 100;
     }
   }
-}
+  div.centered {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-.centered {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  .newGame {
-    transition: 0.4s cubic-bezier(0.125, 0.25, 0.1, 1.035);
-    animation: growShrink 3s ease-out infinite;
+    img.new-game {
+      transition: 0.4s cubic-bezier(0.125, 0.25, 0.1, 1.035);
+      animation: growShrink 3s ease-out infinite;
+    }
   }
 }
 

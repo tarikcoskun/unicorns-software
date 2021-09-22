@@ -2,8 +2,6 @@ import Link from "next/link";
 import { Slot } from "@types";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import slotsStyle from "@styles/Slots.module.scss";
-import levelsStyle from "@styles/Levels.module.scss";
 
 import { Save } from "@components/Save";
 import { Chapter } from "@components/Chapter";
@@ -27,52 +25,49 @@ export default function Levels() {
   if (router.query.slot) {
     return (
       <>
-        <Link href="/save-editor" passHref>
-          <h1 className={levelsStyle.switchSlot}>Switch Slot</h1>
-        </Link>
-        <header className={levelsStyle.points}>
-          <div>
+        <header id="points">
+          <div className="point-container">
             <h1>
               <input
-                id="skill_points"
+                id="skill-points"
                 type="number"
                 min="0"
                 max="244"
+                maxLength={3}
                 defaultValue={activeSlot?.skillPoints}
               />
-              <label htmlFor="skill_points">/244</label>
+              <label htmlFor="skill-points">/244</label>
             </h1>
             <img
-              src="/image/difficulty_point.png"
-              alt="difficulty_point"
-              title="Skill points"
+              src="/image/difficultyPoint.png"
+              alt="Skill point"
               draggable="false"
               onDragStart={() => false}
             />
           </div>
-          <div>
+          <div className="point-container">
             <h1>
               <input
-                id="exploration_points"
+                id="exploration-points"
                 style={{ width: "2.625rem" }}
                 type="number"
                 min="0"
                 max="45"
+                maxLength={2}
                 defaultValue={activeSlot?.explorationPoints}
               />
-              <label htmlFor="exploration_points">/45</label>
+              <label htmlFor="exploration-points">/45</label>
             </h1>
             <img
-              src="/image/exploration_point.png"
-              alt="exploration_point"
-              title="Exploration points"
+              src="/image/explorationPoint.png"
+              alt="Exploration point"
               draggable="false"
               onDragStart={() => false}
             />
           </div>
         </header>
 
-        <main className={levelsStyle.levels}>
+        <main id="levels">
           <Chapter id="A" levels={ChapterA} />
           <Chapter id="B" levels={ChapterB} />
           <Chapter id="C" levels={ChapterC} />
@@ -83,7 +78,7 @@ export default function Levels() {
     );
   } else {
     return (
-      <main className={slotsStyle.slots}>
+      <main id="slots">
         {slots.map((slot, index) => (
           <Save
             key={index}

@@ -2,7 +2,6 @@ import Link from "next/link";
 import { Slot } from "@types";
 import { ChangeEvent } from "react";
 import { useRouter } from "next/router";
-import style from "@styles/Save.module.scss";
 
 import { readableTime } from "@lib/readableTime";
 import { readSaveContent } from "@lib/readSaveContent";
@@ -50,16 +49,16 @@ export const Save: React.FC<Props> = ({
 
   return (
     <label
+      className="slot"
       htmlFor={"upload-save" + index}
-      className={style.slot}
       onMouseEnter={() => new Audio("/sound/slot_enter.mp3").play()}
       onMouseLeave={() => new Audio("/sound/slot_leave.mp3").play()}
     >
       {type === "save" ? (
         <Link href={`/save-editor?slot=${index + 1}`} passHref>
-          <div className={style.container}>
-            <h1>{progressPercentage}%</h1>
-            <div className={style.shellyProgress}>
+          <div className="container">
+            <h1 className="progress-percentage">{progressPercentage}%</h1>
+            <div className="shelly-progress">
               <img
                 src="/image/shelly_outline.svg"
                 alt="shelly_progress"
@@ -75,13 +74,13 @@ export const Save: React.FC<Props> = ({
                 onDragStart={() => false}
               />
             </div>
-            <h2>{readableTime(gameTimer)}</h2>
-            <footer>
+            <h2 className="timer">{readableTime(gameTimer)}</h2>
+
+            <footer className="points">
               <div>
                 <img
-                  src="/image/difficulty_point.png"
-                  alt="difficulty_point"
-                  title="Skill points"
+                  src="/image/difficultyPoint.png"
+                  alt="Skill point"
                   draggable="false"
                   onDragStart={() => false}
                 />
@@ -89,9 +88,8 @@ export const Save: React.FC<Props> = ({
               </div>
               <div>
                 <img
-                  src="/image/exploration_point.png"
-                  alt="exploration_point"
-                  title="Exploration points"
+                  src="/image/explorationPoint.png"
+                  alt="Exploration point"
                   draggable="false"
                   onDragStart={() => false}
                 />
@@ -101,7 +99,7 @@ export const Save: React.FC<Props> = ({
           </div>
         </Link>
       ) : (
-        <div className={`${style.container} ${style.centered}`}>
+        <div className="container centered">
           <input
             id={"upload-save" + index}
             style={{ display: "none" }}
@@ -110,7 +108,7 @@ export const Save: React.FC<Props> = ({
             onChange={uploadSave}
           ></input>
           <img
-            className={style.newGame}
+            className="new-game"
             src="/image/new_game.svg"
             alt="new_game"
             draggable="false"
@@ -118,20 +116,20 @@ export const Save: React.FC<Props> = ({
           />
         </div>
       )}
-      <div className={style.bottomContainer}>
-        {type == "save" ? (
+      <footer className="bottom">
+        {type === "save" ? (
           <img
-            className={style.deleteSave}
-            src="/image/delete_save.png"
+            className="delete-save"
+            src="/image/deleteSave.png"
             alt="Delete save"
             draggable="false"
             onClick={deleteSave}
             onDragStart={() => false}
           />
         ) : (
-          <h3>Upload Save</h3>
+          <h3 className="upload-save">Upload Save</h3>
         )}
-      </div>
+      </footer>
     </label>
   );
 };

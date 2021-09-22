@@ -1,21 +1,4 @@
-.switchSlot {
-  color: #fff;
-  line-height: 1.75rem;
-  cursor: pointer;
-  position: fixed;
-  top: 1rem;
-  left: 1rem;
-  text-decoration: none;
-  font-size: 1.125rem;
-  margin-top: 0.325rem;
-  border-bottom: 3px solid transparent;
-  filter: drop-shadow(0 0 8px #8c82d8);
-  &:hover {
-    border-color: #fff;
-  }
-}
-
-.points {
+header#points {
   position: fixed;
   left: 50%;
   top: 1rem;
@@ -23,17 +6,20 @@
   display: flex;
   gap: 5rem;
   align-items: center;
-  div {
+
+  div.point-container {
     display: flex;
     gap: 0.75rem;
     align-items: center;
     justify-content: center;
+
     h1 {
       display: flex;
       gap: 0.25rem;
       align-items: center;
       font-size: 1.25rem;
       margin-top: 0.25rem;
+
       input {
         -moz-appearance: textfield;
         color: #ff72ff;
@@ -65,14 +51,13 @@
   }
 }
 
-.levels {
+main#levels {
   height: 100%;
   width: 100%;
   margin-top: 4rem;
   display: flex;
   gap: 2rem;
   align-items: center;
-  max-width: 100%;
   margin-left: auto;
   padding: 0 10rem;
 }

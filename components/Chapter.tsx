@@ -1,7 +1,6 @@
 import { Slot } from "@types";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import style from "@styles/Chapter.module.scss";
 
 type ActiveSlot = {
   level: number;
@@ -42,22 +41,22 @@ export const Chapter: React.FC<{
   }
 
   return (
-    <section className={style.chapter} id={id}>
+    <section className="chapter" id={id}>
       {Object.entries(levels).map((level, index) => (
         <figure
           className="level"
           style={{ animationDelay: index * 0.25 + "s" }}
-          key={index}
           onMouseEnter={() => playSound(level[1].color)}
           onClick={() => selectLevel(level[1].id)}
+          key={index}
         >
-          <header className={style.upper}>
+          <header className="upper">
             {level[1].exploration && (
               <img
-                className={`${style.explorationPoint} ${level[1].color}`}
+                className={`exploration-point ${level[1].color}`}
                 style={{ filter: `var(--${level[1].color}-filter)` }}
-                src="/image/exploration_point.png"
-                alt="exploration_point"
+                src="/image/explorationPoint.png"
+                alt="Exploration point"
                 draggable="false"
                 onDragStart={() => false}
               />
@@ -65,7 +64,7 @@ export const Chapter: React.FC<{
           </header>
           {activeSlot.level == level[1].id && (
             <img
-              className={style.selectedLevel}
+              className="selected-level"
               src="/image/shelly.svg"
               alt="selected_level"
               draggable="false"
@@ -73,17 +72,17 @@ export const Chapter: React.FC<{
             />
           )}
           <img
-            className={style.levelIcon}
-            style={{ filter: `var(--${level[1].color}-filter)` }}
+            className="level-icon"
             src={`/image/level_icons/${level[1].icon}.svg`}
+            style={{ filter: `var(--${level[1].color}-filter)` }}
             alt={level[1].icon}
             draggable="false"
             onDragStart={() => false}
           />
           <img
-            className={`${style.levelIcon} ${style.levelIcon_Ghost}`}
-            style={{ filter: `var(--${level[1].color}-ghost-filter)` }}
+            className="level-icon level-icon-ghost"
             src={`/image/level_icons/${level[1].icon}.svg`}
+            style={{ filter: `var(--${level[1].color}-ghost-filter)` }}
             alt={level[1].icon}
             draggable="false"
             onDragStart={() => false}

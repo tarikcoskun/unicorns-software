@@ -1,4 +1,4 @@
-.container {
+main#home {
   max-width: 48rem;
   margin: 0 auto;
   padding: 2rem 0;
@@ -6,12 +6,7 @@
   flex-direction: column;
   gap: 0.5rem;
 
-  img {
-    place-self: center;
-    width: 16rem;
-  }
-
-  .option {
+  a.option {
     cursor: pointer;
     text-decoration: none;
     padding: 0.75rem;

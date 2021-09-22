@@ -1,6 +1,5 @@
 import { Dialog } from "@types";
 import { useState } from "react";
-import style from "@styles/Dialog.module.scss";
 
 export const GameDialog: React.FC<{ dialogs: Array<Partial<Dialog>> }> = ({
   dialogs,
@@ -10,12 +9,13 @@ export const GameDialog: React.FC<{ dialogs: Array<Partial<Dialog>> }> = ({
 
   return (
     <div
-      className={style.overlay}
+      className="dialog-overlay"
       style={{ display: destroyed === true ? "none" : "flex" }}
     >
-      <div className={style.dialog}>
+      <figure className="dialog">
         {dialogs[index].image && (
           <img
+            className="dialog-image"
             src={dialogs[index].image}
             alt="unicorn"
             draggable="false"
@@ -23,18 +23,18 @@ export const GameDialog: React.FC<{ dialogs: Array<Partial<Dialog>> }> = ({
           />
         )}
         {dialogs[index].id ? (
-          <div className={style.introduction}>
+          <div className="introduction">
             <p>{dialogs[index].id}</p>
             <h1>{dialogs[index].title}</h1>
           </div>
         ) : (
-          <div className={style.container}>
+          <div className="container">
             <h1>{dialogs[index].title}</h1>
             <p>{dialogs[index].text}</p>
           </div>
         )}
-      </div>
-      <div className={style.controls}>
+      </figure>
+      <div className="controls">
         <img
           onClick={() => setIndex(index - 1)}
           src="/image/dialog_arrow.png"
