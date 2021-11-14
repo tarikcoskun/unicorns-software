@@ -3,36 +3,33 @@ export const ChapterA = {
     id: 28,
     icon: "hall",
     color: "blue",
-    secret: true,
   },
   "A01.1": {
     id: 29,
     icon: "hall",
     color: "pink",
-    exploration: true,
+    secret: "SecretPassage",
   },
   A02: {
     id: 30,
     icon: "hall",
     color: "blue",
-    secret: true,
   },
   "A02.1": {
     id: 21,
-    icon: "hat_selection",
+    icon: "hat-selection",
     color: "pink",
   },
   A03: {
     id: 31,
     icon: "hall",
     color: "blue",
-    secret: true,
-    exploration: true,
   },
   "A03.1": {
     id: 12,
     icon: "diana",
     color: "pink",
+    secret: "DianasStory",
   },
   A04: {
     id: 32,
@@ -41,12 +38,12 @@ export const ChapterA = {
   },
   A05: {
     id: 33,
-    icon: "skill_test",
+    icon: "skill-test",
     color: "blue",
   },
   A06: {
     id: 34,
-    icon: "difficulty_decision",
+    icon: "difficulty-decision",
     color: "blue",
   },
   A07: {
@@ -68,19 +65,18 @@ export const ChapterA = {
     id: 38,
     icon: "stars",
     color: "blue",
-    secret: true,
   },
   "A10.1": {
     id: 11,
     icon: "stars",
     color: "pink",
-    exploration: true,
+    secret: "LookingAtTheStars",
   },
   "A10.2": {
     id: 61,
     icon: "stars",
     color: "pink",
-    exploration: true,
+    secret: "ExpansionInSpace",
   },
   A11: {
     id: 39,
@@ -103,11 +99,10 @@ export const ChapterA = {
     icon: "spikes",
     color: "orange",
     combat: true,
-    secret: true,
   },
   "A14.1": {
     id: 5,
-    icon: "secret_presentation",
+    icon: "secret-presentation",
     color: "pink",
   },
   A15: {
@@ -118,13 +113,13 @@ export const ChapterA = {
   },
   A16: {
     id: 45,
-    icon: "conveyor_belts",
+    icon: "conveyor-belts",
     color: "orange",
     combat: true,
   },
   A17: {
     id: 46,
-    icon: "conveyor_belts",
+    icon: "conveyor-belts",
     color: "orange",
     combat: true,
   },
@@ -142,7 +137,7 @@ export const ChapterA = {
   },
   A20: {
     id: 49,
-    icon: "demolition_boss",
+    icon: "boss_demolition",
     color: "orange",
     combat: true,
     boss: true,
@@ -151,6 +146,6 @@ export const ChapterA = {
     id: 50,
     icon: "blank",
     color: "blue",
-    exploration: true,
+    secret: "AHardClimb",
   },
 };
