@@ -1,4 +1,4 @@
-export function readableTime(time: number) {
+export default function readableTime(time: number) {
   let hours: number | string = Math.floor(time / 3600);
   time %= 3600;
   let minutes: number | string = Math.floor(time / 60);

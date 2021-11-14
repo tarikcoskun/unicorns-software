@@ -1,21 +1,16 @@
-import {
-  calculatedDifficultyPoints,
-  calculatedExplorationPoints,
-} from "@lib/calculatedPoints";
+import calculated from "./calculatedPoints";
 
-export function readSaveContent(saveFile: string) {
-  let content: Array<string> = <Array<string>>saveFile.match(/[^\r\n]+/g);
-  let level: number = 143;
+export default function readSaveContent(saveFile: string) {
+  const content: string[] = <string[]>saveFile.match(/[^\r\n]+/g);
+  let room: number = 143;
   let gameTimer: number = 0;
   let skillPoints: number = 0;
   let unlockedLevels: number = 0;
   let explorationPoints: number = 0;
   let progressPercentage: number = 0;
 
-  // Set level
-  level = Number(content[content.indexOf("Room") + 1]);
-
-  // Set timer
+  // Set room and times
+  room = Number(content[content.indexOf("Room") + 1]);
   gameTimer = Math.floor(Number(content[content.indexOf("Timer Game") + 1]));
 
   // Calculate skill points
@@ -24,13 +19,13 @@ export function readSaveContent(saveFile: string) {
     128
   );
 
-  for (var index = 0; index < 128; index++) {
-    if (!calculatedDifficultyPoints.includes(index)) continue;
+  for (let index = 0; index < 128; index++) {
+    if (!calculated.difficultyPoints.includes(index)) continue;
     skillPoints += Number(skillPointsArray[index]) + 1;
   }
 
   // Calculate unlocked levels
-  for (var index = 0; index < 128; index++) {
+  for (let index = 0; index < 128; index++) {
     unlockedLevels += Number(
       parseArray(content.indexOf("Level Data: Unlocked"), 128)[index]
     );
@@ -40,15 +35,15 @@ export function readSaveContent(saveFile: string) {
   const explorationPointsIndex = content.indexOf(
     "Collected Exploration Points"
   );
-  const explorationPointsArray = parseArray(explorationPointsIndex, 45);
-  for (var index = 0; index < 45; index++) {
-    if (calculatedExplorationPoints.includes(explorationPointsArray[index]))
+  const explorationPointsArray = parseArray(explorationPointsIndex, 46);
+  for (let index = 0; index < 46; index++) {
+    if (calculated.explorationPoints.includes(explorationPointsArray[index]))
       explorationPoints++;
   }
 
   // Calculate progress percentage
   progressPercentage = Math.floor(
-    ((unlockedLevels / 128 + skillPoints / 244 + explorationPoints / 45) / 3) *
+    ((unlockedLevels / 128 + skillPoints / 244 + explorationPoints / 46) / 3) *
       100
   );
 
@@ -57,10 +52,10 @@ export function readSaveContent(saveFile: string) {
   }
 
   return {
-    level: level,
-    gameTimer: gameTimer,
-    skillPoints: skillPoints,
-    explorationPoints: explorationPoints,
-    progressPercentage: progressPercentage,
+    room,
+    gameTimer,
+    skillPoints,
+    explorationPoints,
+    progressPercentage,
   };
 }

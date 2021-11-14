@@ -1,10 +1,6 @@
 @import "https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap";
-@import "chapter.scss";
-@import "dialog.scss";
-@import "levels.scss";
 @import "slots.scss";
-@import "save.scss";
-@import "home.scss";
+@import "slot.scss";
 
 html {
   --blue: #049aff;
@@ -38,64 +34,24 @@ html {
     hue-rotate(352deg) brightness(102%) contrast(101%)
     drop-shadow(0 0 16px var(--orange-darker));
 
-  ::-webkit-scrollbar {
+  &::-webkit-scrollbar {
     width: 0;
     height: 0;
   }
-}
 
-* {
-  font-family: "Press Start 2P", serif;
-  font-weight: 400;
-  color: #fff;
-  margin: 0;
-  padding: 0;
-  user-select: none;
-}
+  * {
+    font: 20px "Press Start 2P", cursive;
+    color: #ffffff;
+  }
 
-body {
-  background: #000;
-  height: 100vh;
-  overflow-y: hidden;
-  scroll-behavior: smooth;
-}
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: #000000;
 
-#__next {
-  height: 100vh;
-}
-
-@media only screen and (min-width: 90rem) {
-  #__next {
-    zoom: 1.111;
-  }
-}
-@media only screen and (min-width: 100rem) {
-  #__next {
-    zoom: 1.25;
-  }
-}
-@media only screen and (min-width: 112rem) {
-  #__next {
-    zoom: 1.335;
-  }
-}
-@media only screen and (min-width: 125rem) {
-  #__next {
-    zoom: 1.5;
-  }
-}
-@media only screen and (min-width: 135rem) {
-  #__next {
-    zoom: 2;
-  }
-}
-@media only screen and (min-width: 185rem) {
-  #__next {
-    zoom: 3;
-  }
-}
-@media only screen and (min-width: 260rem) {
-  #__next {
-    zoom: 4;
+    #app {
+      height: 100%;
+    }
   }
 }

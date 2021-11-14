@@ -1,0 +1,179 @@
+$transition-easing: cubic-bezier(0.125, 0.25, 0.1, 1.035);
+
+@mixin gray-overlay($offset, $width, $height) {
+  &::after {
+    content: "";
+    top: 0;
+    left: 50%;
+    width: $width;
+    height: $height;
+    position: absolute;
+    transform: translate(-50%);
+    transition: 0.3s $transition-easing;
+    box-shadow: inset $offset 0 48px #00000085,
+      inset (-$offset) 0 48px #00000085;
+  }
+}
+
+label.slot {
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  &:hover {
+    figure.slot-background {
+      border-color: #ffffff;
+      transform: translateY(-7rem);
+      box-shadow: 0 0 12px 8px #660047;
+      &::after {
+        box-shadow: none;
+      }
+      div.slot-content {
+        h1.progress-percentage,
+        h2.timer,
+        h3,
+        img {
+          opacity: 1;
+          filter: grayscale(0) drop-shadow(0 0 6px #e2a6cf70);
+          &::after {
+            box-shadow: none;
+          }
+        }
+        div.progress-shelly {
+          filter: drop-shadow(0 0 8px #811ad4);
+          img {
+            filter: grayscale(0);
+            opacity: 1;
+          }
+          &::after {
+            box-shadow: none;
+          }
+        }
+        footer.points {
+          opacity: 1;
+          &::after {
+            box-shadow: none;
+          }
+        }
+        &.upload-content img.new-game {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  figure.slot-background {
+    height: 480px;
+    width: 100%;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    margin-bottom: 72px;
+    background: #000000;
+    border: 3.5px solid #3f253f;
+    box-shadow: 0 0 12px 8px #00000050;
+    transition: 0.3s $transition-easing;
+    @include gray-overlay(120px, 100%, 100%);
+
+    div.slot-content {
+      display: flex;
+      text-align: center;
+      flex-direction: column;
+      justify-content: center;
+      transition: 0.3s $transition-easing;
+
+      h1.progress-percentage {
+        opacity: 0.5;
+        font-size: 48px;
+      }
+
+      h2.timer {
+        opacity: 0.5;
+        margin: 32px 0;
+        font-size: 24px;
+      }
+
+      div.progress-shelly {
+        height: 187px;
+        position: relative;
+
+        img {
+          left: 50%;
+          bottom: 0;
+          width: 230px;
+          opacity: 0.5;
+          object-fit: cover;
+          position: absolute;
+          filter: grayscale(0.9);
+          object-position: bottom;
+          transform: translateX(-50%);
+          transition: 0.3s $transition-easing;
+        }
+      }
+
+      footer {
+        &.points {
+          display: grid;
+          opacity: 0.5;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          @include gray-overlay(36px, 100%, 100%);
+        }
+
+        &.actions {
+          height: 100%;
+          width: 100%;
+          position: absolute;
+          bottom: -12.5rem;
+          opacity: 0;
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+          transition: 0.2s cubic-bezier(0.125, 0.25, 0.1, 1.035);
+
+          img.delete-save {
+            margin-bottom: 4.5rem;
+            height: 103px;
+            width: 84px;
+            filter: drop-shadow(0 0 8px #66005d);
+          }
+
+          h3.upload-save {
+            margin-bottom: 7.5rem;
+            font-size: 1.25rem;
+            text-align: center;
+            width: 100%;
+          }
+        }
+      }
+
+      &.upload-content {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img.new-game {
+          opacity: 0.5;
+          transition: 0.4s cubic-bezier(0.125, 0.25, 0.1, 1.035);
+          animation: growShrink 3s ease-out infinite;
+        }
+      }
+    }
+  }
+}
+
+@keyframes growShrink {
+  0% {
+    width: 9rem;
+  }
+  50% {
+    width: 11rem;
+  }
+  100% {
+    width: 9rem;
+  }
+}
