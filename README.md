@@ -1,7 +1,27 @@
-# Vue 3 + Vite
+> ⚠️ This project is still in development, there are many bugs and many incomplete things
+### Unicorn's Software
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+This is a toolkit for the game [Will You Snail?](https://store.steampowered.com/app/1115050/Will_You_Snail) Including a save editor, a theme creator and more to come!
 
-## Recommended IDE Setup
+### To-do
 
-- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
+- [ ] Make a theme creator
+- [ ] Saving
+- [ ] Add an option to unlock all skill points, exploration points and dialogs
+- [x] Let users upload save files
+- [x] Parse save files into an easy-to-read format
+- [x] Add sound effects
+- [x] Add every level of the game
+- [x] Re-create the level selector of the game
+
+### Contributing
+
+Pull requests are welcome. Issues are preffered for advices or new ideas. Please test your changes before opening pull requests.
+
+### Running locally
+
+You need [Node.js](https://nodejs.org/en/download) to be installed in your system.
+
+- Clone the repository using `git clone https://github.com/tarikcoskun/unicorns-studio`
+- Install modules using `yarn` or `npm install`
+- Start the project in development mode: `yarn dev` or `npm run dev`
