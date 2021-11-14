@@ -1,18 +1,16 @@
-> ⚠️ This project is still in development, there are many bugs and many incomplete things
+> ⚠️ This project is still under development, there are many bugs and many incomplete stuff
+
 ### Unicorn's Software
 
-This is a toolkit for the game [Will You Snail?](https://store.steampowered.com/app/1115050/Will_You_Snail) Including a save editor, a theme creator and more to come!
+This is an advanced save editor for the game [Will You Snail?](https://store.steampowered.com/app/1115050/Will_You_Snail)
 
 ### To-do
 
-- [ ] Make a theme creator
-- [ ] Saving
-- [ ] Add an option to unlock all skill points, exploration points and dialogs
+- [ ] Generating save files
+- [ ] Add an option to unlock all skill points, secrets and dialogs
 - [x] Let users upload save files
 - [x] Parse save files into an easy-to-read format
-- [x] Add sound effects
 - [x] Add every level of the game
-- [x] Re-create the level selector of the game
 
 ### Contributing
 
@@ -22,6 +20,6 @@ Pull requests are welcome. Issues are preffered for advices or new ideas. Please
 
 You need [Node.js](https://nodejs.org/en/download) to be installed in your system.
 
-- Clone the repository using `git clone https://github.com/tarikcoskun/unicorns-studio`
+- Clone the repository using `git clone https://github.com/tarikcoskun/unicorns-software`
 - Install modules using `yarn` or `npm install`
 - Start the project in development mode: `yarn dev` or `npm run dev`
