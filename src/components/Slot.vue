@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import { PropType } from "vue";
-import uploadSave from "~/lib/uploadSave";
 import { initialSave, ISave } from "@/utils";
-import readableTime from "~/lib/readableTime";
+import { uploadSave } from "~/lib/uploadSave";
+import { readableTime } from "~/lib/readableTime";
 
 defineProps({
   index: {

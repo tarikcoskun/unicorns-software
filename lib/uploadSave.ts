@@ -1,7 +1,7 @@
-import readSaveContent from "./readSaveContent";
+import { readSaveContent } from "./readSaveContent";
 import { useCookies } from "@vueuse/integrations/useCookies";
 
-export default function uploadSave(event: Event, index: number) {
+export function uploadSave(event: Event, index: number) {
   const fileReader: FileReader = new FileReader();
   const files = (event.target as HTMLInputElement).files;
 
