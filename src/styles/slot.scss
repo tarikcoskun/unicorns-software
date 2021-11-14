@@ -15,6 +15,13 @@ $transition-easing: cubic-bezier(0.125, 0.25, 0.1, 1.035);
   }
 }
 
+@mixin no-overlay {
+  opacity: 1;
+  &::after {
+    box-shadow: none;
+  }
+}
+
 label.slot {
   z-index: 1;
   height: 100%;
@@ -24,51 +31,9 @@ label.slot {
   flex-direction: column;
   justify-content: flex-end;
 
-  &:hover {
-    figure.slot-background {
-      border-color: #ffffff;
-      transform: translateY(-7rem);
-      box-shadow: 0 0 12px 8px #660047;
-      &::after {
-        box-shadow: none;
-      }
-      div.slot-content {
-        h1.progress-percentage,
-        h2.timer,
-        h3,
-        img {
-          opacity: 1;
-          filter: grayscale(0) drop-shadow(0 0 6px #e2a6cf70);
-          &::after {
-            box-shadow: none;
-          }
-        }
-        div.progress-shelly {
-          filter: drop-shadow(0 0 8px #811ad4);
-          img {
-            filter: grayscale(0);
-            opacity: 1;
-          }
-          &::after {
-            box-shadow: none;
-          }
-        }
-        footer.points {
-          opacity: 1;
-          &::after {
-            box-shadow: none;
-          }
-        }
-        &.upload-content img.new-game {
-          opacity: 1;
-        }
-      }
-    }
-  }
-
   figure.slot-background {
-    height: 480px;
     width: 100%;
+    height: 480px;
     cursor: pointer;
     user-select: none;
     position: relative;
@@ -115,39 +80,11 @@ label.slot {
         }
       }
 
-      footer {
-        &.points {
-          display: grid;
-          opacity: 0.5;
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-          @include gray-overlay(36px, 100%, 100%);
-        }
-
-        &.actions {
-          height: 100%;
-          width: 100%;
-          position: absolute;
-          bottom: -12.5rem;
-          opacity: 0;
-          display: flex;
-          justify-content: center;
-          align-items: flex-end;
-          transition: 0.2s cubic-bezier(0.125, 0.25, 0.1, 1.035);
-
-          img.delete-save {
-            margin-bottom: 4.5rem;
-            height: 103px;
-            width: 84px;
-            filter: drop-shadow(0 0 8px #66005d);
-          }
-
-          h3.upload-save {
-            margin-bottom: 7.5rem;
-            font-size: 1.25rem;
-            text-align: center;
-            width: 100%;
-          }
-        }
+      footer.points {
+        display: grid;
+        opacity: 0.5;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        @include gray-overlay(36px, 100%, 100%);
       }
 
       &.upload-content {
@@ -161,6 +98,72 @@ label.slot {
           transition: 0.4s cubic-bezier(0.125, 0.25, 0.1, 1.035);
           animation: growShrink 3s ease-out infinite;
         }
+      }
+    }
+
+    footer.actions {
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      bottom: -200px;
+      position: absolute;
+      align-items: flex-end;
+      justify-content: center;
+      transition: 0.2s cubic-bezier(0.125, 0.25, 0.1, 1.035);
+
+      img.delete-save {
+        width: 84px;
+        height: 103px;
+        margin-bottom: 4.5rem;
+        filter: drop-shadow(0 0 8px #66005d);
+      }
+
+      h3.upload-save {
+        width: 100%;
+        text-align: center;
+        font-size: 1.25rem;
+        margin-bottom: 7.5rem;
+        filter: drop-shadow(0 0 8px #c910b9);
+      }
+    }
+  }
+
+  &:hover {
+    figure.slot-background {
+      border-color: #ffffff;
+      transform: translateY(-7rem);
+      box-shadow: 0 0 12px 8px #660047;
+      @include no-overlay();
+
+      div.slot-content {
+        h1.progress-percentage,
+        h2.timer,
+        h3,
+        img {
+          @include no-overlay();
+          filter: grayscale(0) drop-shadow(0 0 6px #e2a6cf70);
+        }
+        div.progress-shelly {
+          filter: drop-shadow(0 0 8px #811ad4);
+          @include no-overlay();
+          img {
+            filter: grayscale(0);
+            opacity: 1;
+          }
+        }
+
+        footer.points {
+          @include no-overlay();
+        }
+
+        &.upload-content img.new-game {
+          @include no-overlay();
+        }
+      }
+
+      footer.actions {
+        @include no-overlay();
       }
     }
   }
