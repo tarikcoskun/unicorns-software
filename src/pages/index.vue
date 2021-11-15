@@ -1,10 +1,16 @@
 <script lang="ts" setup>
 import Slot from "@/components/Slot.vue";
+import { onBeforeMount } from "@vue/runtime-core";
 import { useCookies } from "@vueuse/integrations/useCookies";
 
 const cookies = useCookies(["slots"]);
-const slots = cookies.get("slots");
-if (!slots || slots.length !== 3) cookies.set("slots", [{}, {}, {}]);
+let slots = cookies.get("slots");
+
+onBeforeMount(() => {
+  if (!slots || slots.length !== 3) cookies.set("slots", [{}, {}, {}]);
+});
+
+cookies.addChangeListener((change) => (slots = change.value));
 </script>
 
 <template>

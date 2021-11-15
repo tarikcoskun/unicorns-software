@@ -35,6 +35,7 @@ label.slot {
     width: 100%;
     height: 480px;
     cursor: pointer;
+    overflow: hidden;
     user-select: none;
     position: relative;
     margin-bottom: 72px;
@@ -106,15 +107,14 @@ label.slot {
       width: 100%;
       height: 100%;
       display: flex;
-      bottom: -200px;
+      bottom: -180px;
       position: absolute;
       align-items: flex-end;
       justify-content: center;
       transition: 0.2s cubic-bezier(0.125, 0.25, 0.1, 1.035);
 
       img.delete-save {
-        width: 84px;
-        height: 103px;
+        height: 90px;
         margin-bottom: 4.5rem;
         filter: drop-shadow(0 0 8px #66005d);
       }
@@ -131,6 +131,7 @@ label.slot {
 
   &:hover {
     figure.slot-background {
+      overflow: unset;
       border-color: #ffffff;
       transform: translateY(-7rem);
       box-shadow: 0 0 12px 8px #660047;

@@ -2,6 +2,7 @@
 import { PropType } from "vue";
 import { initialSave, ISave } from "@/utils";
 import { uploadSave } from "~/lib/uploadSave";
+import { deleteSave } from "~/lib/deleteSave";
 import { readableTime } from "~/lib/readableTime";
 
 defineProps({
@@ -77,6 +78,7 @@ defineProps({
           src="/img/delete.png"
           class="delete-save"
           alt="Delete save"
+          @click="deleteSave(index)"
         />
         <h3 class="upload-save" v-else>Upload Save</h3>
       </footer>

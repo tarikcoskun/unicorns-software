@@ -9,7 +9,6 @@
   "dependencies": {
     "@vueuse/core": "^6.8.0",
     "@vueuse/integrations": "^6.8.0",
-    "@vueuse/motion": "^2.0.0-beta.4",
     "universal-cookie": "^4.0.4",
     "vue": "^3.2.16",
     "vue-router": "^4.0.12"
