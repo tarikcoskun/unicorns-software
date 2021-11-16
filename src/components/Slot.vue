@@ -11,18 +11,11 @@ function uploadSave(event: Event, index: number) {
   const fileReader: FileReader = new FileReader();
   const files = (event.target as HTMLInputElement).files;
 
-  const handleFileLoad = () => {
-    store.commit("updateSlot", {
+  if (files && files[0].name.endsWith(".sav"))
+    fileReader.onload = () => store.commit("updateSlot", {
       index: index,
       value: readSaveContent(fileReader.result as string),
     });
-
-    localStorage.setItem("slots", JSON.stringify(store.state.slots));
-    console.log(readSaveContent(fileReader.result as string));
-  };
-
-  if (files && files[0].name.endsWith(".sav"))
-    fileReader.onload = handleFileLoad;
   else alert("Please upload a valid save file");
   if (files) fileReader.readAsText(files[0]);
 }
@@ -32,10 +25,8 @@ function deleteSave(index: number) {
     confirm(
       "Are you sure you want to delete this save slot?\nDeleting this save file will replace it with an empty save slot"
     )
-  ) {
+  )
     store.commit("deleteSlot", index);
-    localStorage.setItem("slots", JSON.stringify(store.state.slots));
-  }
 }
 
 defineProps({

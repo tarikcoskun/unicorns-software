@@ -11,9 +11,11 @@ export default createStore({
     },
     updateSlot(state, slot) {
       state.slots[slot.index] = slot.value;
+      localStorage.setItem("slots", JSON.stringify(state.slots));
     },
     deleteSlot(state, index) {
       state.slots[index] = {};
+      localStorage.setItem("slots", JSON.stringify(state.slots));
     },
   },
 });
