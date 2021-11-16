@@ -21,12 +21,7 @@ function uploadSave(event: Event, index: number) {
 }
 
 function deleteSave(index: number) {
-  if (
-    confirm(
-      "Are you sure you want to delete this save slot?\nDeleting this save file will replace it with an empty save slot"
-    )
-  )
-    store.commit("deleteSlot", index);
+  if (confirm("Are you sure you want to delete this save slot?\nDeleting this save file will replace it with an empty save slot")) store.commit("deleteSlot", index);
 }
 
 defineProps({
