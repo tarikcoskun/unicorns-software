@@ -1,16 +1,12 @@
 <script lang="ts" setup>
+import { useStore } from "vuex";
 import Slot from "@/components/Slot.vue";
-import { onBeforeMount } from "@vue/runtime-core";
-import { useCookies } from "@vueuse/integrations/useCookies";
+import { computed } from "@vue/reactivity";
 
-const cookies = useCookies(["slots"]);
-let slots = cookies.get("slots");
+const store = useStore();
+let slots = computed(() => store.state.slots);
 
-onBeforeMount(() => {
-  if (!slots || slots.length !== 3) cookies.set("slots", [{}, {}, {}]);
-});
-
-cookies.addChangeListener((change) => (slots = change.value));
+store.commit("setSlots");
 </script>
 
 <template>

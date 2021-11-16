@@ -11,7 +11,8 @@
     "@vueuse/integrations": "^6.8.0",
     "universal-cookie": "^4.0.4",
     "vue": "^3.2.16",
-    "vue-router": "^4.0.12"
+    "vue-router": "^4.0.12",
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
     "@types/node": "^16.11.6",

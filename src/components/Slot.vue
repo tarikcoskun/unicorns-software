@@ -1,9 +1,39 @@
 <script lang="ts" setup>
 import { PropType } from "vue";
+import { useStore } from "vuex";
 import { initialSave, ISave } from "@/utils";
-import { uploadSave } from "~/lib/uploadSave";
-import { deleteSave } from "~/lib/deleteSave";
 import { readableTime } from "~/lib/readableTime";
+import { readSaveContent } from "~/lib/readSaveContent";
+
+const store = useStore();
+
+function uploadSave(event: Event, index: number) {
+  const fileReader: FileReader = new FileReader();
+  const files = (event.target as HTMLInputElement).files;
+
+  const handleFileLoad = () => {
+    store.commit("updateSlot", {
+      index: index,
+      value: readSaveContent(fileReader.result as string),
+    });
+    localStorage.setItem("slots", JSON.stringify(store.state.slots));
+    console.log(readSaveContent(fileReader.result as string));
+  };
+
+  fileReader.onload = handleFileLoad;
+  if (files) fileReader.readAsText(files[0]);
+}
+
+function deleteSave(index: number) {
+  if (
+    confirm(
+      "Are you sure you want to delete this save slot?\nDeleting this save file will replace it with an empty save slot"
+    )
+  ) {
+    store.commit("deleteSlot", index);
+    localStorage.setItem("slots", JSON.stringify(store.state.slots));
+  }
+}
 
 defineProps({
   index: {
@@ -16,7 +46,7 @@ defineProps({
     default: "slot",
   },
   slot: {
-    type: Object as PropType<ISave>,
+    type: Object as PropType<Partial<ISave>>,
     required: false,
     default: initialSave,
   },
@@ -27,36 +57,36 @@ defineProps({
   <label class="slot" :for="`save-${index}`">
     <figure class="slot-background">
       <div class="slot-content" v-if="type === 'save'">
-        <h1 className="progress-percentage">{{ slot?.progressPercentage }}%</h1>
+        <h1 className="progress-percentage">{{ slot.progressPercentage }}%</h1>
         <div class="progress-shelly">
           <img
             src="/img/shelly-outline.png"
-            :alt="String(slot?.progressPercentage)"
+            :alt="String(slot.progressPercentage)"
             draggable="false"
           />
           <img
             class="shelly-filler"
             src="/img/shelly-filler.png"
-            :style="`height: ${slot?.progressPercentage}%`"
+            :style="`height: ${slot.progressPercentage}%`"
             draggable="false"
           />
         </div>
-        <h2 class="timer">{{ readableTime(slot?.gameTimer) }}</h2>
+        <h2 class="timer">{{ readableTime(slot.gameTimer as number) }}</h2>
 
         <footer class="points">
           <div>
             <img
               src="/img/difficulty-point.png"
-              :alt="String(slot?.skillPoints)"
+              :alt="String(slot.skillPoints)"
             />
-            <h3>{{ slot?.skillPoints }}/244</h3>
+            <h3>{{ slot.skillPoints }}/244</h3>
           </div>
           <div>
             <img
               src="/img/exploration-point.png"
-              :alt="String(slot?.explorationPoints)"
+              :alt="String(slot.explorationPoints)"
             />
-            <h3>{{ slot?.explorationPoints }}/46</h3>
+            <h3>{{ slot.explorationPoints }}/46</h3>
           </div>
         </footer>
       </div>
