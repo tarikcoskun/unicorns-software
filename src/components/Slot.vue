@@ -16,11 +16,14 @@ function uploadSave(event: Event, index: number) {
       index: index,
       value: readSaveContent(fileReader.result as string),
     });
+
     localStorage.setItem("slots", JSON.stringify(store.state.slots));
     console.log(readSaveContent(fileReader.result as string));
   };
 
-  fileReader.onload = handleFileLoad;
+  if (files && files[0].name.endsWith(".sav"))
+    fileReader.onload = handleFileLoad;
+  else alert("Please upload a valid save file");
   if (files) fileReader.readAsText(files[0]);
 }
 
