@@ -6,6 +6,7 @@ export default createStore({
   },
   mutations: {
     setSlots(state) {
+      if (!localStorage.slots) localStorage.slots = JSON.stringify(state.slots);
       state.slots = JSON.parse(localStorage.slots);
     },
     updateSlot(state, slot) {
