@@ -4,7 +4,7 @@ import Slot from "@/components/Slot.vue";
 import { computed } from "@vue/reactivity";
 
 const store = useStore();
-let slots = computed(() => store.state.slots);
+const slots = computed(() => store.state.slots);
 
 store.commit("setSlots");
 </script>

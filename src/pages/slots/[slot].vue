@@ -1,6 +1,20 @@
 <script lang="ts" setup>
 import * as levels from "~/lib/levels";
 import Chapter from "@/components/Chapter.vue";
+
+import { useStore } from "vuex";
+import { useRoute } from "vue-router";
+import { computed } from "@vue/reactivity";
+
+const store = useStore();
+const slots = computed(() => store.state.slots);
+
+store.commit("setSlots");
+
+const slot = computed(() => {
+  const route = useRoute();
+  return slots.value
+});
 </script>
 
 <template>

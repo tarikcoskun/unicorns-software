@@ -1,6 +1,6 @@
 import { RouteRecordRaw, createRouter, createWebHistory } from "vue-router";
 import Slots from "@/pages/index.vue";
-import Save from "@/pages/slots/[slot].vue";
+import Editor from "@/pages/slots/[slot].vue";
 
 const routes: RouteRecordRaw[] = [
   {
@@ -11,7 +11,7 @@ const routes: RouteRecordRaw[] = [
   {
     path: "/slots/:slot",
     name: "Slot",
-    component: Save,
+    component: Editor,
   },
   {
     path: "/:pathMatch(.*)*",
