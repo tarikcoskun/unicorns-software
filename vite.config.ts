@@ -11,13 +11,31 @@ export default defineConfig({
   plugins: [
     Vue(),
     VitePWA({
-      includeAssets: ["favicon.png", "robots.txt"],
+      includeAssets: ["favicon.svg", "favicon.ico", "robots.txt", "apple-touch-icon.png"],
       registerType: "autoUpdate",
       manifest: {
         name: "Unicorn's Software",
         short_name: "Unicorn's Software",
         description: "Unicorn's Software is a save editor for the game Will You Snail",
         theme_color: "#ff4dff",
+        icons: [
+          {
+            src: 'pwa-192x192.png',
+            sizes: '192x192',
+            type: 'image/png',
+          },
+          {
+            src: 'pwa-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+          },
+          {
+            src: 'pwa-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'any maskable',
+          }
+        ]
       },
     }),
   ],
