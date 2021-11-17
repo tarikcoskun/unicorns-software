@@ -35,9 +35,7 @@ defineProps({
       />
       <h1
         :style="`filter: drop-shadow(0 0 8px var(--${level[1].color}-darker)); color: var(--${level[1].color})`"
-      >
-        {{ level[0] }}
-      </h1>
+      >{{ level[0] }}</h1>
     </figure>
   </section>
 </template>

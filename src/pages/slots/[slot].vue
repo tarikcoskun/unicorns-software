@@ -9,12 +9,13 @@ import { computed } from "@vue/reactivity";
 const store = useStore();
 const slots = computed(() => store.state.slots);
 
-store.commit("setSlots");
+store.commit("initializeSlots");
 
-const slot = computed(() => {
+const activeSlot = computed(() => {
   const route = useRoute();
-  return slots.value
+  return slots.value[Number(route.params.slot)]
 });
+console.log(activeSlot.value)
 </script>
 
 <template>
@@ -27,10 +28,11 @@ const slot = computed(() => {
           max="244"
           type="number"
           maxlength="3"
+          :value="activeSlot.skillPoints"
         />
         <label for="skill-points">/244</label>
-        <img src="/img/difficulty-point.png" alt="Skill points" />
       </h1>
+      <img src="/img/difficulty-point.png" alt="Skill points" />
     </div>
     <div class="point-container">
       <h1>
@@ -40,10 +42,11 @@ const slot = computed(() => {
           max="46"
           type="number"
           maxlength="2"
+          :value="activeSlot.explorationPoints"
         />
         <label for="exploration-points">/46</label>
-        <img src="/img/exploration-point.png" alt="Exploration points" />
       </h1>
+      <img src="/img/exploration-point.png" alt="Exploration points" />
     </div>
   </header>
 

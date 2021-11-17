@@ -7,10 +7,11 @@ This is an advanced save editor for the game [Will You Snail?](https://store.ste
 ### To-do
 
 - [ ] Generating save files
+- [ ] Maybe add localization support
 - [ ] Add an option to unlock all skill points, secrets and dialogs
 - [x] Let users upload save files
-- [x] Parse save files into an easy-to-read format
 - [x] Add every level of the game
+- [x] Parse save files into an easy-to-read format
 
 ### Contributing
 

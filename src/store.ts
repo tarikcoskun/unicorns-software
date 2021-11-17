@@ -5,7 +5,7 @@ export default createStore({
     slots: [{}, {}, {}],
   },
   mutations: {
-    setSlots(state) {
+    initializeSlots(state) {
       if (!localStorage.slots) localStorage.setItem("slots", JSON.stringify(state.slots));
       state.slots = JSON.parse(localStorage.slots);
     },
