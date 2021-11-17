@@ -14,6 +14,7 @@ export default defineConfig({
       includeAssets: ["favicon.svg", "favicon.ico", "robots.txt", "apple-touch-icon.png"],
       registerType: "autoUpdate",
       manifest: {
+        display: "fullscreen",
         name: "Unicorn's Software",
         short_name: "Unicorn's Software",
         description: "Unicorn's Software is a save editor for the game Will You Snail",
