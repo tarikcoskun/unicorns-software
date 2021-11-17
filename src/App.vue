@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import ReloadPWA from "./components/ReloadPWA.vue";
+import PWAToast from "./components/PWAToast.vue";
 import { useStore } from "vuex";
 
 const store = useStore();
@@ -10,7 +10,7 @@ store.commit("initializeSlots");
   <div>
     <router-view v-slot="{ Component }">
       <component :is="Component" />
-      <ReloadPWA />
+      <PWAToast />
     </router-view>
   </div>
 </template>
