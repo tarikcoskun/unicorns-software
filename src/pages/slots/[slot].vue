@@ -9,13 +9,10 @@ import { computed } from "@vue/reactivity";
 const store = useStore();
 const slots = computed(() => store.state.slots);
 
-store.commit("initializeSlots");
-
 const activeSlot = computed(() => {
   const route = useRoute();
   return slots.value[Number(route.params.slot)]
 });
-console.log(activeSlot.value)
 </script>
 
 <template>

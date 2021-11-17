@@ -5,8 +5,6 @@ import { computed } from "@vue/reactivity";
 
 const store = useStore();
 const slots = computed(() => store.state.slots);
-
-store.commit("initializeSlots");
 </script>
 
 <template>
