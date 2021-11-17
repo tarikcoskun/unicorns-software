@@ -17,7 +17,7 @@ export default defineConfig({
         name: "Unicorn's Software",
         short_name: "Unicorn's Software",
         description: "Unicorn's Software is a save editor for the game Will You Snail",
-        theme_color: "#ff4dff",
+        theme_color: "#000000",
         icons: [
           {
             src: 'pwa-192x192.png',
