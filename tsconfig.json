@@ -10,12 +10,11 @@
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
-    "lib": ["ESNext", "DOM", "WebWorker"],
     "paths": {
       "@/*": ["src/*"],
       "~/*": ["./*"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.vue"],
+  "include": ["lib/**/*.ts", "src/**/*.ts", "src/**/*.d.ts", "src/**/*.vue"],
   "exclude": ["node_modules", "**/*.worker.ts"]
 }
