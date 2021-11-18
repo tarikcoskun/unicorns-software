@@ -43,7 +43,7 @@ defineProps({
 </script>
 
 <template>
-  <component :is="type === 'save' ? 'router-link' : 'div'" :to="`/slots/${index}`">
+  <component :is="type === 'save' ? 'router-link' : 'div'" :to="`/editor/${index}`">
     <label class="slot" :for="`save-${index}`">
       <figure class="slot-background">
         <div class="slot-content" v-if="type === 'save'">

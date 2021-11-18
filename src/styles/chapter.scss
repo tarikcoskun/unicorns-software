@@ -71,6 +71,7 @@ main.levels {
       position: absolute;
       background: #372d46;
     }
+
     &::after {
       content: attr(id);
       left: 6px;
@@ -82,6 +83,7 @@ main.levels {
 
     figure.level {
       gap: 16px;
+      margin: 0;
       width: 64px;
       display: flex;
       position: relative;

@@ -16,6 +16,7 @@ defineProps({
     <figure class="level" v-for="level in Object.entries(levels)">
       <header class="upper">
         <img
+          v-if="level[1].secret"
           src="/img/exploration-point.png"
           alt="Exploration point"
           :style="`filter: var(--${level[1].color}-filter)`"
@@ -26,12 +27,6 @@ defineProps({
         :alt="level[1].icon"
         :src="`/img/level-icons/${level[1].icon}.png`"
         :style="`filter: var(--${level[1].color}-filter)`"
-      />
-      <img
-        class="level-icon level-icon-ghost"
-        :alt="level[1].icon"
-        :src="`/img/level-icons/${level[1].icon}.png`"
-        :style="`filter: var(--${level[1].color}-ghost-filter)`"
       />
       <h1
         :style="`filter: drop-shadow(0 0 8px var(--${level[1].color}-darker)); color: var(--${level[1].color})`"

@@ -9,10 +9,10 @@ import { computed } from "@vue/reactivity";
 const store = useStore();
 const slots = computed(() => store.state.slots);
 
-const activeSlot = computed(() => {
-  const route = useRoute();
-  return slots.value[Number(route.params.slot)]
-});
+const route = useRoute();
+const activeSlot = computed(() => slots.value[Number(route.params.slot)]);
+
+if (!slots.value[Number(route.params.slot)]) location.href = "/"
 </script>
 
 <template>

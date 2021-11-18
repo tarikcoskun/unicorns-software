@@ -1,6 +1,6 @@
 import { RouteRecordRaw, createRouter, createWebHistory } from "vue-router";
 import Slots from "@/pages/index.vue";
-import Editor from "@/pages/slots/[slot].vue";
+import Editor from "@/pages/editor/[slot].vue";
 
 const routes: RouteRecordRaw[] = [
   {
@@ -9,7 +9,7 @@ const routes: RouteRecordRaw[] = [
     component: Slots,
   },
   {
-    path: "/slots/:slot",
+    path: "/editor/:slot",
     name: "Slot",
     component: Editor,
   },
