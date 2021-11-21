@@ -2,17 +2,23 @@ import { ISave } from "@/utils";
 import calculated from "./calculatedPoints";
 
 export function generateSave(index: number, data: Partial<ISave>) {
-  const explorationPoints = [String(data.explorationPoints), ...calculated.explorationPoints.slice(0, data.explorationPoints)];
+  const explorationPoints = [data.explorationPoints, ...calculated.explorationPoints.slice(0, data.explorationPoints)];
 
-  const skillPoints = ["128"];
   const unlockedLevels = ["128"];
+  const skillPoints = ["128"];
 
   // Fill the array with 0s
-  for (let index = 0; index < 128; index++) { skillPoints.push("0"); unlockedLevels.push("1") }
+  for (let index = 0; index < 128; index++) { skillPoints.push("-1"); unlockedLevels.push("1") }
 
-  // Set the difficulty
+  // Get the right amount of skill points (hopefully)
+  let maxSkillPoints = data.skillPoints;
   for (let index = 1; index < 129; index++) {
-    if (calculated.difficultyPoints.includes(index)) skillPoints[index + 1] = "3"
+    if (!maxSkillPoints || maxSkillPoints === 0) break;
+    if (!calculated.difficultyPoints.includes(index)) continue;
+
+    if (!(maxSkillPoints -3 < 0)) { skillPoints[index + 1] = "3"; maxSkillPoints -= 3 }
+    else if (!(maxSkillPoints -2 < 0)) { skillPoints[index + 1] = "2"; maxSkillPoints -= 2 }
+    else if (!(maxSkillPoints -1 < 0)) { skillPoints[index + 1] = "1"; maxSkillPoints -= 1 }
   }
 
   const generated = `Game Version\r\nBeta_4.7\r\n\r\nCollected Exploration Points\r\n${explorationPoints.join("\r\n")}\r\n\r\nLevel Data: Unlocked\r\n${unlockedLevels.join("\r\n")}\r\n\r\nLevel Data: Beaten On Difficulty\r\n${skillPoints.join("\r\n")}`
