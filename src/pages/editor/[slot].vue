@@ -1,14 +1,14 @@
 <script lang="ts" setup>
-import { useStore } from "vuex";
-import { useRoute } from "vue-router";
-import { computed } from "@vue/reactivity";
-import { generateSave } from "~/lib/generateSave";
+import { generateSave } from "~/lib/generateSave"
+import { computed } from "@vue/reactivity"
+import { useRoute } from "vue-router"
+import { useStore } from "vuex"
 
-const store = useStore();
-const slots = computed(() => store.state.slots);
+const store = useStore()
+const slots = computed(() => store.state.slots)
 
-const route = useRoute();
-const activeSlot = computed(() => slots.value[Number(route.params.slot)]);
+const route = useRoute()
+const activeSlot = computed(() => slots.value[Number(route.params.slot)])
 
 if (!slots.value[Number(route.params.slot)]) location.href = "/"
 </script>

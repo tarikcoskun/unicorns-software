@@ -3,126 +3,126 @@ export const ChapterB = {
     id: 51,
     icon: "puzzle",
     color: "blue",
-    secret: "FirstPuzzleRewardInB",
+    secret: "FirstPuzzleRewardInB"
   },
   B02: {
     id: 52,
     icon: "puzzle",
-    color: "blue",
+    color: "blue"
   },
   B03: {
     id: 53,
     icon: "puzzle",
     color: "blue",
-    secret: "2ndPuzzleRewardInB",
+    secret: "2ndPuzzleRewardInB"
   },
   "B03.1": {
     id: 54,
     icon: "puzzle",
     color: "pink",
-    secret: "TheDoubleLine",
+    secret: "TheDoubleLine"
   },
   B04: {
     id: 55,
     icon: "squids-brain",
-    color: "blue",
+    color: "blue"
   },
   "B04.1": {
     id: 9,
     icon: "squids-brain",
-    color: "pink",
+    color: "pink"
   },
   "B04.2": {
     id: 19,
     icon: "firewall",
-    color: "pink",
+    color: "pink"
   },
   "B04.3": {
     id: 1,
     icon: "squids-heart",
-    color: "pink",
+    color: "pink"
   },
   "B04.4": {
     id: 7,
     icon: "prediction-processing-unit",
     color: "pink",
-    secret: "ResetSquid",
+    secret: "ResetSquid"
   },
   B05: {
     id: 56,
     icon: "universe",
-    color: "blue",
+    color: "blue"
   },
   B06: {
     id: 57,
     icon: "universe",
-    color: "blue",
+    color: "blue"
   },
   B07: {
     id: 58,
     icon: "universe",
-    color: "blue",
+    color: "blue"
   },
   B08: {
     id: 59,
     icon: "lasers",
     color: "orange",
-    combat: true,
+    combat: true
   },
   B09: {
     id: 60,
     icon: "spikes",
     color: "orange",
-    combat: true,
+    combat: true
   },
   B10: {
     id: 62,
     icon: "laser-show",
     color: "orange",
-    combat: true,
+    combat: true
   },
   B11: {
     id: 63,
     icon: "lasers",
     color: "orange",
-    combat: true,
+    combat: true
   },
   B12: {
     id: 64,
     icon: "blocks",
     color: "orange",
-    combat: true,
+    combat: true
   },
   B13: {
     id: 65,
     icon: "conveyor-belts",
     color: "orange",
-    combat: true,
+    combat: true
   },
   B14: {
     id: 66,
     icon: "laser-show",
     color: "orange",
-    combat: true,
+    combat: true
   },
   B15: {
     id: 67,
     icon: "combat",
     color: "orange",
-    combat: true,
+    combat: true
   },
   B16: {
     id: 68,
     icon: "combat",
     color: "orange",
     combat: true,
-    secret: "CanOnlyReachWithWater",
+    secret: "CanOnlyReachWithWater"
   },
   B17: {
     id: 69,
     icon: "combat",
     color: "orange",
-    combat: true,
+    combat: true
   },
   B18: {
     id: 70,
@@ -130,11 +130,11 @@ export const ChapterB = {
     color: "orange",
     combat: true,
     boss: true,
-    secret: "TopOfDiscoBoss",
+    secret: "TopOfDiscoBoss"
   },
   B19: {
     id: 71,
     icon: "blank",
-    color: "blue",
-  },
-};
+    color: "blue"
+  }
+}

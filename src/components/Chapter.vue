@@ -2,13 +2,13 @@
 defineProps({
   id: {
     type: String,
-    required: true,
+    required: true
   },
   levels: {
     type: Object,
-    required: true,
-  },
-});
+    required: true
+  }
+})
 </script>
 
 <template>

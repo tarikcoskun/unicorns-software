@@ -1,12 +1,13 @@
+/// <reference types="vite/client" />
+
 declare module "*.vue" {
-  import type { defineComponent } from "vue";
-  const Component: ReturnType<typeof defineComponent>;
-  export default Component;
+  import type { defineComponent } from "vue"
+  const Component: ReturnType<typeof defineComponent>
+  export default Component
 }
 
-declare module 'virtual:pwa-register/vue' {
-  // @ts-ignore ignore when vue is not installed
-  import type { Ref } from 'vue'
+declare module "virtual:pwa-register/vue" {
+  import type { Ref } from "vue"
 
   export type RegisterSWOptions = {
     immediate?: boolean

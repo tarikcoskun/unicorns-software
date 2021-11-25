@@ -2,7 +2,7 @@
 
 ### Unicorn's Software
 
-This is an advanced save editor for the game [Will You Snail?](https://store.steampowered.com/app/1115050/Will_You_Snail)
+This is an advanced save editor for [Will You Snail?](https://store.steampowered.com/app/1115050/Will_You_Snail)
 
 ### To-do
 

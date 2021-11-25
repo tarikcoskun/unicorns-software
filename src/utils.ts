@@ -1,9 +1,9 @@
 export interface ISave {
-  room: number;
-  gameTimer: number;
-  skillPoints: number;
-  explorationPoints: number;
-  progressPercentage: number;
+  room: number
+  gameTimer: number
+  skillPoints: number
+  explorationPoints: number
+  progressPercentage: number
 }
 
 export const initialSave: ISave = {
@@ -11,5 +11,5 @@ export const initialSave: ISave = {
   gameTimer: 0,
   skillPoints: 0,
   explorationPoints: 0,
-  progressPercentage: 0,
-};
+  progressPercentage: 0
+}

@@ -1,45 +1,45 @@
 <script lang="ts" setup>
-import { PropType } from "vue";
-import { useStore } from "vuex";
-import { initialSave, ISave } from "@/utils";
-import { readableTime } from "~/lib/readableTime";
-import { readSaveContent } from "~/lib/readSaveContent";
+import { readSaveContent } from "~/lib/readSaveContent"
+import { readableTime } from "~/lib/readableTime"
+import { initialSave, ISave } from "@/utils"
+import { useStore } from "vuex"
+import { PropType } from "vue"
 
-const store = useStore();
+const store = useStore()
 
 function uploadSave(event: Event, index: number) {
-  const fileReader: FileReader = new FileReader();
-  const files = (event.target as HTMLInputElement).files;
+  const fileReader: FileReader = new FileReader()
+  const files = (event.target as HTMLInputElement).files
 
   if (files && files[0].name.endsWith(".sav"))
     fileReader.onload = () => store.commit("updateSlot", {
       index: index,
-      value: readSaveContent(fileReader.result as string),
-    });
-  else alert("Please upload a valid save file");
-  if (files) fileReader.readAsText(files[0]);
+      value: readSaveContent(fileReader.result as string)
+    })
+  else alert("Please upload a valid save file")
+  if (files) fileReader.readAsText(files[0])
 }
 
 function deleteSave(index: number) {
-  if (confirm("Are you sure you want to delete this save slot?\nDeleting this save file will replace it with an empty save slot")) store.commit("deleteSlot", index);
+  if (confirm("Are you sure you want to delete this save slot?\nDeleting this save file will replace it with an empty save slot")) store.commit("deleteSlot", index)
 }
 
 defineProps({
   index: {
     type: Number,
-    required: true,
+    required: true
   },
   type: {
     type: String,
     required: false,
-    default: "slot",
+    default: "slot"
   },
   slot: {
     type: Object as PropType<Partial<ISave>>,
     required: false,
-    default: initialSave,
-  },
-});
+    default: initialSave
+  }
+})
 </script>
 
 <template>

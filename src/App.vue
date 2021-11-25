@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import PWAToast from "./components/PWAToast.vue";
-import { useStore } from "vuex";
+import PWAToast from "./components/PWAToast.vue"
+import { useStore } from "vuex"
 
-const store = useStore();
-store.commit("initializeSlots");
+const store = useStore()
+store.commit("initializeSlots")
 </script>
 
 <template>

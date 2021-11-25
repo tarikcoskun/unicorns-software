@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { useRegisterSW } from 'virtual:pwa-register/vue'
+import { useRegisterSW } from "virtual:pwa-register/vue"
 
 const { offlineReady, needRefresh, updateServiceWorker } = useRegisterSW()
-const close = async() => {
+const close = async () => {
   offlineReady.value = false
   needRefresh.value = false
 }

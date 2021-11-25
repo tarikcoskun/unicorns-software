@@ -2,10 +2,10 @@
  * @type {import('vite').UserConfig}
  */
 
-import { resolve } from "path";
-import { defineConfig } from "vite";
-import Vue from "@vitejs/plugin-vue";
 import { VitePWA } from "vite-plugin-pwa"
+import Vue from "@vitejs/plugin-vue"
+import { defineConfig } from "vite"
+import { resolve } from "path"
 
 export default defineConfig({
   plugins: [
@@ -17,7 +17,7 @@ export default defineConfig({
         display: "minimal-ui",
         name: "Unicorn's Software",
         short_name: "Unicorn's Software",
-        description: "Unicorn's Software is a save editor for the game Will You Snail",
+        description: "Unicorn's Software is a save editor for Will You Snail",
         theme_color: "#000000",
         icons: [
           {
@@ -37,13 +37,13 @@ export default defineConfig({
             purpose: 'any maskable',
           }
         ]
-      },
-    }),
+      }
+    })
   ],
   resolve: {
     alias: [
       { find: "@", replacement: resolve(__dirname, "src") },
-      { find: "~", replacement: resolve(__dirname, ".") },
-    ],
-  },
+      { find: "~", replacement: resolve(__dirname, ".") }
+    ]
+  }
 });

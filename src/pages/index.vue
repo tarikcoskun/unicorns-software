@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import { useStore } from "vuex";
-import Slot from "@/components/Slot.vue";
-import { computed } from "@vue/reactivity";
+import { computed } from "@vue/reactivity"
+import Slot from "@/components/Slot.vue"
+import { useStore } from "vuex"
 
-const store = useStore();
-const slots = computed(() => store.state.slots);
+const store = useStore()
+const slots = computed(() => store.state.slots)
 </script>
 
 <template>

@@ -1,23 +1,23 @@
-import { RouteRecordRaw, createRouter, createWebHistory } from "vue-router";
-import Slots from "@/pages/index.vue";
-import Editor from "@/pages/editor/[slot].vue";
+import { RouteRecordRaw, createRouter, createWebHistory } from "vue-router"
+import Slots from "@/pages/index.vue"
+import Editor from "@/pages/editor/[slot].vue"
 
 const routes: RouteRecordRaw[] = [
   {
     path: "/",
     name: "Home",
-    component: Slots,
+    component: Slots
   },
   {
     path: "/editor/:slot",
     name: "Slot",
-    component: Editor,
+    component: Editor
   },
   {
     path: "/:pathMatch(.*)*",
-    redirect: "/",
-  },
-];
+    redirect: "/"
+  }
+]
 
-const router = createRouter({ history: createWebHistory(), routes });
-export default router;
+const router = createRouter({ history: createWebHistory(), routes })
+export default router
