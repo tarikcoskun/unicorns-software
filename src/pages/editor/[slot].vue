@@ -23,8 +23,7 @@ if (!slots.value[Number(route.params.slot)]) location.href = "/"
           max="244"
           type="number"
           maxlength="3"
-          v-model="activeSlot.skillPoints"
-        />
+          v-model="activeSlot.skillPoints" />
         <label for="skill-points">/244</label>
       </h1>
       <img src="/img/difficulty-point.png" alt="Skill points" />
@@ -37,8 +36,7 @@ if (!slots.value[Number(route.params.slot)]) location.href = "/"
           max="46"
           type="number"
           maxlength="2"
-          v-model="activeSlot.explorationPoints"
-        />
+          v-model="activeSlot.explorationPoints" />
         <label for="exploration-points">/46</label>
       </h1>
       <img src="/img/exploration-point.png" alt="Exploration points" />
