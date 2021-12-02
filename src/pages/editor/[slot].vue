@@ -42,7 +42,7 @@ if (!slots.value[Number(route.params.slot)]) location.href = "/"
       <img src="/img/exploration-point.png" alt="Exploration points" />
     </div>
 
-    <a class="download" @click.prevent="generateSave(Number(route.params.slot), { skillPoints: activeSlot.skillPoints, explorationPoints: activeSlot.explorationPoints })">Download Save</a>
+    <a id="download" @click.prevent="generateSave(Number(route.params.slot), { skillPoints: activeSlot.skillPoints, explorationPoints: activeSlot.explorationPoints })">Generate Save</a>
   </header>
 
   <!-- <main class="levels">
