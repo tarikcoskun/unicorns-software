@@ -66,7 +66,7 @@ a, div {
         }
 
         div.progress-shelly {
-          height: 187px;
+          height: 188px;
           position: relative;
           transition: 0.1s $transition-easing;
           @include gray-overlay(48px, 75%, 100%);
@@ -120,7 +120,7 @@ a, div {
         img.delete-save {
           height: 90px;
           margin-bottom: 4.5rem;
-          filter: drop-shadow(0 0 8px #66005d);
+          filter: drop-shadow(0 0 8px #4a0026);
         }
 
         h3.upload-save {
@@ -138,7 +138,7 @@ a, div {
         overflow: unset;
         border-color: #ffffff;
         transform: translateY(-7rem);
-        box-shadow: 0 0 12px 8px #660047;
+        box-shadow: 0 0 12px 8px #4a0026;
         @include no-overlay();
 
         div.slot-content {
@@ -147,7 +147,7 @@ a, div {
             filter: grayscale(0) drop-shadow(0 0 6px #e2a6cf70);
           }
           div.progress-shelly {
-            filter: drop-shadow(0 0 8px #811ad4);
+            filter: drop-shadow(0 0 8px #2a4dc9);
             @include no-overlay();
             img {
               filter: grayscale(0);

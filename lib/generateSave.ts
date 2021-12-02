@@ -1,5 +1,5 @@
-import calculated from "./calculatedPoints"
 import { readSaveContent } from "./readSaveContent"
+import calculated from "./calculatedPoints"
 import { ISave } from "@/utils"
 
 export function generateSave(index: number, data: Partial<ISave>) {
