@@ -15,6 +15,8 @@ if (!slots.value[Number(route.params.slot)]) location.href = "/"
 
 <template>
   <header class="points">
+    <router-link to="/" class="button slots">SLOTS</router-link>
+
     <div class="point-container">
       <h1>
         <input
@@ -42,7 +44,7 @@ if (!slots.value[Number(route.params.slot)]) location.href = "/"
       <img src="/img/exploration-point.png" alt="Exploration points" />
     </div>
 
-    <a class="button" @click.prevent="generateSave(Number(route.params.slot), { skillPoints: activeSlot.skillPoints, explorationPoints: activeSlot.explorationPoints })">GENERATE</a>
+    <a class="button generate" @click.prevent="generateSave(Number(route.params.slot), { skillPoints: activeSlot.skillPoints, explorationPoints: activeSlot.explorationPoints })">GENERATE</a>
   </header>
 
   <!-- <main class="levels">
