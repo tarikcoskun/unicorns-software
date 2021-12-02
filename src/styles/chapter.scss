@@ -1,11 +1,9 @@
 header.points {
-  left: 50%;
-  top: 16px;
+  padding: 16px;
   gap: 80px;
   display: flex;
-  position: fixed;
   align-items: center;
-  transform: translateX(-50%);
+  justify-content: center;
 
   div.point-container {
     gap: 16px;
@@ -14,7 +12,7 @@ header.points {
     justify-content: center;
 
     h1 {
-      gap: 4px;
+      gap: 8px;
       display: flex;
       font-size: 20px;
       align-items: center;
@@ -26,10 +24,10 @@ header.points {
         background: none;
         border-radius: 0;
         text-align: right;
-        padding: 4px;
+        padding: 4px 6px;
         box-sizing: content-box;
         -moz-appearance: textfield;
-        border: 2px solid #c737ff;
+        border: 3px solid #c737ff;
         filter: drop-shadow(0 0 8px #ff72ff90);
         &::-webkit-outer-spin-button,
         &::-webkit-inner-spin-button {
@@ -42,6 +40,8 @@ header.points {
     }
     img { filter: drop-shadow(0 0 8px #8c82d8); }
   }
+
+  a.button { position: absolute; right: 16px; }
 }
 
 main.levels {
