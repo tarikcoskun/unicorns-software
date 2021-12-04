@@ -5,12 +5,12 @@ import Editor from "@/pages/editor/[slot].vue"
 const routes: RouteRecordRaw[] = [
   {
     path: "/",
-    name: "Home",
+    name: "home",
     component: Slots
   },
   {
     path: "/editor/:slot",
-    name: "Slot",
+    name: "editor",
     component: Editor
   },
   {

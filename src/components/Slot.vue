@@ -50,6 +50,7 @@ defineProps({
           <h1 className="progress-percentage">{{ slot.progressPercentage }}%</h1>
           <div class="progress-shelly">
             <img
+              class="shelly-outline"
               src="/img/shelly-outline.png"
               :alt="String(slot.progressPercentage)"
               draggable="false"

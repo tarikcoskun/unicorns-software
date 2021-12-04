@@ -3,6 +3,7 @@ import { generateSave } from "~/lib/generateSave"
 import { computed } from "@vue/reactivity"
 import { useRoute } from "vue-router"
 import { useStore } from "vuex"
+import router from "@/router"
 
 const store = useStore()
 const slots = computed(() => store.state.slots)
@@ -10,13 +11,11 @@ const slots = computed(() => store.state.slots)
 const route = useRoute()
 const activeSlot = computed(() => slots.value[Number(route.params.slot)])
 
-if (!slots.value[Number(route.params.slot)]) location.href = "/"
+if (!slots.value[Number(route.params.slot)]) router.push("home")
 </script>
 
 <template>
   <header class="points">
-    <router-link to="/" class="button slots">SLOTS</router-link>
-
     <div class="point-container">
       <h1>
         <input
@@ -44,7 +43,7 @@ if (!slots.value[Number(route.params.slot)]) location.href = "/"
       <img src="/img/exploration-point.png" alt="Exploration points" />
     </div>
 
-    <a class="button generate" @click.prevent="generateSave(Number(route.params.slot), { skillPoints: activeSlot.skillPoints, explorationPoints: activeSlot.explorationPoints })">GENERATE</a>
+    <a class="button" @click.prevent="generateSave(Number(route.params.slot), { skillPoints: activeSlot.skillPoints, explorationPoints: activeSlot.explorationPoints })">GENERATE</a>
   </header>
 
   <!-- <main class="levels">

@@ -41,11 +41,7 @@ header.points {
     img { filter: drop-shadow(0 0 8px #8c82d8); }
   }
 
-  a.button {
-    cursor: pointer; position: absolute;
-    &.slots { left: 16px; }
-    &.generate { right: 16px; }
-  }
+  a.button { cursor: pointer; position: absolute; right: 16px; }
 }
 
 main.levels {

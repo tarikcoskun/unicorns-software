@@ -1,6 +1,7 @@
 $transition-easing: cubic-bezier(0.125, 0.25, 0.1, 1.035);
 
 @mixin gray-overlay($offset, $width, $height) {
+  * { color: #705c66; filter: none }
   &::after {
     content: "";
     top: 0;
@@ -15,7 +16,8 @@ $transition-easing: cubic-bezier(0.125, 0.25, 0.1, 1.035);
 }
 
 @mixin no-overlay {
-  opacity: 1;
+  color: #ffffff;
+  filter: none;
   &::after {
     box-shadow: none;
   }
@@ -40,9 +42,9 @@ a, div {
       overflow: hidden;
       user-select: none;
       position: relative;
-      margin-bottom: 72px;
+      margin-bottom: 84px;
       background: #000000;
-      border: 3.5px solid #3f253f;
+      border: 3.5px solid #483239;
       box-shadow: 0 0 12px 8px #00000050;
       transition: 0.3s $transition-easing;
       @include gray-overlay(120px, 100%, 100%);
@@ -55,12 +57,10 @@ a, div {
         transition: 0.3s $transition-easing;
 
         h1.progress-percentage {
-          opacity: 0.5;
           font-size: 48px;
         }
 
         h2.timer {
-          opacity: 0.5;
           margin: 32px 0;
           font-size: 24px;
         }
@@ -75,21 +75,34 @@ a, div {
             left: 50%;
             bottom: 0;
             width: 230px;
-            opacity: 0.5;
             object-fit: cover;
             position: absolute;
-            filter: grayscale(0.9);
             object-position: bottom;
             transform: translateX(-50%);
             transition: 0.3s $transition-easing;
+
+            &.shelly-filler {
+              filter: brightness(0) saturate(100%) invert(38%) sepia(16%) saturate(409%) hue-rotate(277deg) brightness(93%) contrast(87%);
+            }
+
+            &.shelly-outline {
+              filter: invert(40%) sepia(4%) saturate(1343%) hue-rotate(279deg) brightness(96%) contrast(89%);
+            }
           }
         }
 
         footer.points {
+          margin-bottom: 16px;
           display: grid;
-          opacity: 0.5;
           grid-template-columns: repeat(2, minmax(0, 1fr));
-          @include gray-overlay(36px, 100%, 100%);
+
+          div {
+            @include gray-overlay(24px, 100%, 100%);
+
+            img {
+              filter: brightness(0) saturate(100%) invert(38%) sepia(16%) saturate(409%) hue-rotate(277deg) brightness(93%) contrast(87%);
+            }
+          }
         }
 
         &.upload-content {
@@ -99,9 +112,9 @@ a, div {
           justify-content: center;
 
           img.new-game {
-            opacity: 0.5;
-            transition: 0.4s cubic-bezier(0.125, 0.25, 0.1, 1.035);
             animation: growShrink 3s ease-out infinite;
+            transition: 0.4s cubic-bezier(0.125, 0.25, 0.1, 1.035);
+            filter: brightness(0) saturate(100%) invert(38%) sepia(16%) saturate(409%) hue-rotate(277deg) brightness(93%) contrast(87%);
           }
         }
       }
@@ -144,7 +157,7 @@ a, div {
         div.slot-content {
           h1.progress-percentage, h2.timer, h3, img {
             @include no-overlay();
-            filter: grayscale(0) drop-shadow(0 0 6px #e2a6cf70);
+            filter: drop-shadow(0 0 6px #e2a6cf90);
           }
           div.progress-shelly {
             filter: drop-shadow(0 0 8px #2a4dc9);
@@ -155,7 +168,7 @@ a, div {
             }
           }
 
-          footer.points { @include no-overlay(); }
+          footer.points * { @include no-overlay(); }
           &.upload-content img.new-game { @include no-overlay(); }
         }
 
