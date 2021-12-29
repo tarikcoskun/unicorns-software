@@ -29,6 +29,4 @@ export function generateSave(index: number, data: Partial<ISave>) {
   download.download = fileName
   download.click()
   URL.revokeObjectURL(download.href)
-
-  console.log(readSaveContent(generated))
 }

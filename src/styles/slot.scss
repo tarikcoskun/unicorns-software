@@ -4,13 +4,11 @@ $transition-easing: cubic-bezier(0.125, 0.25, 0.1, 1.035);
   * { color: #705c66; filter: none }
   &::after {
     content: "";
-    top: 0;
-    left: 50%;
     width: $width;
     height: $height;
-    position: absolute;
     transform: translate(-50%);
     transition: 0.3s $transition-easing;
+    position: absolute; top: 0; left: 50%;
     box-shadow: inset $offset 0 48px #00000085, inset (-$offset) 0 48px #00000085;
   }
 }
@@ -92,12 +90,13 @@ a, div {
         }
 
         footer.points {
-          margin-bottom: 16px;
           display: grid;
+          position: relative;
+          margin-bottom: 16px;
           grid-template-columns: repeat(2, minmax(0, 1fr));
 
           div {
-            @include gray-overlay(24px, 100%, 100%);
+            @include gray-overlay(0, 100%, 100%);
 
             img {
               filter: brightness(0) saturate(100%) invert(38%) sepia(16%) saturate(409%) hue-rotate(277deg) brightness(93%) contrast(87%);
@@ -159,20 +158,25 @@ a, div {
             @include no-overlay();
             filter: drop-shadow(0 0 6px #e2a6cf90);
           }
+
           div.progress-shelly {
             filter: drop-shadow(0 0 8px #2a4dc9);
             @include no-overlay();
+
             img {
-              filter: grayscale(0);
-              opacity: 1;
+              filter: none;
+
+              &.shelly-filler {
+                filter: invert(49%) sepia(43%) saturate(5410%) hue-rotate(181deg) brightness(102%) contrast(104%);
+              }
             }
           }
 
-          footer.points * { @include no-overlay(); }
-          &.upload-content img.new-game { @include no-overlay(); }
+          footer.points * { @include no-overlay }
+          &.upload-content img.new-game { @include no-overlay }
         }
 
-        footer.actions { @include no-overlay(); }
+        footer.actions { @include no-overlay }
       }
     }
   }

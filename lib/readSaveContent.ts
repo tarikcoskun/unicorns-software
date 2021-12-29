@@ -40,11 +40,7 @@ export function readSaveContent(saveFile: string) {
     return content.slice(valueTitleIndex + 2, valueTitleIndex + listLength + 2)
   }
 
-  return {
-    room,
-    gameTimer,
-    skillPoints,
-    explorationPoints,
-    progressPercentage,
-  };
+  const generatedData = { room, gameTimer, skillPoints, explorationPoints, progressPercentage }
+  console.table(generatedData)
+  return generatedData
 }
