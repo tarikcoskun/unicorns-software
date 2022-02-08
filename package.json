@@ -1,23 +1,26 @@
 {
   "name": "unicorns.software",
   "version": "1.0.0",
-  "license": "MIT",
+  "private": true,
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "serve": "vite preview"
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
   },
   "dependencies": {
-    "vue": "^3.2.16",
-    "vue-router": "^4.0.12",
-    "vuex": "^4.0.2"
+    "@nuxtjs/pwa": "^3.3.5",
+    "core-js": "^3.19.3",
+    "nuxt": "^2.15.8",
+    "sass": "^1.49.7",
+    "sass-loader": "10.1.1",
+    "vue": "^2.6.14",
+    "vue-server-renderer": "^2.6.14",
+    "vue-template-compiler": "^2.6.14",
+    "webpack": "^4.46.0"
   },
   "devDependencies": {
-    "@types/node": "^16.11.6",
-    "@vitejs/plugin-vue": "^1.9.3",
-    "sass": "^1.43.4",
-    "typescript": "^4.4.4",
-    "vite": "^2.6.4",
-    "vite-plugin-pwa": "^0.11.5"
+    "@nuxt/types": "^2.15.8",
+    "@nuxt/typescript-build": "^2.1.0"
   }
 }
