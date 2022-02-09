@@ -45,7 +45,12 @@ const PWAConfig: PWAOptions = {
     mobileApp: false,
     author: "Tarık Coşkun",
     theme_color: "#000000",
-    appleStatusBarStyle: "black",
+    appleStatusBarStyle: "black"
+  },
+
+  icon: {
+    fileName: "logo.png",
+    source: "@/assets/icons/logo.png"
   }
 }
 

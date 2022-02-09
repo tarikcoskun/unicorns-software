@@ -1,7 +1,6 @@
 @import "https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap";
 @import "chapter.scss";
 @import "slots.scss";
-@import "slot.scss";
 
 html {
   --blue: #049aff;
@@ -51,13 +50,8 @@ html {
     height: 100vh;
     overflow: hidden;
     background: #000000;
-
-    #app {
-      height: 100%;
-    }
   }
 }
-
 
 .button {
   padding: 6px 8px;

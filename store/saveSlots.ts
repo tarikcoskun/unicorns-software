@@ -1,9 +1,9 @@
 import type { MutationTree } from "vuex"
-import type { Save } from "@/types/Save"
+import type { Save } from "~/types/SaveFile"
 
 type StateTree = { slots: Partial<Save>[] }
 
-export const state: () => StateTree = () => ({
+export const state = (): StateTree => ({
   slots: [{}, {}, {}]
 })
 

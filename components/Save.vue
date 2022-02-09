@@ -1,3 +1,123 @@
+<script lang="ts">
+import type { Save } from "@/types/SaveFile"
+
+import Vue, { PropType } from "vue"
+import parseTime from "@/lib/parseTime"
+import readSaveContent from "@/lib/readSaveContent"
+
+export default Vue.extend({
+  props: {
+    index: {
+      type: Number,
+      required: true
+    },
+    type: {
+      type: String,
+      required: false,
+      default: "slot"
+    },
+    save: {
+      type: <PropType<Save>>Object,
+      required: false,
+      default: {
+        room: 143,
+        gameTimer: 0,
+        skillPoints: 0,
+        explorationPoints: 0,
+        progressPercentage: 0
+      }
+    }
+  },
+
+  methods: {
+    parseTime,
+    uploadSave(event: Event, index: number) {
+      const fileReader = new FileReader()
+      const files = (event.target as HTMLInputElement).files
+
+      if (files && files[0].name.endsWith(".sav"))
+        fileReader.onload = () => this.$store.commit("saveSlots/updateSlot", {
+          index: index,
+          value: readSaveContent(<string>fileReader.result)
+        })
+      else alert("Please upload a valid save file")
+      if (files) fileReader.readAsText(files[0])
+    },
+
+    deleteSave(index: number) {
+      if (confirm("Are you sure you want to delete this save slot?\nDeleting this save file will replace it with an empty save slot")) this.$store.commit("saveSlots/deleteSlot", index)
+    }
+  }
+})
+</script>
+
+<template>
+  <component :is="type === 'save' ? 'router-link' : 'div'" :to="`/editor/${index}`">
+    <label class="slot" :for="`save-${index}`">
+      <figure class="slot-background">
+        <div class="slot-content" v-if="type === 'save'">
+          <h1 class="progress-percentage">{{ save.progressPercentage }}%</h1>
+          <div class="progress-shelly">
+            <img
+              class="shelly-outline"
+              src="@/assets/img/shelly-outline.png"
+              :alt="String(save.progressPercentage)"
+              draggable="false"
+            />
+            <img
+              class="shelly-filler"
+              src="@/assets/img/shelly-filler.png"
+              :style="`height: ${save.progressPercentage}%`"
+              draggable="false"
+            />
+          </div>
+          <h2 class="timer">{{ parseTime(save.gameTimer) }}</h2>
+
+          <footer class="points">
+            <div>
+              <img
+                src="@/assets/img/difficulty-point.png"
+                :alt="String(save.skillPoints)"
+              />
+              <h3>{{ save.skillPoints }}/244</h3>
+            </div>
+            <div>
+              <img
+                src="@/assets/img/exploration-point.png"
+                :alt="String(save.explorationPoints)"
+              />
+              <h3>{{ save.explorationPoints }}/46</h3>
+            </div>
+          </footer>
+        </div>
+
+        <div class="slot-content upload-content" v-else>
+          <input
+            type="file"
+            accept=".sav"
+            :id="`save-${index}`"
+            style="display: none"
+            @change="uploadSave($event, index)"
+          />
+          <img class="new-game" src="@/assets/img/new-game.png" alt="New game" />
+        </div>
+
+        <footer class="actions">
+          <img
+            v-if="type === 'save'"
+            src="@/assets/img/delete.png"
+            class="delete-save"
+            alt="Delete save"
+            @click="deleteSave(index)"
+          />
+          <h3 class="upload-save" v-else>Upload Save</h3>
+        </footer>
+      </figure>
+    </label>
+  </component>
+</template>
+
+<style lang="scss" scoped>
 $transition-easing: cubic-bezier(0.125, 0.25, 0.1, 1.035);
 
 @mixin gray-overlay($offset, $width, $height) {
@@ -187,3 +307,4 @@ a, div {
   50% { width: 180px; }
   100% { width: 120px; }
 }
+</style>
