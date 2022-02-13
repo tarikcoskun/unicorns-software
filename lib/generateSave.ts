@@ -7,8 +7,8 @@ import type { Save } from "@/types/SaveFile"
  * @param {Save} data Save file data.
  */
 
-const generateSave = (index: number, data: Partial<Save>): void => {
-  const explorationPoints = [data.explorationPoints, ...calculated.explorationPoints.slice(0, data.explorationPoints)]
+const generateSave = (index: number, data: Save): void => {
+  const explorationPoints = [data.explorationPoints.length, ...calculated.explorationPoints.slice(0, data.explorationPoints.length)]
 
   const unlockedLevels = ["128", ...Array.from({ length: 128 }, () => "1")]
   const skillPoints = ["128", ...Array.from({ length: 128 }, () => "-1")]

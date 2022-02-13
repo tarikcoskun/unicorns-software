@@ -52,17 +52,17 @@ export default Vue.extend({
 </template>
 
 <style lang="scss">
+@import "@/assets/styles/mixins.scss";
+
 main.error {
   background: radial-gradient(circle, #310000, #140000, #000000);
 
   figure.status {
     margin: 0;
     height: 100vh;
-    display: flex;
     text-align: center;
-    align-items: center;
     flex-direction: column;
-    justify-content: center;
+    @include flex(center, center, column, 32px);
 
     h1, p { filter: drop-shadow(0 0 12px #f53342) }
 

@@ -1,3 +1,5 @@
+import calculated from "@/lib/calculatedPoints"
+
 export interface Save {
   room: number
   gameTimer: number
