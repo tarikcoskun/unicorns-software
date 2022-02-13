@@ -52,7 +52,7 @@ export default Vue.extend({
 </script>
 
 <template>
-  <NuxtLink :to="`/editor/${index}`" v-if="type === 'save'">
+  <NuxtLink :to="`/save-editor/${index}`" v-if="type === 'save'">
     <h1 class="progress">{{ save.progressPercentage }}%</h1>
     <figure class="progress">
       <img class="outline" src="@/assets/img/shelly-outline.png" />
@@ -76,7 +76,7 @@ export default Vue.extend({
 
   <label :for="`save-${index}`" v-else>
     <input type="file" accept=".sav" :id="`save-${index}`" @change="uploadSave($event, index)" />
-    <img class="upload" src="@/assets/img/new-game.png" />
+    <img class="upload" src="@/assets/img/plus.png" />
   </label>
 </template>
 
@@ -94,17 +94,18 @@ a, label {
   position: relative;
   border: 3.5px solid #483239;
   box-shadow: 0 0 12px 8px #00000050;
-  @include overlay(96px, 100%, 100%);
+  @include overlay(88px, 100%, 100%);
   @include flex(center, center, column, 36px);
 
-  h1.progress { font-size: 48px }
-  h2.timer { font-size: 24px }
+  h1.progress { font-size: 48px; transition: 250ms }
+  h2.timer { font-size: 24px; transition: 250ms }
 
   figure.progress {
     width: 100%;
     height: 188px;
     transition: 250ms;
     position: relative;
+    @include overlay(0, 100%, 100%);
 
     img {
       left: 50%;
@@ -129,12 +130,12 @@ a, label {
     aside {
       @include flex(center, center, column, 16px);
 
-      img { filter: brightness(0) saturate(100%) invert(38%) sepia(16%) saturate(409%) hue-rotate(277deg) brightness(93%) contrast(87%) }
+      img { transition: 250ms; filter: brightness(0) saturate(100%) invert(38%) sepia(16%) saturate(409%) hue-rotate(277deg) brightness(93%) contrast(87%) }
+      h3 { transition: 250ms }
     }
   }
 
   input { display: none }
-
   img.upload {
     transition: 250ms;
     animation: growShrink 3s ease-out infinite;
@@ -146,12 +147,19 @@ a, label {
     box-shadow: 0 0 12px 8px #4a0026;
     @include no-overlay;
 
-    img.upload { @include no-overlay }
-    footer.points aside { @include no-overlay }
-    figure.progress img {
-      @include no-overlay;
+    h1.progress, h2.timer, footer.points aside img, footer.points aside h3 { filter: drop-shadow(0 0 6px #e082b190) }
 
-      &.filler { filter: invert(49%) sepia(43%) saturate(5410%) hue-rotate(181deg) brightness(102%) contrast(104%) }
+    img.upload { @include no-overlay }
+    footer.points aside, footer.points aside img { @include no-overlay }
+    figure.progress {
+      @include no-overlay;
+      filter: drop-shadow(0 0 8px #2a4dc9) !important;
+
+      img {
+        @include no-overlay;
+
+        &.filler { filter: invert(49%) sepia(43%) saturate(5410%) hue-rotate(181deg) brightness(102%) contrast(104%) }
+      }
     }
   }
 }

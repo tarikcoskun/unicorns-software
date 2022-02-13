@@ -8,6 +8,7 @@ export default Vue.extend({
 
 <template>
   <main>
+    <NuxtLink to="/save-editor">Save Editor</NuxtLink>
   </main>
 </template>
 
