@@ -39,7 +39,7 @@ const PWAConfig: PWAOptions = {
   },
 
   meta: {
-    name: "Unicorn's Sofwtare",
+    name: "Unicorn's Software",
     description: "Unicorn's Software is a save editor for Will You Snail",
 
     mobileApp: false,

@@ -136,6 +136,7 @@ a, label {
   input { display: none }
 
   img.upload {
+    transition: 250ms;
     animation: growShrink 3s ease-out infinite;
     filter: brightness(0) saturate(100%) invert(38%) sepia(16%) saturate(409%) hue-rotate(277deg) brightness(93%) contrast(87%);
   }
