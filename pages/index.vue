@@ -11,7 +11,7 @@ export default Vue.extend({
 </script>
 
 <template>
-  <main id="slots">
+  <main>
     <Save
       v-for="(save, index) in slots"
       :key="index"
@@ -21,3 +21,15 @@ export default Vue.extend({
     />
   </main>
 </template>
+
+<style lang="scss" scoped>
+@import "@/assets/styles/mixins.scss";
+
+main {
+  height: 100vh;
+  padding: 0 72px;
+  align-items: center;
+  background: radial-gradient(circle, #240000, black, black);
+  @include grid(3, 0 96px);
+}
+</style>

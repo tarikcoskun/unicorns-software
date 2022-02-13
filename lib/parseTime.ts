@@ -1,3 +1,9 @@
+/**
+ * Returns the time as a readable string.
+ * @param {number} time The target time to parse.
+ * @returns {string} h:mm:ss or mm:ss.
+ */
+
 const parseTime = (time: number): string => {
   let hours: number | string = Math.floor(time / 3600)
   time %= 3600;

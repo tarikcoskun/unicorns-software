@@ -56,6 +56,7 @@ main.error {
   background: radial-gradient(circle, #310000, #140000, #000000);
 
   figure.status {
+    margin: 0;
     height: 100vh;
     display: flex;
     text-align: center;

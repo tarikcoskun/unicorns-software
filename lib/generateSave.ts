@@ -1,6 +1,12 @@
 import calculated from "./calculatedPoints"
 import type { Save } from "@/types/SaveFile"
 
+/**
+ * Generates a save file with the given data.
+ * @param {number} index Save file index.
+ * @param {Save} data Save file data.
+ */
+
 const generateSave = (index: number, data: Partial<Save>): void => {
   const explorationPoints = [data.explorationPoints, ...calculated.explorationPoints.slice(0, data.explorationPoints)]
 

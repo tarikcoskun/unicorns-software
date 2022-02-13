@@ -1,6 +1,12 @@
 import type { Save } from "~/types/SaveFile"
 import calculated from "./calculatedPoints"
 
+/**
+ * Returns the necessary parts of the save file.
+ * @param {string} saveFile The target save file.
+ * @returns {Save} Room, timer, skill points, exploration points and progress percentage.
+ */
+
 const readSaveContent = (saveFile: string): Save => {
   let room: number = 143
   let gameTimer: number = 0
