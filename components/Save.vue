@@ -69,7 +69,7 @@ export default Vue.extend({
 
       <aside>
         <img src="@/assets/img/exploration-point.png" />
-        <h3>{{ save.explorationPoints }}/46</h3>
+        <h3>{{ save.explorationPoints.length }}/46</h3>
       </aside>
     </footer>
   </NuxtLink>
@@ -85,6 +85,7 @@ export default Vue.extend({
 
 a, label {
   z-index: 1;
+  width: 288px;
   height: 440px;
   padding: 24px;
   cursor: pointer;
