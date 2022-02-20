@@ -42,6 +42,8 @@ export default Vue.extend({
         })
       else alert("Please upload a valid save file")
       if (files) fileReader.readAsText(files[0])
+
+      this.$store.commit("saveSlots/initialize")
     },
 
     deleteSave(index: number) {
@@ -83,6 +85,8 @@ export default Vue.extend({
 <style lang="scss" scoped>
 @import "@/assets/styles/mixins.scss";
 
+* { font-family: "Press Start 2P", sans-serif }
+
 a, label {
   z-index: 1;
   width: 288px;
@@ -105,7 +109,7 @@ a, label {
     height: 188px;
     transition: 250ms;
     position: relative;
-    @include overlay(0, 100%, 100%);
+    @include overlay(16px, 100%, 100%);
 
     img {
       left: 50%;
@@ -124,6 +128,7 @@ a, label {
   }
 
   footer.points {
+    width: 100%;
     position: relative;
     @include grid(2);
 
@@ -147,7 +152,7 @@ a, label {
     box-shadow: 0 0 12px 8px #4a0026;
     @include no-overlay;
 
-    h1.progress, h2.timer, footer.points aside img, footer.points aside h3 { filter: drop-shadow(0 0 6px #e082b190) }
+    h1.progress, h2.timer, footer.points aside img, footer.points aside h3 { filter: drop-shadow(0 0 6px #e082b190) !important }
 
     img.upload { @include no-overlay }
     footer.points aside, footer.points aside img { @include no-overlay }

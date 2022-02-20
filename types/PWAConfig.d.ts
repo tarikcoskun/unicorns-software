@@ -1,6 +1,6 @@
-import { IconOptions } from "./pwa/icon"
-import { MetaOptions } from "./pwa/meta"
-import { ManifestOptions } from "./pwa/manifest"
+import { IconOptions } from "./PWA/icon"
+import { MetaOptions } from "./PWA/meta"
+import { ManifestOptions } from "./PWA/manifest"
 
 interface PWAOptions {
   meta?: Partial<MetaOptions>

@@ -1,6 +1,9 @@
-export * from "./chapter-a"
-export * from "./chapter-b"
-export * from "./chapter-c"
-export * from "./chapter-d"
-export * from "./chapter-e"
-export * from "./other-levels"
+import ChapterA from "./chapter-a"
+import ChapterB from "./chapter-b"
+import ChapterC from "./chapter-c"
+import ChapterD from "./chapter-d"
+import ChapterE from "./chapter-e"
+import OtherLevels from "./other-levels"
+
+export { ChapterA, ChapterB, ChapterC, ChapterD, ChapterE, OtherLevels }
+export default { ...ChapterA, ...ChapterB, ...ChapterC, ...ChapterD, ...ChapterE, ...OtherLevels }

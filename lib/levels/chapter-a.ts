@@ -1,151 +1,153 @@
-export const ChapterA = {
-  A01: {
-    id: 28,
+const ChapterA = {
+  28: {
+    name: "A01",
     icon: "hall",
     color: "blue"
   },
-  "A01.1": {
-    id: 29,
+  29: {
+    name: "A01.1",
     icon: "hall",
     color: "pink",
     secret: "SecretPassage"
   },
-  A02: {
-    id: 30,
+  30: {
+    name: "A02",
     icon: "hall",
     color: "blue"
   },
-  "A02.1": {
-    id: 21,
+  21: {
+    name: "A02.1",
     icon: "hat-selection",
     color: "pink"
   },
-  A03: {
-    id: 31,
+  31: {
+    name: "A03",
     icon: "hall",
     color: "blue"
   },
-  "A03.1": {
-    id: 12,
+  12: {
+    name: "A03.1",
     icon: "diana",
     color: "pink",
     secret: "DianasStory"
   },
-  A04: {
-    id: 32,
+  32: {
+    name: "A04",
     icon: "hall",
     color: "blue"
   },
-  A05: {
-    id: 33,
+  33: {
+    name: "A05",
     icon: "skill-test",
     color: "blue"
   },
-  A06: {
-    id: 34,
+  34: {
+    name: "A06",
     icon: "difficulty-decision",
     color: "blue"
   },
-  A07: {
-    id: 35,
+  35: {
+    name: "A07",
     icon: "stars",
     color: "blue"
   },
-  A08: {
-    id: 36,
+  36: {
+    name: "A08",
     icon: "stars",
     color: "blue"
   },
-  A09: {
-    id: 37,
+  37: {
+    name: "A09",
     icon: "stars",
     color: "blue"
   },
-  A10: {
-    id: 38,
+  38: {
+    name: "A10",
     icon: "stars",
     color: "blue"
   },
-  "A10.1": {
-    id: 11,
+  11: {
+    name: "A10.1",
     icon: "stars",
     color: "pink",
     secret: "LookingAtTheStars"
   },
-  "A10.2": {
-    id: 61,
+  61: {
+    name: "A10.2",
     icon: "stars",
     color: "pink",
     secret: "ExpansionInSpace"
   },
-  A11: {
-    id: 39,
+  39: {
+    name: "A11",
     icon: "stars",
     color: "blue"
   },
-  A12: {
-    id: 40,
+  40: {
+    name: "A12",
     icon: "blank",
     color: "blue"
   },
-  A13: {
-    id: 41,
+  41: {
+    name: "A13",
     icon: "spikes",
     color: "orange",
     combat: true
   },
-  A14: {
-    id: 43,
+  43: {
+    name: "A14",
     icon: "spikes",
     color: "orange",
     combat: true
   },
-  "A14.1": {
-    id: 5,
+  5: {
+    name: "A14.1",
     icon: "secret-presentation",
     color: "pink"
   },
-  A15: {
-    id: 44,
+  44: {
+    name: "A15",
     icon: "spikes",
     color: "orange",
     combat: true
   },
-  A16: {
-    id: 45,
+  45: {
+    name: "A16",
     icon: "conveyor-belts",
     color: "orange",
     combat: true
   },
-  A17: {
-    id: 46,
+  46: {
+    name: "A17",
     icon: "conveyor-belts",
     color: "orange",
     combat: true
   },
-  A18: {
-    id: 47,
+  47: {
+    name: "A18",
     icon: "combat",
     color: "orange",
     combat: true
   },
-  A19: {
-    id: 48,
+  48: {
+    name: "A19",
     icon: "combat",
     color: "orange",
     combat: true
   },
-  A20: {
-    id: 49,
+  49: {
+    name: "A20",
     icon: "boss_demolition",
     color: "orange",
     combat: true,
     boss: true
   },
-  A21: {
-    id: 50,
+  50: {
+    name: "A21",
     icon: "blank",
     color: "blue",
     secret: "AHardClimb"
   }
 }
+
+export default ChapterA

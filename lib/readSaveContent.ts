@@ -1,4 +1,4 @@
-import type { Save } from "~/types/SaveFile"
+import type { Save } from "@/types/SaveFile"
 import calculated from "./calculatedPoints"
 
 /**

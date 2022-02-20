@@ -28,8 +28,7 @@ export default Vue.extend({
 main {
   height: 100vh;
   padding: 0 72px;
-  place-items: center;
   background: radial-gradient(circle, #240000, black, black);
-  @include grid(3, 0 96px);
+  @include flex(center, center, $gap: 96px);
 }
 </style>

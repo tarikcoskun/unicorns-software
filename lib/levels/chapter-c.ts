@@ -1,146 +1,148 @@
-export const ChapterC = {
-  C01: {
-    id: 72,
+const ChapterC = {
+  72: {
+    name: "C01",
     icon: "puzzle",
     color: "blue",
     secret: "StretchTheLine"
   },
-  "C01.1": {
-    id: 20,
+  20: {
+    name: "C01.1",
     icon: "puzzle",
     color: "blue",
     secret: "CloseItUp"
   },
-  C02: {
-    id: 73,
+  73: {
+    name: "C02",
     icon: "puzzle",
     color: "blue",
     secret: "DifferentConnectors"
   },
-  C03: {
-    id: 74,
+  74: {
+    name: "C03",
     icon: "puzzle",
     color: "blue",
     secret: "LongLines"
   },
-  C04: {
-    id: 75,
+  75: {
+    name: "C04",
     icon: "universes",
     color: "blue"
   },
-  C05: {
-    id: 76,
+  76: {
+    name: "C05",
     icon: "universes",
     color: "blue"
   },
-  C06: {
-    id: 77,
+  77: {
+    name: "C06",
     icon: "universes",
     color: "blue"
   },
-  C07: {
-    id: 78,
+  78: {
+    name: "C07",
     icon: "universes",
     color: "blue"
   },
-  C08: {
-    id: 79,
+  79: {
+    name: "C08",
     icon: "spikes",
     color: "orange",
     combat: true
   },
-  C09: {
-    id: 80,
+  80: {
+    name: "C09",
     icon: "spikes",
     color: "orange",
     combat: true
   },
-  C10: {
-    id: 81,
+  81: {
+    name: "C10",
     icon: "fish-and-jelly",
     color: "orange",
     combat: true
   },
-  C11: {
-    id: 82,
+  82: {
+    name: "C11",
     icon: "fish-and-jelly",
     color: "orange",
     combat: true,
     secret: "MiniUnderwCave"
   },
-  C12: {
-    id: 83,
+  83: {
+    name: "C12",
     icon: "race",
     color: "orange",
     combat: true
   },
-  C13: {
-    id: 84,
+  84: {
+    name: "C134",
     icon: "race",
     color: "orange",
     combat: true
   },
-  "C13.1": {
-    id: 2,
+  2: {
+    name: "C13.1",
     icon: "water-pump",
     color: "pink"
   },
-  C14: {
-    id: 85,
+  85: {
+    name: "C14",
     icon: "blocks",
     color: "orange",
     combat: true,
     secret: "OverTheBombs"
   },
-  C15: {
-    id: 86,
+  86: {
+    name: "C15",
     icon: "fish-and-jelly",
     color: "orange",
     combat: true
   },
-  C16: {
-    id: 87,
+  87: {
+    name: "C16",
     icon: "race",
     color: "orange",
     combat: true
   },
-  C17: {
-    id: 88,
+  88: {
+    name: "C17",
     icon: "combat",
     color: "orange",
     combat: true,
     secret: "DrillDownAndFlyHigh"
   },
-  C18: {
-    id: 89,
+  89: {
+    name: "C18",
     icon: "combat",
     color: "orange",
     combat: true,
     secret: "PiranhaTower"
   },
-  C19: {
-    id: 90,
+  90: {
+    name: "C19",
     icon: "race",
     color: "orange",
     combat: true,
     secret: "InTheShortcut"
   },
-  C20: {
-    id: 91,
+  91: {
+    name: "C20",
     icon: "blank",
     color: "blue",
     secret: "BlockedByUnderwCurrents"
   },
-  C21: {
-    id: 92,
+  92: {
+    name: "C21",
     icon: "boss_mama-squid",
     color: "orange",
     combat: true,
     boss: true
   },
-  C22: {
-    id: 93,
+  93: {
+    name: "C22",
     icon: "blank",
     color: "blue"
   }
 }
+
+export default ChapterC

@@ -1,145 +1,147 @@
-export const ChapterE = {
-  E01: {
-    id: 122,
+const ChapterE = {
+  122: {
+    name: "E01",
     icon: "puzzle",
     color: "blue"
   },
-  E02: {
-    id: 123,
+  123: {
+    name: "E02",
     icon: "puzzle",
     color: "blue",
     secret: "HandleTheHack"
   },
-  E03: {
-    id: 124,
+  124: {
+    name: "E03",
     icon: "puzzle",
     color: "blue",
     secret: "TheHackingTower"
   },
-  "E03.1": {
-    id: 125,
+  125: {
+    name: "E03.1",
     icon: "puzzle",
     color: "pink",
     secret: "Antijumppuzzle"
   },
-  E04: {
-    id: 126,
+  126: {
+    name: "E04",
     icon: "puzzle",
     color: "blue",
     secret: "OneLine"
   },
-  E05: {
-    id: 127,
+  127: {
+    name: "E05",
     icon: "timeline",
     color: "blue",
     secret: "OnTheHorizon"
   },
-  E06: {
-    id: 98,
+  98: {
+    name: "E06",
     icon: "amelia",
     color: "blue",
     secret: "InPrison"
   },
-  "E06.1": {
-    id: 3,
+  3: {
+    name: "E06.1",
     icon: "puzzle",
     color: "pink",
     secret: "DifficultGlitchPuzzle"
   },
-  E07: {
-    id: 128,
+  128: {
+    name: "E07",
     icon: "crazy_spikes",
     color: "orange",
     combat: true
   },
-  E08: {
-    id: 129,
+  129: {
+    name: "E08",
     icon: "crazy_spikes",
     color: "orange",
     combat: true
   },
-  E09: {
-    id: 130,
+  130: {
+    name: "E09",
     icon: "crazy_lasers",
     color: "orange",
     combat: true
   },
-  E10: {
-    id: 131,
+  131: {
+    name: "E10",
     icon: "bartender",
     color: "orange",
     combat: true,
     secret: "BartenderSecret"
   },
-  E11: {
-    id: 132,
+  132: {
+    name: "E11",
     icon: "snowy-doom",
     color: "orange",
     combat: true
   },
-  E12: {
-    id: 133,
+  133: {
+    name: "E12",
     icon: "snowman",
     color: "orange",
     combat: true
   },
-  E13: {
-    id: 134,
+  134: {
+    name: "E13",
     icon: "crazy_spikes",
     color: "orange",
     combat: true
   },
-  E14: {
-    id: 135,
+  135: {
+    name: "E14",
     icon: "killer-fish",
     color: "orange",
     combat: true
   },
-  E15: {
-    id: 136,
+  136: {
+    name: "E15",
     icon: "shelly",
     color: "orange",
     combat: true
   },
-  "E15.1": {
-    id: 137,
+  137: {
+    name: "E15.1",
     icon: "crazy_tower-defense",
     color: "pink"
   },
-  "E15.2": {
-    id: 138,
+  138: {
+    name: "E15.2",
     icon: "hall",
     color: "pink",
     secret: "BubbleDReward"
   },
-  E16: {
-    id: 16,
+  16: {
+    name: "E16",
     icon: "stars",
     color: "blue"
   },
-  E17: {
-    id: 139,
+  139: {
+    name: "E17",
     icon: "boss_squid",
     color: "orange",
     combat: true,
     boss: true
   },
-  E18: {
-    id: 140,
+  140: {
+    name: "E18",
     icon: "boss_crazy_squid",
     color: "orange",
     combat: true,
     boss: true
   },
-  E19: {
-    id: 141,
+  141: {
+    name: "E19",
     icon: "broken-squid",
     color: "blue",
     secret: "BehindTheFinalHorizon"
   },
-  "E19.1": {
-    id: 10,
+  10: {
+    name: "E19.1",
     icon: "squids-heart",
     color: "pink"
   }
 }
+
+export default ChapterE

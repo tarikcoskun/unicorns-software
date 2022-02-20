@@ -1,21 +1,17 @@
 @import "https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700";
 @import "mixins.scss";
 
 * {
   color: white;
   text-decoration: none;
+  scroll-behavior: smooth;
   padding: 0; margin: 0; border: 0;
-  font: 20px "Press Start 2P", sans-serif;
+  font: 18px "Inter", sans-serif;
 
   &::-webkit-scrollbar {
     width: 4px;
     &-track { background: black }
     &-thumb { background: white }
   }
-}
-
-body {
-  height: 100vh;
-  overflow: hidden;
-  background: black;
 }
