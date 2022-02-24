@@ -10,7 +10,7 @@ export default Vue.extend({
 
 <template>
   <div>
-    <header class="navigation">
+    <!--<header class="navigation">
       <aside class="brand">
         <img src="@/assets/logo.png" />
         <h1>Unicorn's Software</h1>
@@ -21,7 +21,7 @@ export default Vue.extend({
         <NuxtLink to="/wiki">Wiki</NuxtLink>
         <NuxtLink to="/save-editor">Save Editor</NuxtLink>
       </aside>
-    </header>
+    </header>-->
 
     <Nuxt />
   </div>
