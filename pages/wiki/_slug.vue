@@ -16,12 +16,13 @@ export default Vue.extend({
   <main id="post">
     <section class="content">
       <header>
-        <h1>{{ article.title }}</h1>
+
       </header>
 
       <article>
         <header>
           <aside class="left">
+            <h1>{{ article.title }}</h1>
             <p>{{ article.description }}</p>
 
             <figure class="contents">
@@ -55,13 +56,9 @@ export default Vue.extend({
 @import "@/assets/styles/mixins.scss";
 
 main#post {
+  padding: 96px 0 32px;
 
   section.content {
-    > header {
-      padding: 96px 0 32px;
-      h1 { font-size: 36px; font-weight: 600 }
-    }
-
     article {
       margin: 0 auto;
 
@@ -70,22 +67,18 @@ main#post {
 
         aside {
           &.left {
-            p { line-height: 30px; text-align: justify }
+            h1 { font-size: 36px; font-weight: 600 }
+            p { line-height: 30px; text-align: justify; margin-top: 24px }
 
             figure.contents {
+              padding: 8px;
               margin-top: 64px;
               overflow: hidden;
               border-radius: 4px;
               width: fit-content;
-              border: 1px solid #3a3a3a;
+              background: #282838;
 
-              h2 {
-                padding: 8px;
-                font-size: 20px;
-                font-weight: 600;
-                border: 1px solid #161616
-              }
-
+              h2 { padding: 8px; font-size: 20px; font-weight: 600 }
               ul {
                 @include flex($dir: column);
 
@@ -93,11 +86,12 @@ main#post {
                   font-size: 16px;
                   cursor: pointer;
                   list-style: none;
-                  padding: 6px 10px;
+                  padding: 6px 8px;
+                  border-radius: 4px;
                   transition: 150ms background;
 
                   &.h3 { margin-left: 12px }
-                  &:hover { background: #161616 }
+                  &:hover { background: #343446 }
                   &.h2:not(:first-child) { margin-top: 12px }
                 }
               }
@@ -105,12 +99,13 @@ main#post {
           }
 
           &.info-box {
+            padding: 8px;
             width: 292px;
             float: right;
             flex-shrink: 0;
             overflow: hidden;
             border-radius: 4px;
-            border: 1px solid #3a3a3a;
+            background: #282838;
             @include flex($dir: column);
 
             header {
@@ -119,21 +114,21 @@ main#post {
 
               h1 {
                 padding: 8px 0;
+                font-size: 20px;
                 font-weight: 600;
                 text-align: center;
-                background: #c42276;
-                margin: 0 !important;
-                font-size: 20px !important;
+                border-radius: 4px;
+                background: #50505f;
               }
 
-              img { width: 100% }
+              img { width: 100%; border-radius: 4px; margin: 4px 0; }
             }
 
             div {
-              padding: 8px;
+              padding: 8px 0;
               h3 { font-size: 14px; font-weight: 600 }
               span { font-size: 14px }
-              &:not(:last-child) { padding-bottom: 6px; border-bottom: 1px solid #161616 }
+              &:not(:last-child) { padding-bottom: 6px }
             }
           }
         }
@@ -170,7 +165,7 @@ main#post {
           line-height: 30px;
           margin-bottom: 36px;
 
-          &::marker { color: var(--text) }
+          &::marker { color: var(--fg) }
         }
 
         a { color: #4188f7 }

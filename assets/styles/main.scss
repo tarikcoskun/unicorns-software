@@ -15,8 +15,8 @@ html {
 
     &::-webkit-scrollbar {
       width: 4px;
-      &-track { background: black }
-      &-thumb { background: white }
+      &-track { background: var(--bg) }
+      &-thumb { background: var(--fg) }
     }
   }
 }

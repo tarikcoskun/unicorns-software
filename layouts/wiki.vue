@@ -77,7 +77,7 @@ div#wiki {
           position: relative;
           transform: translateX(-50%);
           position: absolute; left: 50%; right: 50%;
-          @include flex($align: center, $gap: 16px);
+          @include flex(center, $gap: 16px);
 
           header {
             width: 100%;
@@ -86,6 +86,7 @@ div#wiki {
             border-radius: 6px;
             background: #343446;
             transition: 150ms background;
+            @include flex(center);
 
             svg {
               width: 24px;
