@@ -61,6 +61,7 @@ export default Vue.extend({
 
 div#wiki {
   header.navigation {
+    padding: 8px 0;
     background: #282838;
 
     section {
@@ -70,13 +71,14 @@ div#wiki {
       aside {
         &.brand {
           @include flex(center, $gap: 16px);
+
+          img { width: 32px }
+          h1 { font-weight: 500 }
         }
 
         &.search {
-          width: 36%;
+          width: 50%;
           position: relative;
-          transform: translateX(-50%);
-          position: absolute; left: 50%; right: 50%;
           @include flex(center, $gap: 16px);
 
           header {
@@ -105,7 +107,7 @@ div#wiki {
 
             &:hover { background: #3a3a4b }
             &:focus-within {
-              background: #50505f;
+              background: #4f4f64;
               svg path, input::placeholder { color: var(--fg); fill: var(--fg) }
             }
           }
@@ -131,6 +133,17 @@ div#wiki {
 
           &:focus-within {
             div.search-results { display: flex }
+          }
+        }
+
+        &.links {
+          @include flex(center);
+
+          a {
+            padding: 8px 20px;
+            border-radius: 6px;
+            transition: 150ms background;
+            &:hover { background: #343446 }
           }
         }
       }

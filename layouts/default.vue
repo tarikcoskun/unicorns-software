@@ -9,7 +9,7 @@ export default Vue.extend({
 </script>
 
 <template>
-  <div>
+  <div id="default">
     <!--<header class="navigation">
       <aside class="brand">
         <img src="@/assets/logo.png" />
@@ -30,21 +30,23 @@ export default Vue.extend({
 <style lang="scss">
 @import "@/assets/styles/mixins.scss";
 
-header.navigation {
-  padding: 16px;
-  background: black;
-  @include flex(center, space-between);
+div#default {
+  header.navigation {
+    padding: 16px;
+    background: black;
+    @include flex(center, space-between);
 
-  aside {
-    &.brand {
-      @include flex(center, $gap: 16px);
+    aside {
+      &.brand {
+        @include flex(center, $gap: 16px);
 
-      img { width: 32px }
-      h1 { font-weight: 500 }
-    }
+        img { width: 32px }
+        h1 { font-weight: 500 }
+      }
 
-    &.links {
-      @include flex(center, $gap: 24px);
+      &.links {
+        @include flex(center, $gap: 24px);
+      }
     }
   }
 }

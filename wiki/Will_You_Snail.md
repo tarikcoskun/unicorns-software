@@ -26,27 +26,21 @@ Will You Snail was initially created to be a difficult rage game, with the inten
 
 On December 21, Jonas released a demo of Will You Snail themed around winter. In the video where he announces the demo, he also mentions that Will You Snail will not be released as a free game.[^4]
 
-### 2019
+### Early-Mid Development (2019)
 
 TBA
 
-### 2020
+### Mid Development (2020)
 
 During this time Jonas added a way to view the current difficulty (And to see if automatic difficulty is enabled or not) and removed the stretched out blocks. He also added a highlight for the death effect, now showing what killed Shelly, jiggle effects for certain enemies and transitions, a level selection menu, automatic graphics adjustion, more voice lines and better facial animations for Squid. Certain placeholder textures were also changed. Around the time this devlog was released, he also wrote an internal document containing the game's lore. The difficulty for every level was reduced because playtesters got frustrated playing even on the lowest difficulty. Two bosses also received changes. The splitting boss had its arena changed so that the ceiling and floor collapse, and the old disco boss was removed and remade from scratch.[^5]
 
 In a message on the Will You Snail Discord server, he mentions that the price will be around 12$.[^6]
 
-### 2021
+### Mid-End Development (2021)
 
 In his last devlog for this year, he mentions that the delays for Will You Snail are for a different reason.[^7]
 
-### Data Leak
-
-NOTICE: If you know any information on the leak that occurred around May, you may talk about it on the talk page.
-
-There may have been a data leak around May. The leak was by a translator, who, according to them, was forced by a friend of theirs (Hereafter referred to as Nick) to leak the game's beta or their personal information would be publicly revealed.[^8] It is uncertain if more copies of the leaked beta exist.
-
-### 2022 (Planned year of release)
+### End of the Development (2022)
 
 Will You Snail is planned to be released on March 9 of 2022.[^9][^10] Jonas revealed that he was working with No Gravity Games, a console publisher/porting studio, with porting Will You Snail to PlayStation, Xbox and Nintendo Switch. [^11] On February 14, the official press kit for Will You Snail was published, revealing the price of Will You Snail at 15 USD / 12.5 Euro. In a message on the Will You Snail Discord Server, he says that the game will release in March.[^12] After he sent this message, he uploaded a video to YouTube officially revealing March 9 as Will You Snail's release date[^13], although he told beta testers that the game was intended to be released on March 24.[^14]
 

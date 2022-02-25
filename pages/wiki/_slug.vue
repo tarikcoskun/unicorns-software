@@ -16,13 +16,12 @@ export default Vue.extend({
   <main id="post">
     <section class="content">
       <header>
-
+        <h1>{{ article.title }}</h1>
       </header>
 
       <article>
         <header>
           <aside class="left">
-            <h1>{{ article.title }}</h1>
             <p>{{ article.description }}</p>
 
             <figure class="contents">
@@ -35,7 +34,6 @@ export default Vue.extend({
 
           <aside class="info-box">
             <header>
-              <h1>{{ article.info.header.title }}</h1>
               <img :src="article.info.header.image" />
             </header>
 
@@ -56,19 +54,21 @@ export default Vue.extend({
 @import "@/assets/styles/mixins.scss";
 
 main#post {
-  padding: 96px 0 32px;
-
   section.content {
+    > header {
+      padding: 128px 0 32px;
+      h1 { font-size: 36px; font-weight: 600 }
+    }
+
     article {
       margin: 0 auto;
 
       header {
-        @include flex(flex-start, space-between, $gap: 64px);
+        @include flex(flex-start, space-between, $gap: 96px);
 
         aside {
           &.left {
-            h1 { font-size: 36px; font-weight: 600 }
-            p { line-height: 30px; text-align: justify; margin-top: 24px }
+            p { line-height: 30px }
 
             figure.contents {
               padding: 8px;
@@ -99,9 +99,9 @@ main#post {
           }
 
           &.info-box {
-            padding: 8px;
             width: 292px;
             float: right;
+            padding: 12px;
             flex-shrink: 0;
             overflow: hidden;
             border-radius: 4px;
@@ -118,10 +118,14 @@ main#post {
                 font-weight: 600;
                 text-align: center;
                 border-radius: 4px;
-                background: #50505f;
               }
 
-              img { width: 100%; border-radius: 4px; margin: 4px 0; }
+              img {
+                width: 100%;
+                margin: 4px 0;
+                border-radius: 4px;
+                box-shadow: 0 6px 12px #00000036;
+              }
             }
 
             div {
