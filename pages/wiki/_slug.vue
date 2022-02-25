@@ -1,11 +1,13 @@
 <script lang="ts">
 import Vue from "vue"
-import type { Post } from "@/types/Post"
+import type { Article } from "@/types/Article"
 
 export default Vue.extend({
+  name: "Article",
+  layout: "wiki",
   async asyncData({ $content, route }) {
-    const post = <Post>await $content(route.params.slug).fetch()
-    return { post }
+    const article = <Article>await $content(route.params.slug).fetch()
+    return { article }
   }
 })
 </script>
@@ -14,36 +16,36 @@ export default Vue.extend({
   <main id="post">
     <section class="content">
       <header>
-        <h1>{{ post.title }}</h1>
+        <h1>{{ article.title }}</h1>
       </header>
 
       <article>
         <header>
           <aside class="left">
-            <p>{{ post.description }}</p>
+            <p>{{ article.description }}</p>
 
             <figure class="contents">
               <h2>Contents</h2>
               <ul>
-                <NuxtLink v-for="link of post.toc" :key="link.id" :class="{ 'toc2': link.depth === 2, 'toc3': link.depth === 3 }" :to="`#${link.id}`">{{ link.text }}</NuxtLink>
+                <NuxtLink v-for="link of article.toc" :key="link.id" :class="{ 'h2': link.depth === 2, 'h3': link.depth === 3 }" :to="`#${link.id}`">{{ link.text }}</NuxtLink>
               </ul>
             </figure>
           </aside>
 
           <aside class="info-box">
             <header>
-              <h1>{{ post.info.header.title }}</h1>
-              <img :src="post.info.header.image" />
+              <h1>{{ article.info.header.title }}</h1>
+              <img :src="article.info.header.image" />
             </header>
 
-            <div v-for="([title, text], index) in Object.entries(post.info.details)" :key="index">
+            <div v-for="([title, text], index) in Object.entries(article.info.details)" :key="index">
               <h3>{{ title }}</h3>
               <span>{{ text }}</span>
             </div>
           </aside>
         </header>
 
-        <NuxtContent class="post-content" :document="post" />
+        <NuxtContent class="post-content" :document="article" />
       </article>
     </section>
   </main>
@@ -53,14 +55,8 @@ export default Vue.extend({
 @import "@/assets/styles/mixins.scss";
 
 main#post {
-  padding: 32px;
-  min-height: 100vh;
-  background: black;
 
   section.content {
-    margin: 0 auto;
-    max-width: 1000px;
-
     > header {
       padding: 96px 0 32px;
       h1 { font-size: 36px; font-weight: 600 }
@@ -74,10 +70,11 @@ main#post {
 
         aside {
           &.left {
-            p { color: #d6d6db; line-height: 30px; text-align: justify }
+            p { line-height: 30px; text-align: justify }
 
             figure.contents {
               margin-top: 64px;
+              overflow: hidden;
               border-radius: 4px;
               width: fit-content;
               border: 1px solid #3a3a3a;
@@ -99,9 +96,9 @@ main#post {
                   padding: 6px 10px;
                   transition: 150ms background;
 
-                  &.toc3 { margin-left: 12px }
+                  &.h3 { margin-left: 12px }
                   &:hover { background: #161616 }
-                  &.toc2:not(:first-child) { margin-top: 12px }
+                  &.h2:not(:first-child) { margin-top: 12px }
                 }
               }
             }
@@ -135,7 +132,7 @@ main#post {
             div {
               padding: 8px;
               h3 { font-size: 14px; font-weight: 600 }
-              span { font-size: 14px; color: #d6d6db }
+              span { font-size: 14px }
               &:not(:last-child) { padding-bottom: 6px; border-bottom: 1px solid #161616 }
             }
           }
@@ -161,7 +158,6 @@ main#post {
               border-color: white;
               &::after {
                 content: "#";
-                color: #d6d6db;
                 font-size: 24px;
                 margin-left: 8px;
                 font-weight: 400;
@@ -171,7 +167,6 @@ main#post {
         }
 
         ul li, ol li, p, a {
-          color: #d6d6db;
           line-height: 30px;
           margin-bottom: 36px;
 

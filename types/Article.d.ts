@@ -23,7 +23,7 @@ interface Toc {
   depth?: number
 }
 
-export interface Post {
+export interface Article {
   toc?: Toc[]
   dir?: string
   body?: Body

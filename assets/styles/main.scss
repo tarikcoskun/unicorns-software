@@ -2,16 +2,28 @@
 @import "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700";
 @import "mixins.scss";
 
-* {
-  color: white;
-  text-decoration: none;
-  scroll-behavior: smooth;
-  padding: 0; margin: 0; border: 0;
-  font: 18px "Inter", sans-serif;
+html {
+  --bg: #1c1c28;
+  --fg: #c6c6cc;
 
-  &::-webkit-scrollbar {
-    width: 4px;
-    &-track { background: black }
-    &-thumb { background: white }
+  * {
+    color: var(--fg);
+    text-decoration: none;
+    scroll-behavior: smooth;
+    padding: 0; margin: 0; border: 0;
+    font: 18px "Inter", sans-serif;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+      &-track { background: black }
+      &-thumb { background: white }
+    }
   }
+}
+
+body { background: var(--bg) }
+h1, h2, h3 { color: white }
+section {
+  margin: 0 auto;
+  max-width: 1100px;
 }

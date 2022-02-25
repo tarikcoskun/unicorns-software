@@ -33,3 +33,5 @@
     &::after { box-shadow: none }
   }
 }
+
+@mixin mobile { @media (max-width: 700px) { @content }}

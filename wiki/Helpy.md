@@ -3,19 +3,15 @@ title: Helpy
 description: Helpy is the boss for Chapter D in Will You Snail.
 tags:
   - characters
+
+info:
+  header:
+    title: Helpy
+    image: /wiki/helpy.webp
+
+  details:
+    Appearances: Chapter D
 ---
-
-<info-box>
-  <header>
-    <h1>Helpy</h1>
-    <img src="/wiki/helpy.webp" />
-  </header>
-
-  <div>
-    <h3>Appearances</h3>
-    <span>Will You Snail?, Chapter D</span>
-  </div>
-</info-box>
 
 # Behavior
 
