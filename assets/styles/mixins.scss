@@ -1,3 +1,10 @@
+@mixin line-clamp($val: 1) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: $val;
+  -webkit-box-orient: vertical;
+}
+
 @mixin flex($align: unset, $justify: unset, $dir: row, $gap: 0) {
   gap: $gap;
   display: flex;

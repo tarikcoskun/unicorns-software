@@ -14,7 +14,7 @@ export default Vue.extend({
 </script>
 
 <template>
-  <main id="post">
+  <main id="article">
     <section class="content">
       <header>
         <h1>{{ article.title }}</h1>
@@ -25,10 +25,10 @@ export default Vue.extend({
           <aside class="left">
             <p>{{ article.description }}</p>
 
-            <WikiContents :toc="article.toc" />
+            <WikiContents :toc="article.toc" v-if="article.toc.length" />
           </aside>
 
-          <WikiInfoBox :info="article.info" />
+          <WikiInfoBox :info="article.info" v-if="article.info" />
         </header>
 
         <NuxtContent class="post-content" :document="article" />
@@ -40,7 +40,7 @@ export default Vue.extend({
 <style lang="scss">
 @import "@/assets/styles/mixins.scss";
 
-main#post {
+main#article {
   section.content {
     p { line-height: 30px }
 
