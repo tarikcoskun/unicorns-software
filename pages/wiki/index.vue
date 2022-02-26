@@ -34,8 +34,11 @@ export default Vue.extend({
 
         <div>
           <NuxtLink class="article" :to="`/wiki/${article.slug}`" v-for="article in articles.latest" :key="article.slug">
-            <h2>{{ article.title }}</h2>
-            <p>{{ article.description }}</p>
+            <img :src="article.cover">
+            <footer>
+              <h2>{{ article.title }}</h2>
+              <p>{{ article.description }}</p>
+            </footer>
           </NuxtLink>
         </div>
       </section>
@@ -48,8 +51,11 @@ export default Vue.extend({
 
         <div>
           <NuxtLink class="article" :to="`/wiki/${article.slug}`" v-for="article in articles.characters" :key="article.slug">
-            <h2>{{ article.title }}</h2>
-            <p>{{ article.description }}</p>
+            <img :src="article.cover">
+            <footer>
+              <h2>{{ article.title }}</h2>
+              <p>{{ article.description }}</p>
+            </footer>
           </NuxtLink>
         </div>
       </section>
@@ -73,17 +79,24 @@ main {
       }
 
       div {
-        margin: 64px -12px 0;
+        margin-top: 64px;
         @include grid(3, 16px);
 
         a.article {
-          padding: 12px;
+          overflow: hidden;
           border-radius: 4px;
+          background: #282838;
           transition: 150ms background;
+          @include flex($dir: column);
 
-          h2 { font-size: 20px; font-weight: 600 }
-          p { margin-top: 12px; @include line-clamp(2) }
-          &:hover { background: #282838 }
+          img {}
+          footer {
+            padding: 16px;
+            h2 { font-size: 20px; font-weight: 600 }
+            p { margin-top: 12px; @include line-clamp(2) }
+          }
+
+          &:hover { background: #343446 }
         }
       }
     }
