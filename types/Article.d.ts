@@ -17,10 +17,17 @@ interface Body {
   children?: Child[]
 }
 
-interface Toc {
+export interface Toc {
   id?: string
   text?: string
   depth?: number
+}
+
+export interface Info {
+  image: string
+  details: {
+    [key: string]: string
+  }
 }
 
 export interface Article {

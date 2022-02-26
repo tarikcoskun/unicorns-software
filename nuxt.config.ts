@@ -17,6 +17,7 @@ const Config: NuxtConfig = {
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
 
+  components: true,
   css: ["@/assets/styles/main"],
   buildModules: ["@nuxt/typescript-build"],
   modules: [["@nuxtjs/pwa", PWAConfig], ["@nuxt/content", ContentConfig]]

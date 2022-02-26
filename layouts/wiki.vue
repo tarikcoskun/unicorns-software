@@ -1,11 +1,9 @@
 <script lang="ts">
 import Vue from "vue"
 import { Article } from "@/types/Article"
-import MagIcon from "@/components/MagIcon.vue"
 
 export default Vue.extend({
   name: "WikiLayout",
-  components: { MagIcon },
 
   data: () => ({
     query: <string>"",
@@ -61,11 +59,10 @@ export default Vue.extend({
 
 div#wiki {
   header.navigation {
-    padding: 8px 0;
     background: #282838;
 
     section {
-      width: 100%;
+      padding: 8px 0;
       @include flex(center, space-between);
 
       aside {

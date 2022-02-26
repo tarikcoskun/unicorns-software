@@ -1,9 +1,7 @@
 <script lang="ts">
 import Vue from "vue"
-import Save from "@/components/Save.vue"
 
 export default Vue.extend({
-  components: { Save },
   computed: {
     slots() { return this.$store.state.saveSlots.slots }
   }

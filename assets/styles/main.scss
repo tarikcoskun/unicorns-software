@@ -26,4 +26,6 @@ h1, h2, h3 { color: white }
 section {
   margin: 0 auto;
   max-width: 1000px;
+  padding: 96px 32px;
+  @include mobile { padding: 32px 24px }
 }

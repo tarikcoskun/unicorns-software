@@ -13,11 +13,20 @@ export default Vue.extend({
 
 <template>
   <main>
-    <article v-for="(post, index) in articles" :key="index">
-      {{ post.title }}
-    </article>
+    <section class="content">
+      <NuxtLink :to="`/wiki/${article.slug}`" v-for="article in articles" :key="article.slug">
+        {{ article.title }}
+      </NuxtLink>
+    </section>
   </main>
 </template>
 
 <style lang="scss" scoped>
+@import "@/assets/styles/mixins.scss";
+
+main {
+  section.content {
+
+  }
+}
 </style>

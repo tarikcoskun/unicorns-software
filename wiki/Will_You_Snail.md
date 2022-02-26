@@ -3,9 +3,7 @@ title: Will You Snail?
 description: Will You Snail is a game created by Jonas Tyroller. The game will be released in March 9th. The objective is to reach the end of the level while the AI spawns various traps to kill you. This AI has the ability to predict the player's movement, so they must try to outsmart it and have it place traps away from the intended path.
 
 info:
-  header:
-    title: Will You Snail?
-    image: /wiki/will_you_snail.jpg
+  image: /wiki/will_you_snail.jpg
 
   details:
     Developer: Jonas Tyroller
