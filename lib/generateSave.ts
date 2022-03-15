@@ -1,4 +1,3 @@
-import initialSave from "./initialSave"
 import type { SaveFile } from "@/types/SaveFile"
 
 /**

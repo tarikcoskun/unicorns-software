@@ -11,6 +11,7 @@ const Config: NuxtConfig = {
     meta: [
       { charset: "utf-8" },
       { name: "og:image", content: "/embed.png" },
+      { name: "twitter:image", content: "/twitter.png" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "description", hid: "description",  content: "Unicorn's Software is a save editor for Will You Snail" }
     ],
