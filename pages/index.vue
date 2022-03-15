@@ -24,19 +24,29 @@ export default Vue.extend({
 
   methods: {
     generateSave,
+    reset() { this.save = initialSave },
     uploadSave(event: Event) {
       const fileReader = new FileReader()
       const [file] = <FileList>(<HTMLInputElement>event.target).files
 
       this.fileName = file.name
-      if (file && file.name.endsWith(".sav"))
-        fileReader.onload = () => this.save = readSaveContent(<string>fileReader.result)
+      fileReader.readAsText(file)
+      if (file.name.endsWith(".sav")) fileReader.onload = () => this.save = readSaveContent(<string>fileReader.result)
       else alert("Please upload a valid save file")
-      if (file) fileReader.readAsText(file)
     }
   },
 
   computed: {
+    explorationPoints() {
+      let explorationPoints = 0
+      for (let index = 0; index < 46; index++) {
+        if (!calculated.explorationPoints.includes(this.save["Collected Exploration Points"][index])) continue
+        explorationPoints += 1
+      }
+
+      return explorationPoints
+    },
+
     skillPoints() {
       let skillPoints = { normal: 0, underwater: 0 }
       for (let index = 0; index < 256; index++) {
@@ -63,26 +73,27 @@ export default Vue.extend({
         <fieldset>
           <legend>Save File</legend>
 
-          <aside class="grid-2">
+          <aside class="grid-3">
             <label for="upload" class="button">UPLOAD</label>
             <input type="file" accept=".sav" id="upload" @change="uploadSave" />
             <button @click="generateSave(fileName, save)">GENERATE</button>
+            <button @click="reset">RESET</button>
           </aside>
           <aside class="grid">
             <div>
               <label>
                 <aside><img src="@/assets/img/exploration-point.png"> Exploration points</aside>
                 <aside>
-                  <span>({{ save["Collected Exploration Points"].length }})</span>
+                  <span>({{ explorationPoints }}/46)</span>
                   <span> > </span>
                 </aside>
               </label>
             </div>
             <div>
               <label>
-                <aside><img src="@/assets/img/skill-point.png">  Skill points</aside>
+                <aside><img src="@/assets/img/skill-point.png"> Skill points</aside>
                 <aside>
-                  <span>({{ skillPoints.normal }})</span>
+                  <span>({{ skillPoints.normal }}/244)</span>
                   <span> > </span>
                 </aside>
               </label>
@@ -139,7 +150,7 @@ export default Vue.extend({
                 <option value="-1">None</option>
                 <option value="0">Fedora</option>
                 <option value="1">Lil' Shelly</option>
-                <option value="2">Unicorn Horn</option>
+                <option value="2">Unicorn horn</option>
                 <option value="3">Human rider</option>
                 <option value="4">Christmas hat</option>
                 <option value="5">Lil' Squid</option>
@@ -242,6 +253,7 @@ main {
 
         &.grid   { @include grid(1, $gap: 24px 8px) }
         &.grid-2 { @include grid(2, $gap: 24px 8px) }
+        &.grid-3 { @include grid(3, $gap: 24px 8px) }
       }
     }
   }

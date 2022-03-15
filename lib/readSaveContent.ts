@@ -6,7 +6,7 @@ import type { SaveFile, NumberBool, Difficulty, Hat } from "@/types/SaveFile"
  * @returns {SaveFile} All the save data.
  */
 
-const readSaveContent = (saveFile: string): SaveFile => {
+export default function readSaveContent(saveFile: string): SaveFile {
   const getPos = (valueTitle: string) => content.indexOf(valueTitle)
   const getValue = (valueTitle: string) => {
     const value = <string | number>content[getPos(valueTitle) + 1]
@@ -61,5 +61,3 @@ const readSaveContent = (saveFile: string): SaveFile => {
 
   return data
 }
-
-export default readSaveContent
