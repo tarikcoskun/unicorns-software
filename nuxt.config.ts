@@ -1,10 +1,10 @@
 import type { NuxtConfig } from "@nuxt/types"
 
 import PWAConfig from "./config/pwa"
-import ContentConfig from "./config/content"
 
 const Config: NuxtConfig = {
   target: "static",
+  dir: { static: "public" },
 
   head: {
     title: "Unicorn's Software — Save Editor for Will You Snail",
@@ -18,9 +18,9 @@ const Config: NuxtConfig = {
   },
 
   components: true,
-  css: ["@/assets/styles/main"],
-  buildModules: ["@nuxt/typescript-build"],
-  modules: [["@nuxtjs/pwa", PWAConfig], ["@nuxt/content", ContentConfig]]
+  css: ["@/assets/css/main"],
+  modules: [["@nuxtjs/pwa", PWAConfig]],
+  buildModules: ["@nuxt/typescript-build"]
 }
 
 export default Config

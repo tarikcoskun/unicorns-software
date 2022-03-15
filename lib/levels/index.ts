@@ -6,4 +6,4 @@ import ChapterE from "./chapter-e"
 import OtherLevels from "./other-levels"
 
 export { ChapterA, ChapterB, ChapterC, ChapterD, ChapterE, OtherLevels }
-export default { ...ChapterA, ...ChapterB, ...ChapterC, ...ChapterD, ...ChapterE, ...OtherLevels }
+export default <{ [key: number]: { name: string } }>{ ...ChapterA, ...ChapterB, ...ChapterC, ...ChapterD, ...ChapterE, ...OtherLevels }

@@ -11,8 +11,8 @@
     "resolveJsonModule": true,
     "moduleResolution": "node",
     "experimentalDecorators": true,
-    "lib": ["esnext", "esnext.asyncIterable", "dom"],
-    "types": ["@nuxt/types", "@types/node", "@nuxt/content"],
+    "types": ["@nuxt/types", "@types/node"],
+    "lib": ["esnext", "esnext.asyncIterable", "dom", "dom.iterable"],
 
     "baseUrl": ".",
     "paths": {

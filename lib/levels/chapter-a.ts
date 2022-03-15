@@ -1,148 +1,148 @@
 const ChapterA = {
-  28: {
+  29: {
     name: "A01",
     icon: "hall",
     color: "blue"
   },
-  29: {
+  30: {
     name: "A01.1",
     icon: "hall",
     color: "pink",
     secret: "SecretPassage"
   },
-  30: {
+  31: {
     name: "A02",
     icon: "hall",
     color: "blue"
   },
-  21: {
+  22: {
     name: "A02.1",
     icon: "hat-selection",
     color: "pink"
   },
-  31: {
+  32: {
     name: "A03",
     icon: "hall",
     color: "blue"
   },
-  12: {
+  13: {
     name: "A03.1",
     icon: "diana",
     color: "pink",
     secret: "DianasStory"
   },
-  32: {
+  33: {
     name: "A04",
     icon: "hall",
     color: "blue"
   },
-  33: {
+  34: {
     name: "A05",
     icon: "skill-test",
     color: "blue"
   },
-  34: {
+  35: {
     name: "A06",
     icon: "difficulty-decision",
     color: "blue"
   },
-  35: {
+  36: {
     name: "A07",
     icon: "stars",
     color: "blue"
   },
-  36: {
+  37: {
     name: "A08",
     icon: "stars",
     color: "blue"
   },
-  37: {
+  38: {
     name: "A09",
     icon: "stars",
     color: "blue"
   },
-  38: {
+  39: {
     name: "A10",
     icon: "stars",
     color: "blue"
   },
-  11: {
+  12: {
     name: "A10.1",
     icon: "stars",
     color: "pink",
     secret: "LookingAtTheStars"
   },
-  61: {
+  62: {
     name: "A10.2",
     icon: "stars",
     color: "pink",
     secret: "ExpansionInSpace"
   },
-  39: {
+  40: {
     name: "A11",
     icon: "stars",
     color: "blue"
   },
-  40: {
+  41: {
     name: "A12",
     icon: "blank",
     color: "blue"
   },
-  41: {
+  42: {
     name: "A13",
     icon: "spikes",
     color: "orange",
     combat: true
   },
-  43: {
+  44: {
     name: "A14",
     icon: "spikes",
     color: "orange",
     combat: true
   },
-  5: {
+  6: {
     name: "A14.1",
     icon: "secret-presentation",
     color: "pink"
   },
-  44: {
+  45: {
     name: "A15",
     icon: "spikes",
     color: "orange",
     combat: true
   },
-  45: {
+  46: {
     name: "A16",
     icon: "conveyor-belts",
     color: "orange",
     combat: true
   },
-  46: {
+  47: {
     name: "A17",
     icon: "conveyor-belts",
     color: "orange",
     combat: true
   },
-  47: {
+  48 : {
     name: "A18",
     icon: "combat",
     color: "orange",
     combat: true
   },
-  48: {
+  49: {
     name: "A19",
     icon: "combat",
     color: "orange",
     combat: true
   },
-  49: {
+  50: {
     name: "A20",
     icon: "boss_demolition",
     color: "orange",
     combat: true,
     boss: true
   },
-  50: {
+  51: {
     name: "A21",
     icon: "blank",
     color: "blue",

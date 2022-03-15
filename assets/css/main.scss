@@ -1,0 +1,71 @@
+@import "https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap";
+@import "mixins.scss";
+
+html {
+  --bg: #1c1c28;
+  --fg: #c6c6cc;
+
+  * {
+    color: var(--fg);
+    letter-spacing: 0.1px;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    padding: 0; margin: 0; border: 0;
+    font: 16px "Press Start 2P", sans-serif;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+      &-track { background: var(--bg) }
+      &-thumb { background: var(--fg) }
+    }
+  }
+}
+
+body { background: black }
+
+button, select, input, .button {
+  color: white;
+  appearance: none;
+  padding: 10px 12px;
+  background: #090909;
+  box-sizing: border-box;
+  border: 2px solid #292929;
+
+  &:hover, &:focus {
+    outline: none;
+    border-color: #5e5e5e;
+  }
+}
+
+input {
+  &[type=file] { display: none }
+  &[type=checkbox] {
+    padding: 10px;
+    width: fit-content;
+    background: #090909;
+    border: 2px solid #292929;
+
+    &:checked {
+      background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+      background-color: #10b981;
+    }
+
+    &:hover, &:focus {
+      outline: none;
+      border-color: #5e5e5e;
+    }
+  }
+}
+
+select {
+  background-size: 14px;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 24 24' fill='gray' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z'/%3e%3c/svg%3e");
+}
+
+button, label[for=upload] {
+  cursor: pointer;
+  text-align: center;
+}
