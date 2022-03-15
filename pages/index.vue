@@ -60,128 +60,139 @@ export default Vue.extend({
 
     <main>
       <section>
-        <h1>Save File</h1>
+        <fieldset>
+          <legend>Save File</legend>
 
-        <div>
-          <figure>
-            <label>Upload</label>
-            <label for="upload" class="button">Upload Save</label>
+          <aside class="grid-2">
+            <label for="upload" class="button">UPLOAD</label>
             <input type="file" accept=".sav" id="upload" @change="uploadSave" />
-          </figure>
-          <figure>
-            <label>Download</label>
-            <button @click="generateSave(fileName, save)">Generate Save</button>
-          </figure>
-          <figure>
-            <label>Exploration Points</label>
-            <p>{{ save["Collected Exploration Points"].length }}</p>
-          </figure>
-          <figure>
-            <label>Skill Points</label>
-            <p>{{ skillPoints.normal }}</p>
-          </figure>
-          <figure>
-            <label>Skill Points Underwater</label>
-            <p>{{ skillPoints.underwater }}</p>
-          </figure>
-        </div>
+            <button @click="generateSave(fileName, save)">GENERATE</button>
+          </aside>
+          <aside class="grid">
+            <div>
+              <label>
+                <aside><img src="@/assets/img/exploration-point.png"> Exploration points</aside>
+                <aside>
+                  <span>({{ save["Collected Exploration Points"].length }})</span>
+                  <span> > </span>
+                </aside>
+              </label>
+            </div>
+            <div>
+              <label>
+                <aside><img src="@/assets/img/skill-point.png">  Skill points</aside>
+                <aside>
+                  <span>({{ skillPoints.normal }})</span>
+                  <span> > </span>
+                </aside>
+              </label>
+            </div>
+          </aside>
+        </fieldset>
       </section>
 
       <section>
-        <h1>Numerics</h1>
-
-        <div>
-          <figure>
-            <label>Deaths</label>
-            <input type="number" v-model="save['Deaths']" />
-          </figure>
-          <figure>
-            <label>Anger Game Level</label>
-            <input type="number" v-model="save['Anger Game Level']" />
-          </figure>
-          <figure>
-            <label>Anger Game XP</label>
-            <input type="number" v-model="save['Anger Game XP']" />
-          </figure>
-          <figure>
-            <label>Timer Game</label>
-            <input type="number" v-model="save['Timer Game']" />
-          </figure>
-          <figure>
-            <label>Timer Chapter</label>
-            <input type="number" v-model="save['Timer Chapter']" />
-          </figure>
-          <figure>
-            <label>Timer Level</label>
-            <input type="number" v-model="save['Timer Level']" />
-          </figure>
-        </div>
+        <fieldset>
+          <legend>Numerics</legend>
+          <aside class="grid-2">
+            <div>
+              <label>Deaths</label>
+              <input type="number" v-model="save['Deaths']" />
+            </div>
+            <div>
+              <label>Anger Game Level</label>
+              <input type="number" v-model="save['Anger Game Level']" />
+            </div>
+            <div>
+              <label>Anger Game XP</label>
+              <input type="number" v-model="save['Anger Game XP']" />
+            </div>
+            <div>
+              <label>Timer Game</label>
+              <input type="number" v-model="save['Timer Game']" />
+            </div>
+            <div>
+              <label>Timer Chapter</label>
+              <input type="number" v-model="save['Timer Chapter']" />
+            </div>
+            <div>
+              <label>Timer Level</label>
+              <input type="number" v-model="save['Timer Level']" />
+            </div>
+          </aside>
+        </fieldset>
       </section>
 
       <section>
-        <h1>Select Boxes</h1>
-
-        <div>
-          <figure>
-            <label>Room</label>
-            <select v-model="save['Room']">
-              <option :value="key" v-for="[key, value] in sortedLevels" :key="key">{{ value.name }}</option>
-            </select>
-          </figure>
-          <figure>
-            <label>Hat</label>
-            <select v-model="save['Hat']">
-              <option value="-1">None</option>
-              <option value="0">Fedora</option>
-              <option value="1">Lil' Shelly</option>
-              <option value="2">Unicorn Horn</option>
-              <option value="3">Human rider</option>
-              <option value="4">Christmas hat</option>
-              <option value="5">Lil' Squid</option>
-              <option value="6">Poop</option>
-            </select>
-          </figure>
-          <figure>
-            <label>Difficulty</label>
-            <select v-model="save['Difficulty']">
-              <option value="3">Easy</option>
-              <option value="2">Very Easy</option>
-              <option value="1">Extremely Easy</option>
-              <option value="0">Infinitely Easy</option>
-            </select>
-          </figure>
-        </div>
+        <fieldset>
+          <legend>Select Boxes</legend>
+          <aside class="grid-2">
+            <div>
+              <label>Room</label>
+              <select v-model="save['Room']">
+                <option :value="key" v-for="[key, value] in sortedLevels" :key="key">{{ value.name }}</option>
+              </select>
+            </div>
+            <div>
+              <label>Hat</label>
+              <select v-model="save['Hat']">
+                <option value="-1">None</option>
+                <option value="0">Fedora</option>
+                <option value="1">Lil' Shelly</option>
+                <option value="2">Unicorn Horn</option>
+                <option value="3">Human rider</option>
+                <option value="4">Christmas hat</option>
+                <option value="5">Lil' Squid</option>
+                <option value="6">Poop</option>
+              </select>
+            </div>
+            <div>
+              <label>Difficulty</label>
+              <select v-model="save['Difficulty']">
+                <option value="3">Easy</option>
+                <option value="2">Very Easy</option>
+                <option value="1">Extremely Easy</option>
+                <option value="0">Infinitely Easy</option>
+              </select>
+            </div>
+          </aside>
+        </fieldset>
       </section>
 
       <section>
-        <h1>Toggles</h1>
-
-        <div>
-          <figure>
-            <label>Exploration Mode</label>
-            <input type="checkbox" :checked="save['Exploration Mode']" @change="save['Exploration Mode'] = ($event.target.checked === true ? 1 : 0)" />
-          </figure>
-          <figure>
-            <label>Training Mode</label>
-            <input type="checkbox" :checked="save['Training Mode']" @change="save['Training Mode'] = ($event.target.checked === true ? 1 : 0)" />
-          </figure>
-          <figure>
-            <label>Heart Fixed</label>
-            <input type="checkbox" :checked="save['Heart Fixed']" @change="save['Heart Fixed'] = ($event.target.checked === true ? 1 : 0)" />
-          </figure>
-          <figure>
-            <label>Final Credits Reached</label>
-            <input type="checkbox" :checked="save['Final Credits Reached']" @change="save['Final Credits Reached'] = ($event.target.checked === true ? 1 : 0)" />
-          </figure>
-          <figure>
-            <label>Pump Inverted</label>
-            <input type="checkbox" :checked="save['Pump Inverted']" @change="save['Pump Inverted'] = ($event.target.checked === true ? 1 : 0)" />
-          </figure>
-          <figure>
-            <label>Speedrun Is Legit</label>
-            <input type="checkbox" :checked="save['Speedrun Is Still Legit']" @change="save['Speedrun Is Still Legit'] = ($event.target.checked === true ? 1 : 0)" />
-          </figure>
-        </div>
+        <fieldset>
+          <legend>Toggles</legend>
+          <aside class="grid-2">
+            <div>
+              <label>Exploration Mode</label>
+              <input type="checkbox" :checked="save['Exploration Mode']" @change="save['Exploration Mode'] = ($event.target.checked === true ? 1 : 0)" />
+            </div>
+            <div>
+              <label>Training Mode</label>
+              <input type="checkbox" :checked="save['Training Mode']" @change="save['Training Mode'] = ($event.target.checked === true ? 1 : 0)" />
+            </div>
+            <div>
+              <label>Training Mode</label>
+              <input type="checkbox" :checked="save['Training Mode']" @change="save['Training Mode'] = ($event.target.checked === true ? 1 : 0)" />
+            </div>
+            <div>
+              <label>Heart Fixed</label>
+              <input type="checkbox" :checked="save['Heart Fixed']" @change="save['Heart Fixed'] = ($event.target.checked === true ? 1 : 0)" />
+            </div>
+            <div>
+              <label>Reached Credits</label>
+              <input type="checkbox" :checked="save['Final Credits Reached']" @change="save['Final Credits Reached'] = ($event.target.checked === true ? 1 : 0)" />
+            </div>
+            <div>
+              <label>Pump Inverted</label>
+              <input type="checkbox" :checked="save['Pump Inverted']" @change="save['Pump Inverted'] = ($event.target.checked === true ? 1 : 0)" />
+            </div>
+            <div>
+              <label>Speedrun Is Legit</label>
+              <input type="checkbox" :checked="save['Speedrun Is Still Legit']" @change="save['Speedrun Is Still Legit'] = ($event.target.checked === true ? 1 : 0)" />
+            </div>
+          </aside>
+        </fieldset>
       </section>
     </main>
   </div>
@@ -202,25 +213,39 @@ header {
 
 main {
   margin: 0 auto;
-  max-width: 800px;
   padding: 64px 0;
+  max-width: 600px;
   @include flex($dir: column, $gap: 48px);
 
   section {
-    padding-bottom: 48px;
-    @include flex($dir: column, $gap: 32px);
+    fieldset {
+      padding: 16px;
+      border: 3px solid white;
+      @include grid(1, $gap: 16px 8px);
 
-    h1 { color: white; font-size: 20px }
-    div {
-      @include grid(2, $gap: 24px 16px);
+      legend { font-size: 18px; padding: 0 6px }
 
-      figure {
-        @include flex($dir: column, $gap: 12px);
-        p { color: white }
+      > aside {
+        div {
+          @include flex($dir: column, $gap: 12px);
+
+          label {
+            font-size: 14px;
+            @include flex(center, space-between);
+
+            aside {
+              @include flex(center, $gap: 16px);
+              img { width: 32px }
+            }
+          }
+        }
+
+        &.grid   { @include grid(1, $gap: 24px 8px) }
+        &.grid-2 { @include grid(2, $gap: 24px 8px) }
       }
     }
-
-    &:not(:last-child) { border-bottom: 2px solid #090909 }
   }
+
+  &:not(:last-child) { border-bottom: 2px solid #090909 }
 }
 </style>

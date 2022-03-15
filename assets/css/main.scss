@@ -2,11 +2,8 @@
 @import "mixins.scss";
 
 html {
-  --bg: #1c1c28;
-  --fg: #c6c6cc;
-
   * {
-    color: var(--fg);
+    color: white;
     letter-spacing: 0.1px;
     text-decoration: none;
     scroll-behavior: smooth;
@@ -24,7 +21,7 @@ html {
 body { background: black }
 
 button, select, input, .button {
-  color: white;
+  font-size: 14px;
   appearance: none;
   padding: 10px 12px;
   background: #090909;
