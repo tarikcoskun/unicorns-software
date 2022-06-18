@@ -1,6 +1,6 @@
-> ⚠️ This project is still under development, there are many bugs and many incomplete stuff
+### Unicorn's Software [DISCONTINUED]
 
-### Unicorn's Software
+> I am no longer interested in the project, as there are many alternatives. You can fork this repository and do whatever you want with it.
 
 This is an advanced save editor for [Will You Snail?](https://store.steampowered.com/app/1115050/Will_You_Snail)
 
